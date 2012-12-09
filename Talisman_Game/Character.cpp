@@ -86,7 +86,7 @@ void Character::removeObject(Card obj){
 void Character::removeObject(string name){
 	for(int i = 0; i <= bag.size(); i++){
 		if(bag[i].getName() == name){
-			AdventureCard temp = bag[i];
+			Card temp = bag[i];
 			bag[i] = bag.back();
 			bag.back() = temp;
 			bag.pop_back();

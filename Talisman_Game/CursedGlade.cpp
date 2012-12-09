@@ -15,4 +15,9 @@ CursedGlade::~CursedGlade()
 }
 
 void CursedGlade::effect(Character character)
-{}
+{
+	//if(this->Cards.size()>0)
+	//	{}//this->Cards[0]->effect(character)
+	//else if(this->Cards.size()==0)
+	//	{}//do something
+}

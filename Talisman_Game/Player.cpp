@@ -6,12 +6,12 @@ bool isPermaDead;
 
 Player::Player()
 {
-	int temp;
+	//int temp;
 
-	srand((unsigned int)time(0));
-	temp = ((int) rand() % 6 + 1);
-	
-	character = createCharacter(temp);
+	//srand((unsigned int)time(0));
+	//temp = ((int) rand() % 6 + 1);
+	//
+	//character = createCharacter(temp);
 }
 
 Player::Player(Map* Board, int isInPlay[])
