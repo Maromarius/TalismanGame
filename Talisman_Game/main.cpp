@@ -141,9 +141,9 @@ int diceRoll(void)
 
 bool canEvade(Player opponent)
 {
-	if(opponent.getCharacter().getProfession()=="Elf" && opponent.getCurrentAreaName()=="Woods")
+	if(opponent.getCharacter()->getProfession()=="Elf" && opponent.getCurrentAreaName()=="Woods")
 		return true;
-	else if(opponent.getCharacter().getProfession()=="Dwarf" && opponent.getCurrentAreaName()=="Hills")
+	else if(opponent.getCharacter()->getProfession()=="Dwarf" && opponent.getCurrentAreaName()=="Hills")
 		return true;
 	else 
 		return false;
@@ -152,7 +152,7 @@ bool canEvade(Player opponent)
 void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 {
 	cout << "\nIt is currently Player " << turn << "'s turn!" << endl;
-			cout << players[turn].getCharacter().getProfession() << ", you are at the "<< players[turn].getCurrentAreaName()<<endl;
+			cout << players[turn].getCharacter()->getProfession() << ", you are at the "<< players[turn].getCurrentAreaName()<<endl;
 			char decision;
 			bool endTurn=false;
 
@@ -160,7 +160,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 			//-Casting the Command Spell
 			if(players[turn].getCurrentAreaName()=="Crown of Command")
 			{
-				cout<<players[turn].getCharacter().getProfession()<<", you are still at the COROWN OF COMMAND, please press any key to roll the die and cast the Command Spell!" << endl;
+				cout<<players[turn].getCharacter()->getProfession()<<", you are still at the COROWN OF COMMAND, please press any key to roll the die and cast the Command Spell!" << endl;
 				system("PAUSE");
 				int dRoll = diceRoll();
 				cout << "You have rolled a " << dRoll << "!"<<endl;
@@ -170,7 +170,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 					for (int i=0;i<numberOfPlayers;i++)
 					{
 						if ((!players[i].checkIfPermaDead()) && i!=turn)
-							players[i].getCharacter().loseLive(1);
+							players[i].getCharacter()->loseLive(1);
 					}
 					endTurn = true;
 				}
@@ -185,13 +185,13 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 			
 			//--Non-Rolling Non-Movement Alternatives to the Turn 2/2
 			//-Building a raft
-			if(players[turn].getCharacter().hasAxe() && players[turn].getCurrentAreaName()=="Woods" && !players[turn].getCharacter().isBagFull())
+			if(players[turn].getCharacter()->hasAxe() && players[turn].getCurrentAreaName()=="Woods" && !players[turn].getCharacter()->isBagFull())
 			{
 				cout<<"Would you like to use this turn to build a Raft instead of moving (y/n)?"<<endl;
 				cin>>decision;
 				if(decision)
 				{
-					players[turn].getCharacter().setHasRaft(true);
+					players[turn].getCharacter()->setHasRaft(true);
 					endTurn = true;
 				}
 			}
@@ -200,7 +200,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 
 			//--Non-Rolling Movement Alternatives to the Turn 1/2
 			//-Using a raft
-			if(players[turn].getCharacter().hasRaft() && players[turn].getCurrentRegion()=="outter")
+			if(players[turn].getCharacter()->hasRaft() && players[turn].getCurrentRegion()=="outter")
 			{
 				cout<<"Would you like to use this turn to cross the Storm River with your Raft instead of moving (y/n)?"<<endl;
 				cin>>decision;
@@ -254,7 +254,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 				//-Special landing points on board 1/4 Sentinel
 				if(players[turn].getCurrentAreaName()=="Sentinel")
 				{
-				cout << players[turn].getCharacter().getProfession() << "!!, you have reach the Sentinel, would you like to tempt to cross the bridge? (y/n) " << endl;
+				cout << players[turn].getCharacter()->getProfession() << "!!, you have reach the Sentinel, would you like to tempt to cross the bridge? (y/n) " << endl;
 				cin>>decision;
 					if(decision == 'y')
 					{
@@ -270,7 +270,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 				//-Special landing points on board 2/4 Hills from the middle region
 				if(players[turn].getCurrentAreaName()=="Hills" && players[turn].getCurrentRegion()=="middle")
 				{
-				cout << players[turn].getCharacter().getProfession() << ", you are back at the Hills, would you like to cross the bridge? (y/n) " << endl;
+				cout << players[turn].getCharacter()->getProfession() << ", you are back at the Hills, would you like to cross the bridge? (y/n) " << endl;
 				cin>>decision;
 					if(decision == 'y')
 					{
@@ -286,7 +286,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 				//-Special landing points on board 3/4 Portal of Power
 				if(players[turn].getCurrentAreaName()=="Portal of Power")
 				{
-				cout << players[turn].getCharacter().getProfession() << "!!, you have reach the Portal of Power, would you like to tempt to open it? (y/n) " << endl;
+				cout << players[turn].getCharacter()->getProfession() << "!!, you have reach the Portal of Power, would you like to tempt to open it? (y/n) " << endl;
 				cin>>decision;
 					if(decision == 'y')
 					{
@@ -302,8 +302,8 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 				//-Special landing points on board 4/4 Valey of Fire
 				if(players[turn].getCurrentAreaName()=="Valey of Fire")
 				{
-				cout << players[turn].getCharacter().getProfession() << "!!, you have reach the Valey of Fire!!"<<endl;
-					if(players[turn].getCharacter().hasTalisman())
+				cout << players[turn].getCharacter()->getProfession() << "!!, you have reach the Valey of Fire!!"<<endl;
+					if(players[turn].getCharacter()->hasTalisman())
 					{
 						cout<<"You have used your Talisman to enter into the Crown of Command!!\n"<<endl;
 						players[turn].setCurrentArea(TalismanMap,"crown","Crown of Command");
@@ -328,7 +328,7 @@ void encounterPlayer(Player players[], int turn)
 			if ((i!=turn) && (players[i].getCurrentAreaNumber() == players[turn].getCurrentAreaNumber())) 
 			{
 				//Decide if you would to encounter the character
-				cout<<players[i].getCharacter().getProfession()<<" is also at the "<<players[i].getCurrentAreaName()<<" would you like to encounter them?(y/n)"<<endl;
+				cout<<players[i].getCharacter()->getProfession()<<" is also at the "<<players[i].getCurrentAreaName()<<" would you like to encounter them?(y/n)"<<endl;
 				cin>>decision;
 			}
 			//Encountoring Opponent
@@ -338,7 +338,7 @@ void encounterPlayer(Player players[], int turn)
 				bool opponetCanEvade = canEvade(players[i]);
 				if (opponetCanEvade)
 				{
-					cout<<players[i].getCharacter().getProfession()<<", would you like to evade?(y/n)"<<endl;
+					cout<<players[i].getCharacter()->getProfession()<<", would you like to evade?(y/n)"<<endl;
 					cin>>opponentDecision;
 				}
 				//Opponent evades 
@@ -347,7 +347,7 @@ void encounterPlayer(Player players[], int turn)
 				//Opponent does not evade 
 				else if(opponentDecision =='n')
 				{
-					players[turn].getCharacter().battleCharacter(players[i].getCharacter());	
+					players[turn].getCharacter()->battleCharacter(*players[i].getCharacter());	
 				}
 
 			}
@@ -591,8 +591,8 @@ int main(void){
 	{
 		cout << "Creating Player " << i << endl;
 		new (&players[i]) Player(TalismanMap, isInPlay);
-		cout << players[i].getCharacter().getProfession() <<" has been created." << endl;
-		players[i].getCharacter().printStats();
+		cout << players[i].getCharacter()->getProfession() <<" has been created." << endl;
+		players[i].getCharacter()->printStats();
 	}
 
 	// CURRENT BUILD:
@@ -612,7 +612,7 @@ int main(void){
 			encounterPlayer(players, turn);
 
 			//Encounter with space
-			cout << players[turn].getCharacter().getProfession() << ", you are now at the "<< players[turn].getCurrentAreaName()
+			cout << players[turn].getCharacter()->getProfession() << ", you are now at the "<< players[turn].getCurrentAreaName()
 				 <<"\n\n"<<players[turn].getCurrentAreaDescription()<<endl;
 			
 

@@ -38,7 +38,7 @@ class Player
 		Player::Player(Map * Board, int[]);
 		Player::~Player(void);
 		Character Player::createCharacter(int);
-		Character Player::getCharacter(void);
+		Character* Player::getCharacter(void);
 		bool Player::checkIfPermaDead(void);
 		void Player::isNowPermaDead(void);
 		void Player::setCurrentArea(Map * Board,string region, string TargetArea);

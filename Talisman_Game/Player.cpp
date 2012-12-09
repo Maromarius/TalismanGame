@@ -111,9 +111,9 @@ Character Player::createCharacter(int characterRoll)
 
 }
 
-Character Player::getCharacter()
+Character* Player::getCharacter()
 {
-	return character;
+	return &character;
 }
 
 void Player::setCurrentArea(Map * Board, string region,string TargetArea)

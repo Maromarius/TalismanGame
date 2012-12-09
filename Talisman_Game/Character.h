@@ -91,13 +91,8 @@ public:
 	int getCraft();
 	int getBaseCraft();
 	int getCounterStrength();
-<<<<<<< .mine
 	int getCounterCraft();	
-=======
-	int getCounterCraft();
 	int getIdleTurns();
-	void showBag();
->>>>>>> .r25
 	int getMaxObjectSize();
 	void printStats();
 	bool hasAxe();
