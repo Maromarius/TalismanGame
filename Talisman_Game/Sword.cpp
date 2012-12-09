@@ -1,4 +1,8 @@
 #include "Sword.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 
 Sword::Sword(void)
