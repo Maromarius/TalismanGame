@@ -156,10 +156,10 @@ void Player::setCurrentRegion(string newRegion)
 
 void Player :: moveCharacterRight()
 {
-	this->currentArea = this->currentArea->right;
+	this->currentArea = this->currentArea->getRight();
 }
 
 void Player :: moveCharacterLeft()
 {
-	this->currentArea = this->currentArea->left;
+	this->currentArea = this->currentArea->getLeft();
 }
