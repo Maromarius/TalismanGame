@@ -1,4 +1,8 @@
 #include "Armour.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 
 Armour::Armour(void)
