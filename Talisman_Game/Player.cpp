@@ -162,15 +162,39 @@ void Player :: moveCharacterLeft()
 	this->currentArea = this->currentArea->getLeft();
 }
 
+// Bag
 void Player:: addToBag(Card card)
 {
 	this->character.addObject(card);
 }
-
 Card Player:: removeFromBag(Card card){
 	return this->character.removeObject(card);
 }
-
 Card Player:: removeFromBag(string card){
 	return this->character.removeObject(card);
 }
+
+// Followers
+void Player:: addFollower(Card card)
+{
+	this->character.addFollower(card);
+}
+Card Player:: removeFollower(Card card){
+	return this->character.removeFollower(card);
+}
+Card Player:: removeFollower(string card){
+	return this->character.removeFollower(card);
+}
+
+// Spells
+/*
+void Player:: addSpell(Card card)
+{
+	this->character.addSpell(card);
+}
+Card Player:: removeSpell(Card card){
+	return this->character.removeSpell(card);
+}
+Card Player:: removeSpell(string card){
+	return this->character.removeSpell(card);
+}*/

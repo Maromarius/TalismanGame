@@ -595,15 +595,9 @@ int main(void){
 		players[i].getCharacter().printStats();
 	}
 
-	// MIKE TEST 1212
-	/*Card c = adventureCards->draw();
-	players[0].addToBag(c);
-	players[0].getCharacter().showBag();
+	// CURRENT BUILD:
+	// Bag & Followers work; Spells do not.
 
-	c = players[0].removeFromBag(c);
-	cout << "??" << endl;
-	players[0].getCharacter().showBag();
-	c.print();*/
 
 	//--------------GAME--------------
 	//for(int testTurns = 0 ; testTurns<30; testTurns++)

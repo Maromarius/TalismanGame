@@ -52,5 +52,11 @@ class Player
 		void addToBag(Card);
 		Card removeFromBag(Card);
 		Card removeFromBag(string);
+		void addFollower(Card);
+		Card removeFollower(Card);
+		Card removeFollower(string);
+		void addSpell(Card);
+		Card removeSpell(Card);
+		Card removeSpell(string);
 };
 #endif
