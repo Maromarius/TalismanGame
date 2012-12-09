@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FOLLOWER_H
+#define FOLLOWER_H
 #include "adventurecard.h"
 class Follower :
 	public AdventureCard
@@ -9,4 +10,4 @@ public:
 	int followerStrength;
 	int followerCraft;
 };
-
+#endif

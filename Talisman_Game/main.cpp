@@ -560,6 +560,8 @@ cout<<"/////////////////////////////////////////////\n"
 	//--------------SETUP--------------
 	//--Board Setup
 	Map* TalismanMap = new Map();
+	Deck* adventureCards = createAdventureCardDeck();
+	Deck* spellCards = createSpellCardDeck();
 
 	//--Number of Players Setup
 	bool correctInput = false;
@@ -617,14 +619,6 @@ cout<<"/////////////////////////////////////////////\n"
 		}
 		(turn == numberOfPlayers)?(turn=1):(turn++);
 	}	
-
-	Deck * adventureCards = createAdventureCardDeck();
-	Deck * spellCards = createSpellCardDeck();
-
-	for(int i = 0; i < 17; i++){
-		spellCards->cards[i].print();
-		cout << "\n\n";
-	}
 			
 	system("PAUSE");
 	return 0;

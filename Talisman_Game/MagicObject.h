@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MAGICOBJECT_H
+#define MAGICOBJECT_H
 #include "adventurecard.h"
 class MagicObject :
 	public AdventureCard
@@ -9,4 +10,4 @@ public:
 	int objectCraft;
 	int objectStrength;
 };
-
+#endif
