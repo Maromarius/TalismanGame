@@ -12,7 +12,11 @@ Card::~Card(void)
 }
 
 void Card::print(){
-	cout << NAME << "\n" << DESCRIPTION;
+	cout << NAME << "\n" << DESCRIPTION<<"\n";
+}
+
+string Card::getType(){
+	return this->CARDTYPE;
 }
 
 string Card::getName(){

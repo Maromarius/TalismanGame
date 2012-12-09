@@ -3,6 +3,7 @@
 
 Spell::Spell(void)
 {
+	CARDTYPE="Spell";
 }
 
 

@@ -3,6 +3,7 @@
 
 NormalObject::NormalObject(void)
 {
+	CARDTYPE="Normal Object";
 }
 
 

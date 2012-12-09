@@ -4,6 +4,7 @@
 BattleObject::BattleObject(void)
 {
 	objectStrength = 0;
+	CARDTYPE="Battle Object";
 }
 
 

@@ -3,6 +3,7 @@
 
 Stranger::Stranger(void)
 {
+	CARDTYPE="Stranger";
 }
 
 

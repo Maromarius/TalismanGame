@@ -3,6 +3,7 @@
 
 Event::Event(void)
 {
+	CARDTYPE="Event";
 }
 
 

@@ -12,6 +12,7 @@ Enemy::Enemy(string name, string description,string type,int encounterNumber,int
 	this->encounterNumber = encounterNumber;
 	this->craft = craft;
 	this->strength = strength;
+	CARDTYPE="Enemy";
 }
 
 Enemy::~Enemy(){}

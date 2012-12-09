@@ -3,6 +3,7 @@
 
 Place::Place(void)
 {
+	CARDTYPE="Place";
 }
 
 

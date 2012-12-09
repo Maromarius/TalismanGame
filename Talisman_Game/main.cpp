@@ -565,7 +565,13 @@ cout<<" **********            ** **                                       \n"
 	Map* TalismanMap = new Map();
 	Deck* adventureCards = createAdventureCardDeck();
 	Deck* spellCards = createSpellCardDeck();
-
+	Player* player1 = new Player();
+	// TODO: Give Object to Player!
+	Card c = adventureCards->draw();
+	c.print();
+	player1->addToBag(c);
+	player1->getCharacter().showBag();
+	/*
 	//--Number of Players Setup
 	bool correctInput = false;
 	int characterNumberSelection;
@@ -592,10 +598,9 @@ cout<<" **********            ** **                                       \n"
 		cout << players[i].getCharacter().getProfession() <<" has been created." << endl;
 		players[i].getCharacter().printStats();
 	}
-
-
-
-
+	*/
+	
+/*
 
 
 	//--------------GAME--------------
@@ -622,7 +627,7 @@ cout<<" **********            ** **                                       \n"
 		}
 		(turn == numberOfPlayers)?(turn=1):(turn++);
 	}
-			
+	*/		
 	system("PAUSE");
 	return 0;
 }

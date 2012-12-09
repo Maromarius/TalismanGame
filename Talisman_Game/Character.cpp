@@ -18,7 +18,6 @@ Character::Character(int _baseStrength, int _baseCraft, int _baseLife, int _base
 	fateTokens = 0;
 	maxObjects = 4;
 	numToadTurnsLeft = 0;
-
 	this->profession = profession;
 
     mule = false;
@@ -60,25 +59,23 @@ Character::~Character(void)
 }
 
 //-----OBJECTS-----//
-void Character::addObject(AdventureCard obj)
+void Character::addObject(Card obj)
 {
-	if(bag.size() <=3){
-		bag.push_back(obj);
+		if(this->bag.size() <=3){
+		this->bag.push_back(obj);
 	}
-	else if(mule&& bag.size() <=7){
-		bag.push_back(obj);	
+	else if(mule&& this->bag.size() <=7){
+		this->bag.push_back(obj);	
 	}
 	else
-	{
-		cout << "Bag is Full"<<endl;
-	}
-}
+		cout<<"The Bag is Full"<<endl;
+ }
 
-void Character::removeObject(AdventureCard obj){
+void Character::removeObject(Card obj){
 	string name = obj.NAME;
 	for(int i = 0; i <= bag.size(); i++){
 		if(bag[i].getName() == name){
-			AdventureCard temp = bag[i];
+			Card temp = bag[i];
 			bag[i] = bag.back();
 			bag.back() = temp;
 			bag.pop_back();
@@ -98,9 +95,7 @@ void Character::removeObject(string name){
 }
 //-----GAIN/LOSS-----//
 void Character::gainStrength(int str){
-
-	counterStrength += str;
-	
+	counterStrength += str;	
 }
 
 void Character::loseStrength(int str){

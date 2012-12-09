@@ -9,8 +9,10 @@ public:
 	Card(void);
 	~Card(void);
 	void print();
+	string CARDTYPE;
 	string NAME;
 	string DESCRIPTION;
+	string getType();
 	string getName();
 	string getDescription();
 };

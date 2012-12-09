@@ -47,10 +47,9 @@ protected: //TO CHANGE!!!
 	string alignment;
 	string profession;
 
-	vector<AdventureCard> bag;
+	vector<Card> bag;
 
 	//Spell spells[3];					// Array to hold the spells a character has
-    //LinkedList<Follower> followers;	// Linked list to hold all followers
 
 
 
@@ -74,12 +73,12 @@ public:
     void updateAlignment(string);
     void updateMule();
     void updateToad();
-	void addObject(AdventureCard);
+	void addObject(Card);
 	void moveRight();
 	void moveLeft();
 	void battleCharacter(Character);
 	void battleMonster(Enemy);
-	void removeObject(AdventureCard);
+	void removeObject(Card);
 	void removeObject(string);
 	string getProfession();
 	string getSpawnPoint();

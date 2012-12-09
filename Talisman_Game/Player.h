@@ -4,7 +4,7 @@
 #include "Map.h"
 #include "Player.h"
 #include "Character.h"
-
+#include "Card.h"
 #include "Assassin.h"
 #include "Druid.h"
 #include "Dwarf.h"
@@ -49,5 +49,6 @@ class Player
 		void Player::setCurrentRegion(string);
 		void moveCharacterLeft();
 		void moveCharacterRight();
+		void addToBag(Card);
 };
 #endif
