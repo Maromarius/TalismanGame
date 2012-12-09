@@ -1018,9 +1018,6 @@
     <ClCompile Include="MagicalVortex.cpp">
       <Filter>Source Files\Card\AdventureCard\Event</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files\Card\AdventureCard\Event</Filter>
-    </ClCompile>
     <ClCompile Include="MarketDay.cpp">
       <Filter>Source Files\Card\AdventureCard\Event</Filter>
     </ClCompile>
@@ -1071,6 +1068,9 @@
     </ClCompile>
     <ClCompile Include="Talisman.cpp">
       <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

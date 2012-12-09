@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
-#include "Object.h"
 #include "Map.h"
 
 using namespace std;
@@ -49,7 +48,7 @@ protected: //TO CHANGE!!!
 	string alignment;
 	string profession;
 
-	vector<Object> bag;
+	//vector<Object> bag;
 
 	//Spell spells[3];					// Array to hold the spells a character has
     //LinkedList<Follower> followers;	// Linked list to hold all followers
@@ -76,7 +75,7 @@ public:
     void updateAlignment(string);
     void updateMule();
     void updateToad();
-	void addObject(Object);
+	//void addObject(Object);
 	void moveRight();
 	void moveLeft();
 	void battleCharacter(Character);
@@ -93,7 +92,7 @@ public:
 	int getCounterStrength();
 	int getCounterCraft();
 	string showBag();
-	vector<Object> getBag();
+	//vector<Object> getBag();
 	int getMaxObjectSize();
 	void printStats();
 	bool hasAxe();

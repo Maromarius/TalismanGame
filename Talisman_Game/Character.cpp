@@ -29,7 +29,7 @@ Character::Character(int _baseStrength, int _baseCraft, int _baseLife, int _base
 	isAlive = true;
 
 
-	vector<Object> bag;
+//	vector<Object> bag;
 
     baseStrength = _baseStrength;
     baseCraft = _baseCraft;
@@ -63,24 +63,21 @@ Character::~Character(void)
 }
 
 //-----OBJECTS-----//
-void Character::addObject(Object obj){
-	
-	
-	
-	
-	if(bag.size() <=3){
-		bag.push_back(obj);
-	}
-	else if(mule&& bag.size() <=7){
-		bag.push_back(obj);	
-	}
-	else
-	{
-		cout << "Bag is Full"<<endl;
-	}
-	
-
-}
+//void Character::addObject(Object obj)
+//{
+//	if(bag.size() <=3){
+//		bag.push_back(obj);
+//	}
+//	else if(mule&& bag.size() <=7){
+//		bag.push_back(obj);	
+//	}
+//	else
+//	{
+//		cout << "Bag is Full"<<endl;
+//	}
+//	
+//
+//}
 
 /*void Character::removeObject(Object obj){
 
@@ -261,29 +258,28 @@ int Character::getCounterCraft(){
 	return this->counterCraft;
 }
 
-string Character::showBag(){
+//string Character::showBag()
+//{
+//	string temp = "";
+//
+//	for(int i = 0; i < this->bag.size(); i++){
+//		
+//		temp += "->";
+//		temp += this->bag[i].getName();
+//		temp += "\n";	
+//		temp += this->bag[i].getDescription();
+//		temp += "\n";		
+//	}
+//	return temp;
+//}
 
-	string temp = "";
+//vector<Object> Character::getBag()
+//{
+//	return this->bag;
+//}
 
-	for(int i = 0; i < this->bag.size(); i++){
-		
-		temp += "->";
-		temp += this->bag[i].getName();
-		temp += "\n";	
-		temp += this->bag[i].getDescription();
-		temp += "\n";		
-	}
-	return temp;
-}
-
-vector<Object> Character::getBag(){
-
-	return this->bag;
-
-}
-
-int Character::getMaxObjectSize(){
-
+int Character::getMaxObjectSize()
+{
 	return this->maxObjects;
 }
 
@@ -477,10 +473,11 @@ void Character::acquiresRaft()
 
 bool Character::isBagFull()
 {
-	if(this->mule)
+	return false;
+	/*if(this->mule)
 		return !(this->bag.size()<8);
 	else
-		return !(this->bag.size()<4);
+		return !(this->bag.size()<4);*/
 }
 
 bool Character::hasAxe()

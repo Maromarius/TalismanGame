@@ -139,6 +139,16 @@ int diceRoll(void)
 	return ((int) rand() % 6 + 1);
 }
 
+bool canEvade(Player opponent)
+{
+	if(opponent.getCharacter().getProfession()=="Elf" && opponent.getCurrentAreaName()=="Woods")
+		return true;
+	else if(opponent.getCharacter().getProfession()=="Dwarf" && opponent.getCurrentAreaName()=="Hills")
+		return true;
+	else 
+		return false;
+}
+
 void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 {
 	cout << "\nIt is currently Player " << turn << "'s turn!" << endl;
@@ -325,7 +335,7 @@ void encounterPlayer(Player players[], int turn)
 			if (decision=='y')
 			{
 				char opponentDecision='n';
-				bool opponetCanEvade = canEvade(players, i);
+				bool opponetCanEvade = canEvade(players[i]);
 				if (opponetCanEvade)
 				{
 					cout<<players[i].getCharacter().getProfession()<<", would you like to evade?(y/n)"<<endl;
@@ -345,7 +355,6 @@ void encounterPlayer(Player players[], int turn)
 				break;
 		}//End of character loop
 }
-
 
 Deck* createAdventureCardDeck(void){
 	Deck * temp = new Deck();
