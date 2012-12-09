@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Character">
+      <UniqueIdentifier>{ca23f088-a6df-4b88-b993-4b9e5e4c26aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Character">
+      <UniqueIdentifier>{2c1f8fc5-8282-4b97-830e-3bd90d307c08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{e5f23699-8232-4064-8cc6-aaf8ee88094a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{d8cdbb7f-34b9-435e-a2c1-c6979dd86198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Player">
+      <UniqueIdentifier>{b6b26ff2-cefa-4ad0-b954-6451269aae3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Areas">
+      <UniqueIdentifier>{e677999b-f9bc-4a84-adca-59b18855236f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Areas">
+      <UniqueIdentifier>{d6bfb3e1-30df-48c4-a8a0-bb2d6d8a8d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card">
+      <UniqueIdentifier>{4a1c7d98-148a-4275-befc-77f451ccc76b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard">
+      <UniqueIdentifier>{9fa5b06d-ca04-46b7-be12-ac7dbb5cb67f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\Spell">
+      <UniqueIdentifier>{acacb65c-cf29-4c06-8de4-d91702b0c5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Follower">
+      <UniqueIdentifier>{f6bdfa09-6723-4e2a-a55e-e308d3f5ebd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Enemy">
+      <UniqueIdentifier>{53e8c5d8-9b83-4915-8400-6d55b3ea9775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Enemy\Animal">
+      <UniqueIdentifier>{f4a8a8be-cf4b-458a-9b44-ceaee813e68a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Enemy\Monster">
+      <UniqueIdentifier>{4c9c4298-b100-4916-bfa3-6b2e68409c5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Enemy\Spirit">
+      <UniqueIdentifier>{80caea40-5921-4636-a718-11eec903c5eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Enemy\Dragon">
+      <UniqueIdentifier>{843b0442-0cd7-4e0b-bd63-8f2bc3d08818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card">
+      <UniqueIdentifier>{cdaac342-e2bb-4bdf-8223-ba564129b1ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard">
+      <UniqueIdentifier>{64c32d0e-4425-4b26-a573-4e9fcc154420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\Spell">
+      <UniqueIdentifier>{c51ade5b-7592-404f-a868-c639a0d705a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Enemy">
+      <UniqueIdentifier>{5f02df8e-3206-4eba-8b2e-fb6b5a5dee02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Follower">
+      <UniqueIdentifier>{6023cdd0-e91f-4f38-a926-233e0d3340a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Enemy\Animal">
+      <UniqueIdentifier>{6531c92a-4a91-491e-bf2e-4ab1c308bbb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Enemy\Dragon">
+      <UniqueIdentifier>{a46c9504-4eb4-459b-9cf6-76208bd377d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Enemy\Monster">
+      <UniqueIdentifier>{a2f21376-d013-43da-a0a9-2297a36f50bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Enemy\Spirit">
+      <UniqueIdentifier>{2cc902d6-9c1e-41fc-a738-38442f763595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\BattleObject">
+      <UniqueIdentifier>{1e486a6b-0f10-4cf5-a3da-887854c8adb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\BattleObject">
+      <UniqueIdentifier>{e33f8cfc-a5fe-44cc-af7d-41c975b3c264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\MagicObject">
+      <UniqueIdentifier>{395a8125-1552-4acc-bd29-73f8ec4564d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\MagicObject">
+      <UniqueIdentifier>{03c0b274-c9b8-413a-88f8-6e0ade2d3452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Event">
+      <UniqueIdentifier>{f824864d-d8a8-41f7-9c36-affd7352dc2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Event">
+      <UniqueIdentifier>{92ee65f9-9790-4512-97a0-ec5d7065d163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\NormalObject">
+      <UniqueIdentifier>{083b3297-9a95-4101-a918-0ee9de473efb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\NormalObject">
+      <UniqueIdentifier>{6a0d65a1-d613-40ee-a14a-5fd58d940469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player">
+      <UniqueIdentifier>{09d107d3-728e-4fa7-a654-3f609c03dcfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Stranger">
+      <UniqueIdentifier>{7cc555ff-ee6a-493a-b148-a70bc9f7ede7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Stranger">
+      <UniqueIdentifier>{926d65af-bf06-4435-b480-17a1a8c7e8af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Place">
+      <UniqueIdentifier>{6c23be33-a6fb-4810-a16a-5b38da4880bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Place">
+      <UniqueIdentifier>{8d0e2470-9a31-4514-9ec1-877f68999ca6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Warrior.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Druid.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Region.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Bear.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Area.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Assassin.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Dwarf.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Elf.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Ghoul.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Ministrel.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Monk.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Priest.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Prophetess.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Sorceress.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Thief.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Troll.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="City.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Fields.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Hills.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Plains.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Woods.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Tavern.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Ruins.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Forest.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Village.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Graveyard.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Sentinel.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapel.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Crags.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="WarlocksCave.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Desert.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Oasis.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Temple.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Runes.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Castle.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="PortalOfPower.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackKnight.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenValley.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="CursedGlade.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Chasm.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="ValleyOfFire.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="WerewolfDen.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Crypt.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="PlainOfPeril.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Mines.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="VampiresTower.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Pits.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Ape.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Demon.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClInclude>
+    <ClInclude Include="Dragon.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Dragon</Filter>
+    </ClInclude>
+    <ClInclude Include="Ghost.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClInclude>
+    <ClInclude Include="Giant.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Goblin.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Hobgoblin.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Lemure.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClInclude>
+    <ClInclude Include="Lion.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Serpent.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Shadow.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClInclude>
+    <ClInclude Include="Spectre.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClInclude>
+    <ClInclude Include="WildBoar.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Wolf.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Wraith.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClInclude>
+    <ClInclude Include="DiceWithDeath.h">
+      <Filter>Header Files\Areas</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>Header Files\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="AdventureCard.h">
+      <Filter>Header Files\Card\AdventureCard</Filter>
+    </ClInclude>
+    <ClInclude Include="Deck.h">
+      <Filter>Header Files\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="Helmet.h">
+      <Filter>Header Files\Card\AdventureCard\BattleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Axe.h">
+      <Filter>Header Files\Card\AdventureCard\BattleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleObject.h">
+      <Filter>Header Files\Card\AdventureCard\BattleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Spell.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Armour.h">
+      <Filter>Header Files\Card\AdventureCard\BattleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Acquisition.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Follower.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Alchemist.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Alchemy.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalObject.h">
+      <Filter>Header Files\Card\AdventureCard\NormalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Angel.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="BagOfGold.h">
+      <Filter>Header Files\Card\AdventureCard\NormalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Counterspell.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="CursedByAHag.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="DestroyMagic.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Destruction.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Divination.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Stranger.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Gnome.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Enchanter.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Fairy.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Guide.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Healing.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Hex.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Hermit.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Invisibility.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Immobility.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Mage.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Maiden.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Mercenary.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesmerism.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Mule.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Nullify.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Phantom.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Pixie.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Place.h">
+      <Filter>Header Files\Card\AdventureCard\Place</Filter>
+    </ClInclude>
+    <ClInclude Include="Poltergeist.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoBagsofGold.h">
+      <Filter>Header Files\Card\AdventureCard\NormalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Preservation.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Prince.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="Princess.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="PsyonicBlast.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Raft.h">
+      <Filter>Header Files\Card\AdventureCard\NormalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomSpell.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="Sorcerer.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Sword.h">
+      <Filter>Header Files\Card\AdventureCard\BattleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Teleport.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="TemporalWarp.h">
+      <Filter>Header Files\Card\Spell</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicPortal.h">
+      <Filter>Header Files\Card\AdventureCard\Place</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicStream.h">
+      <Filter>Header Files\Card\AdventureCard\Place</Filter>
+    </ClInclude>
+    <ClInclude Include="Market.h">
+      <Filter>Header Files\Card\AdventureCard\Place</Filter>
+    </ClInclude>
+    <ClInclude Include="Marsh.h">
+      <Filter>Header Files\Card\AdventureCard\Place</Filter>
+    </ClInclude>
+    <ClInclude Include="Maze.h">
+      <Filter>Header Files\Card\AdventureCard\Place</Filter>
+    </ClInclude>
+    <ClInclude Include="PoolofLife.h">
+      <Filter>Header Files\Card\AdventureCard\Place</Filter>
+    </ClInclude>
+    <ClInclude Include="Shrine.h">
+      <Filter>Header Files\Card\AdventureCard\Place</Filter>
+    </ClInclude>
+    <ClInclude Include="Unicorn.h">
+      <Filter>Header Files\Card\AdventureCard\Follower</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterBottle.h">
+      <Filter>Header Files\Card\AdventureCard\NormalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Witch.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Healer.h">
+      <Filter>Header Files\Card\AdventureCard\Stranger</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+      <Filter>Header Files\Card\AdventureCard\BattleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="HolyLance.h">
+      <Filter>Header Files\Card\AdventureCard\BattleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Blizzard.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Storm.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="BookOfSpells.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="EvilDarkness.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicalVortex.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="MarketDay.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Mephistopheles.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Pestilence.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Raiders.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Siren.h">
+      <Filter>Header Files\Card\AdventureCard\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicObject.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Amulet.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Wand.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Cross.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="HolyGrail.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicBelt.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbOfKnowledge.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="PotionOfStrength.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Ring.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Runesword.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SolomonsCrown.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Talisman.h">
+      <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Druid.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Warrior.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Region.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Bear.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Area.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Assassin.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Wizard.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Dwarf.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Elf.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Ghoul.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Ministrel.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Monk.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Priest.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Prophetess.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorceress.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Thief.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Troll.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="City.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackKnight.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Castle.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapel.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Chasm.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Crags.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Crypt.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="CursedGlade.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Desert.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Fields.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Forest.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Graveyard.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="HiddenValley.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Hills.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Mines.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Ape.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Bandit.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Demon.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClCompile>
+    <ClCompile Include="Ghost.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClCompile>
+    <ClCompile Include="Dragon.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Dragon</Filter>
+    </ClCompile>
+    <ClCompile Include="Giant.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Goblin.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Hobgoblin.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Lemure.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClCompile>
+    <ClCompile Include="Lion.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Serpent.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Shadow.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClCompile>
+    <ClCompile Include="Spectre.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClCompile>
+    <ClCompile Include="WildBoar.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Wolf.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Wraith.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Spirit</Filter>
+    </ClCompile>
+    <ClCompile Include="Oasis.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Pits.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Plains.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="PortalOfPower.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Ruins.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Runes.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Sentinel.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Tavern.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Temple.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="ValleyOfFire.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="VampiresTower.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Village.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="WarlocksCave.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="WerewolfDen.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Woods.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="PlainOfPeril.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="DiceWithDeath.cpp">
+      <Filter>Source Files\Areas</Filter>
+    </ClCompile>
+    <ClCompile Include="Card.cpp">
+      <Filter>Source Files\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="AdventureCard.cpp">
+      <Filter>Source Files\Card\AdventureCard</Filter>
+    </ClCompile>
+    <ClCompile Include="Deck.cpp">
+      <Filter>Source Files\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="Axe.cpp">
+      <Filter>Source Files\Card\AdventureCard\BattleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Helmet.cpp">
+      <Filter>Source Files\Card\AdventureCard\BattleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleObject.cpp">
+      <Filter>Source Files\Card\AdventureCard\BattleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Armour.cpp">
+      <Filter>Source Files\Card\AdventureCard\BattleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Spell.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Acquisition.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Follower.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Alchemist.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Alchemy.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalObject.cpp">
+      <Filter>Source Files\Card\AdventureCard\NormalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Angel.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="BagOfGold.cpp">
+      <Filter>Source Files\Card\AdventureCard\NormalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Counterspell.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="CursedByAHag.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="DestroyMagic.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Destruction.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Divination.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Stranger.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Enchanter.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Fairy.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Gnome.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Guide.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Healing.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Hex.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Hermit.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="HolyLance.cpp">
+      <Filter>Source Files\Card\AdventureCard\BattleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Invisibility.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Immobility.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Mage.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Maiden.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Mercenary.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesmerism.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Mule.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Nullify.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Phantom.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Pixie.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Place.cpp">
+      <Filter>Source Files\Card\AdventureCard\Place</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoBagsofGold.cpp">
+      <Filter>Source Files\Card\AdventureCard\NormalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Poltergeist.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Preservation.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Prince.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="Princess.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="PsyonicBlast.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Raft.cpp">
+      <Filter>Source Files\Card\AdventureCard\NormalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomSpell.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield.cpp">
+      <Filter>Source Files\Card\AdventureCard\BattleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorcerer.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Sword.cpp">
+      <Filter>Source Files\Card\AdventureCard\BattleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Teleport.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="TemporalWarp.cpp">
+      <Filter>Source Files\Card\Spell</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicPortal.cpp">
+      <Filter>Source Files\Card\AdventureCard\Place</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicStream.cpp">
+      <Filter>Source Files\Card\AdventureCard\Place</Filter>
+    </ClCompile>
+    <ClCompile Include="Market.cpp">
+      <Filter>Source Files\Card\AdventureCard\Place</Filter>
+    </ClCompile>
+    <ClCompile Include="Maze.cpp">
+      <Filter>Source Files\Card\AdventureCard\Place</Filter>
+    </ClCompile>
+    <ClCompile Include="Marsh.cpp">
+      <Filter>Source Files\Card\AdventureCard\Place</Filter>
+    </ClCompile>
+    <ClCompile Include="PoolofLife.cpp">
+      <Filter>Source Files\Card\AdventureCard\Place</Filter>
+    </ClCompile>
+    <ClCompile Include="Shrine.cpp">
+      <Filter>Source Files\Card\AdventureCard\Place</Filter>
+    </ClCompile>
+    <ClCompile Include="Witch.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Unicorn.cpp">
+      <Filter>Source Files\Card\AdventureCard\Follower</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterBottle.cpp">
+      <Filter>Source Files\Card\AdventureCard\NormalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Healer.cpp">
+      <Filter>Source Files\Card\AdventureCard\Stranger</Filter>
+    </ClCompile>
+    <ClCompile Include="Blizzard.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Storm.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="BookOfSpells.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="EvilDarkness.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicalVortex.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="MarketDay.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Mephistopheles.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Pestilence.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Raiders.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Siren.cpp">
+      <Filter>Source Files\Card\AdventureCard\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Amulet.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Wand.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Cross.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="HolyGrail.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicBelt.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicObject.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="OrbOfKnowledge.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="PotionOfStrength.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Ring.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Runesword.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SolomonsCrown.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Talisman.cpp">
+      <Filter>Source Files\Card\AdventureCard\MagicObject</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

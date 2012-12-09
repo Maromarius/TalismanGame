@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5DB78BFB-E6E4-49BF-9932-D32E6A71A557}</ProjectGuid>
+    <RootNamespace>Talisman_Game</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Acquisition.h" />
+    <ClInclude Include="AdventureCard.h" />
+    <ClInclude Include="Alchemist.h" />
+    <ClInclude Include="Alchemy.h" />
+    <ClInclude Include="Amulet.h" />
+    <ClInclude Include="Angel.h" />
+    <ClInclude Include="Ape.h" />
+    <ClInclude Include="Area.h" />
+    <ClInclude Include="Armour.h" />
+    <ClInclude Include="Assassin.h" />
+    <ClInclude Include="Axe.h" />
+    <ClInclude Include="BagOfGold.h" />
+    <ClInclude Include="Bandit.h" />
+    <ClInclude Include="BattleObject.h" />
+    <ClInclude Include="Bear.h" />
+    <ClInclude Include="BlackKnight.h" />
+    <ClInclude Include="Blizzard.h" />
+    <ClInclude Include="BookOfSpells.h" />
+    <ClInclude Include="Card.h" />
+    <ClInclude Include="Castle.h" />
+    <ClInclude Include="Chapel.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Chasm.h" />
+    <ClInclude Include="City.h" />
+    <ClInclude Include="Counterspell.h" />
+    <ClInclude Include="Crags.h" />
+    <ClInclude Include="Cross.h" />
+    <ClInclude Include="Crypt.h" />
+    <ClInclude Include="CursedByAHag.h" />
+    <ClInclude Include="CursedGlade.h" />
+    <ClInclude Include="Deck.h" />
+    <ClInclude Include="Demon.h" />
+    <ClInclude Include="Desert.h" />
+    <ClInclude Include="DestroyMagic.h" />
+    <ClInclude Include="Destruction.h" />
+    <ClInclude Include="DiceWithDeath.h" />
+    <ClInclude Include="Divination.h" />
+    <ClInclude Include="Dragon.h" />
+    <ClInclude Include="Druid.h" />
+    <ClInclude Include="Dwarf.h" />
+    <ClInclude Include="Elf.h" />
+    <ClInclude Include="Enchanter.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="EvilDarkness.h" />
+    <ClInclude Include="Fairy.h" />
+    <ClInclude Include="Fields.h" />
+    <ClInclude Include="Follower.h" />
+    <ClInclude Include="Forest.h" />
+    <ClInclude Include="Ghost.h" />
+    <ClInclude Include="Ghoul.h" />
+    <ClInclude Include="Giant.h" />
+    <ClInclude Include="Gnome.h" />
+    <ClInclude Include="Goblin.h" />
+    <ClInclude Include="Graveyard.h" />
+    <ClInclude Include="Guide.h" />
+    <ClInclude Include="Healer.h" />
+    <ClInclude Include="Healing.h" />
+    <ClInclude Include="Helmet.h" />
+    <ClInclude Include="Hermit.h" />
+    <ClInclude Include="Hex.h" />
+    <ClInclude Include="HiddenValley.h" />
+    <ClInclude Include="Hills.h" />
+    <ClInclude Include="Hobgoblin.h" />
+    <ClInclude Include="HolyGrail.h" />
+    <ClInclude Include="HolyLance.h" />
+    <ClInclude Include="Immobility.h" />
+    <ClInclude Include="Invisibility.h" />
+    <ClInclude Include="Lemure.h" />
+    <ClInclude Include="Lion.h" />
+    <ClInclude Include="Mage.h" />
+    <ClInclude Include="MagicalVortex.h" />
+    <ClInclude Include="MagicBelt.h" />
+    <ClInclude Include="MagicObject.h" />
+    <ClInclude Include="MagicPortal.h" />
+    <ClInclude Include="MagicStream.h" />
+    <ClInclude Include="Maiden.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Market.h" />
+    <ClInclude Include="MarketDay.h" />
+    <ClInclude Include="Marsh.h" />
+    <ClInclude Include="Maze.h" />
+    <ClInclude Include="Mephistopheles.h" />
+    <ClInclude Include="Mercenary.h" />
+    <ClInclude Include="Mesmerism.h" />
+    <ClInclude Include="Mines.h" />
+    <ClInclude Include="Ministrel.h" />
+    <ClInclude Include="Monk.h" />
+    <ClInclude Include="Mule.h" />
+    <ClInclude Include="NormalObject.h" />
+    <ClInclude Include="Nullify.h" />
+    <ClInclude Include="Oasis.h" />
+    <ClInclude Include="Ogre.h" />
+    <ClInclude Include="OrbOfKnowledge.h" />
+    <ClInclude Include="Pestilence.h" />
+    <ClInclude Include="Phantom.h" />
+    <ClInclude Include="Pits.h" />
+    <ClInclude Include="Pixie.h" />
+    <ClInclude Include="Place.h" />
+    <ClInclude Include="PlainOfPeril.h" />
+    <ClInclude Include="Plains.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Poltergeist.h" />
+    <ClInclude Include="PoolofLife.h" />
+    <ClInclude Include="PortalOfPower.h" />
+    <ClInclude Include="PotionOfStrength.h" />
+    <ClInclude Include="Preservation.h" />
+    <ClInclude Include="Priest.h" />
+    <ClInclude Include="Prince.h" />
+    <ClInclude Include="Princess.h" />
+    <ClInclude Include="Prophetess.h" />
+    <ClInclude Include="PsyonicBlast.h" />
+    <ClInclude Include="Raft.h" />
+    <ClInclude Include="Raiders.h" />
+    <ClInclude Include="RandomSpell.h" />
+    <ClInclude Include="Region.h" />
+    <ClInclude Include="Ring.h" />
+    <ClInclude Include="Ruins.h" />
+    <ClInclude Include="Runes.h" />
+    <ClInclude Include="Runesword.h" />
+    <ClInclude Include="Sentinel.h" />
+    <ClInclude Include="Serpent.h" />
+    <ClInclude Include="Shadow.h" />
+    <ClInclude Include="Shield.h" />
+    <ClInclude Include="Shrine.h" />
+    <ClInclude Include="Siren.h" />
+    <ClInclude Include="SolomonsCrown.h" />
+    <ClInclude Include="Sorcerer.h" />
+    <ClInclude Include="Sorceress.h" />
+    <ClInclude Include="Spectre.h" />
+    <ClInclude Include="Spell.h" />
+    <ClInclude Include="Storm.h" />
+    <ClInclude Include="Stranger.h" />
+    <ClInclude Include="Sword.h" />
+    <ClInclude Include="Talisman.h" />
+    <ClInclude Include="Tavern.h" />
+    <ClInclude Include="Teleport.h" />
+    <ClInclude Include="Temple.h" />
+    <ClInclude Include="TemporalWarp.h" />
+    <ClInclude Include="Thief.h" />
+    <ClInclude Include="Troll.h" />
+    <ClInclude Include="TwoBagsofGold.h" />
+    <ClInclude Include="Unicorn.h" />
+    <ClInclude Include="ValleyOfFire.h" />
+    <ClInclude Include="VampiresTower.h" />
+    <ClInclude Include="Village.h" />
+    <ClInclude Include="Wand.h" />
+    <ClInclude Include="WarlocksCave.h" />
+    <ClInclude Include="Warrior.h" />
+    <ClInclude Include="WaterBottle.h" />
+    <ClInclude Include="WerewolfDen.h" />
+    <ClInclude Include="WildBoar.h" />
+    <ClInclude Include="Witch.h" />
+    <ClInclude Include="Wizard.h" />
+    <ClInclude Include="Wolf.h" />
+    <ClInclude Include="Woods.h" />
+    <ClInclude Include="Wraith.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Acquisition.cpp" />
+    <ClCompile Include="AdventureCard.cpp" />
+    <ClCompile Include="Alchemist.cpp" />
+    <ClCompile Include="Alchemy.cpp" />
+    <ClCompile Include="Amulet.cpp" />
+    <ClCompile Include="Angel.cpp" />
+    <ClCompile Include="Ape.cpp" />
+    <ClCompile Include="Area.cpp" />
+    <ClCompile Include="Armour.cpp" />
+    <ClCompile Include="Assassin.cpp" />
+    <ClCompile Include="Axe.cpp" />
+    <ClCompile Include="BagOfGold.cpp" />
+    <ClCompile Include="Bandit.cpp" />
+    <ClCompile Include="BattleObject.cpp" />
+    <ClCompile Include="Bear.cpp" />
+    <ClCompile Include="BlackKnight.cpp" />
+    <ClCompile Include="Blizzard.cpp" />
+    <ClCompile Include="BookOfSpells.cpp" />
+    <ClCompile Include="Card.cpp" />
+    <ClCompile Include="Castle.cpp" />
+    <ClCompile Include="Chapel.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Chasm.cpp" />
+    <ClCompile Include="City.cpp" />
+    <ClCompile Include="Counterspell.cpp" />
+    <ClCompile Include="Crags.cpp" />
+    <ClCompile Include="Cross.cpp" />
+    <ClCompile Include="Crypt.cpp" />
+    <ClCompile Include="CursedByAHag.cpp" />
+    <ClCompile Include="CursedGlade.cpp" />
+    <ClCompile Include="Deck.cpp" />
+    <ClCompile Include="Demon.cpp" />
+    <ClCompile Include="Desert.cpp" />
+    <ClCompile Include="DestroyMagic.cpp" />
+    <ClCompile Include="Destruction.cpp" />
+    <ClCompile Include="DiceWithDeath.cpp" />
+    <ClCompile Include="Divination.cpp" />
+    <ClCompile Include="Dragon.cpp" />
+    <ClCompile Include="Druid.cpp" />
+    <ClCompile Include="Dwarf.cpp" />
+    <ClCompile Include="Elf.cpp" />
+    <ClCompile Include="Enchanter.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="EvilDarkness.cpp" />
+    <ClCompile Include="Fairy.cpp" />
+    <ClCompile Include="Fields.cpp" />
+    <ClCompile Include="Follower.cpp" />
+    <ClCompile Include="Forest.cpp" />
+    <ClCompile Include="Ghost.cpp" />
+    <ClCompile Include="Ghoul.cpp" />
+    <ClCompile Include="Giant.cpp" />
+    <ClCompile Include="Gnome.cpp" />
+    <ClCompile Include="Goblin.cpp" />
+    <ClCompile Include="Graveyard.cpp" />
+    <ClCompile Include="Guide.cpp" />
+    <ClCompile Include="Healer.cpp" />
+    <ClCompile Include="Healing.cpp" />
+    <ClCompile Include="Helmet.cpp" />
+    <ClCompile Include="Hermit.cpp" />
+    <ClCompile Include="Hex.cpp" />
+    <ClCompile Include="HiddenValley.cpp" />
+    <ClCompile Include="Hills.cpp" />
+    <ClCompile Include="Hobgoblin.cpp" />
+    <ClCompile Include="HolyGrail.cpp" />
+    <ClCompile Include="HolyLance.cpp" />
+    <ClCompile Include="Immobility.cpp" />
+    <ClCompile Include="Invisibility.cpp" />
+    <ClCompile Include="Lemure.cpp" />
+    <ClCompile Include="Lion.cpp" />
+    <ClCompile Include="Mage.cpp" />
+    <ClCompile Include="MagicalVortex.cpp" />
+    <ClCompile Include="MagicBelt.cpp" />
+    <ClCompile Include="MagicObject.cpp" />
+    <ClCompile Include="MagicPortal.cpp" />
+    <ClCompile Include="MagicStream.cpp" />
+    <ClCompile Include="Maiden.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Market.cpp" />
+    <ClCompile Include="MarketDay.cpp" />
+    <ClCompile Include="Marsh.cpp" />
+    <ClCompile Include="Maze.cpp" />
+    <ClCompile Include="Mephistopheles.cpp" />
+    <ClCompile Include="Mercenary.cpp" />
+    <ClCompile Include="Mesmerism.cpp" />
+    <ClCompile Include="Mines.cpp" />
+    <ClCompile Include="Ministrel.cpp" />
+    <ClCompile Include="Monk.cpp" />
+    <ClCompile Include="Mule.cpp" />
+    <ClCompile Include="NormalObject.cpp" />
+    <ClCompile Include="Nullify.cpp" />
+    <ClCompile Include="Oasis.cpp" />
+    <ClCompile Include="Ogre.cpp" />
+    <ClCompile Include="OrbOfKnowledge.cpp" />
+    <ClCompile Include="Pestilence.cpp" />
+    <ClCompile Include="Phantom.cpp" />
+    <ClCompile Include="Pits.cpp" />
+    <ClCompile Include="Pixie.cpp" />
+    <ClCompile Include="Place.cpp" />
+    <ClCompile Include="Plains.cpp" />
+    <ClCompile Include="PlainOfPeril.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Poltergeist.cpp" />
+    <ClCompile Include="PoolofLife.cpp" />
+    <ClCompile Include="PortalOfPower.cpp" />
+    <ClCompile Include="PotionOfStrength.cpp" />
+    <ClCompile Include="Preservation.cpp" />
+    <ClCompile Include="Priest.cpp" />
+    <ClCompile Include="Prince.cpp" />
+    <ClCompile Include="Princess.cpp" />
+    <ClCompile Include="Prophetess.cpp" />
+    <ClCompile Include="PsyonicBlast.cpp" />
+    <ClCompile Include="Raft.cpp" />
+    <ClCompile Include="Raiders.cpp" />
+    <ClCompile Include="RandomSpell.cpp" />
+    <ClCompile Include="Region.cpp" />
+    <ClCompile Include="Ring.cpp" />
+    <ClCompile Include="Ruins.cpp" />
+    <ClCompile Include="Runes.cpp" />
+    <ClCompile Include="Runesword.cpp" />
+    <ClCompile Include="Sentinel.cpp" />
+    <ClCompile Include="Serpent.cpp" />
+    <ClCompile Include="Shadow.cpp" />
+    <ClCompile Include="Shield.cpp" />
+    <ClCompile Include="Shrine.cpp" />
+    <ClCompile Include="Siren.cpp" />
+    <ClCompile Include="SolomonsCrown.cpp" />
+    <ClCompile Include="Sorcerer.cpp" />
+    <ClCompile Include="Sorceress.cpp" />
+    <ClCompile Include="Spectre.cpp" />
+    <ClCompile Include="Spell.cpp" />
+    <ClCompile Include="Storm.cpp" />
+    <ClCompile Include="Stranger.cpp" />
+    <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="Talisman.cpp" />
+    <ClCompile Include="Tavern.cpp" />
+    <ClCompile Include="Teleport.cpp" />
+    <ClCompile Include="Temple.cpp" />
+    <ClCompile Include="TemporalWarp.cpp" />
+    <ClCompile Include="Thief.cpp" />
+    <ClCompile Include="Troll.cpp" />
+    <ClCompile Include="TwoBagsofGold.cpp" />
+    <ClCompile Include="Unicorn.cpp" />
+    <ClCompile Include="ValleyOfFire.cpp" />
+    <ClCompile Include="VampiresTower.cpp" />
+    <ClCompile Include="Village.cpp" />
+    <ClCompile Include="Wand.cpp" />
+    <ClCompile Include="WarlocksCave.cpp" />
+    <ClCompile Include="Warrior.cpp" />
+    <ClCompile Include="WaterBottle.cpp" />
+    <ClCompile Include="WerewolfDen.cpp" />
+    <ClCompile Include="WildBoar.cpp" />
+    <ClCompile Include="Witch.cpp" />
+    <ClCompile Include="Wizard.cpp" />
+    <ClCompile Include="Wolf.cpp" />
+    <ClCompile Include="Woods.cpp" />
+    <ClCompile Include="Wraith.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
