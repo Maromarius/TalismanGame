@@ -13,3 +13,6 @@ PlainOfPeril::PlainOfPeril(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 PlainOfPeril::~PlainOfPeril()
 {
 }
+
+void PlainOfPeril::effect(Character character)
+{}

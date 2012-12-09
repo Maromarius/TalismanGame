@@ -15,6 +15,7 @@ public:
 
     Fields(int);
     ~Fields();
+	virtual void effect(Character);
 };
 
 #endif

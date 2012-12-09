@@ -17,3 +17,6 @@ Crypt::Crypt(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Crypt::~Crypt()
 {
 }
+
+void Crypt::effect(Character character)
+{}

@@ -17,7 +17,6 @@ public:
 	void addAtTail(Area*);
 	void deleteArea(string data);
 	Area* getArea(string data);
-
 	bool isEmpty();
 
 private:

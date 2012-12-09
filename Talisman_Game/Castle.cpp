@@ -12,3 +12,23 @@ Castle::Castle(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Castle::~Castle()
 {
 }
+
+void Castle::effect(Character character)
+{
+	char decision;
+	cout<<"Would you like to heal yourself at the cost of 1 gold?(y/n)"<<endl;
+	cin>>decision;
+
+	if(decision=='y')
+	{	
+		character.replenishLives(0);
+		/*if (pp follower)
+			character.replenishLives(2);*/
+		character.loseGold(1);
+	}
+	else if(decision=='n')
+		return;
+
+	character.printStats();
+	return;
+}

@@ -3,7 +3,6 @@
 #include <string>
 #include "Area.h"
 
-
 using namespace std;
  
 class Chasm: public Area
@@ -15,6 +14,7 @@ public:
 
     Chasm(int);
     ~Chasm();
+	virtual void effect(Character);
 };
 
 #endif

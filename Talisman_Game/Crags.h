@@ -15,6 +15,7 @@ public:
 
     Crags(int);
     ~Crags();
+	virtual void effect(Character);
 };
 
 #endif

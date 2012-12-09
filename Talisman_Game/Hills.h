@@ -15,6 +15,8 @@ public:
 
     Hills(int);
     ~Hills();
+	virtual void effect(Character);
+
 };
 
 #endif

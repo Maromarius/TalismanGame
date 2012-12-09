@@ -15,3 +15,6 @@ Sentinel::Sentinel(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Sentinel::~Sentinel()
 {
 }
+
+void Sentinel::effect(Character character)
+{}

@@ -15,6 +15,7 @@ public:
 
     Crypt(int);
     ~Crypt();
+	virtual void effect(Character);
 };
 
 #endif

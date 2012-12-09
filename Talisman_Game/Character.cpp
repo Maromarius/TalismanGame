@@ -86,6 +86,16 @@ void Character::removeObject(AdventureCard obj){
 	}
 }
 
+void Character::removeObject(string name){
+	for(int i = 0; i <= bag.size(); i++){
+		if(bag[i].getName() == name){
+			AdventureCard temp = bag[i];
+			bag[i] = bag.back();
+			bag.back() = temp;
+			bag.pop_back();
+		}
+	}
+}
 //-----GAIN/LOSS-----//
 void Character::gainStrength(int str){
 
@@ -141,8 +151,8 @@ void Character::replenishLives(int lives){
 	}
 	
 	currentLife += lives;
-	if(currentLife > baseFate){
-		currentLife = baseFate;
+	if(currentLife > baseLife){
+		currentLife = baseLife;
 	}
 }
 
@@ -198,6 +208,11 @@ void Character::updateToad(){
 }
 
 //-----GETTERS/SETTERS-----//
+string Character::getAlignment(){
+	
+	return this->alignment;
+}
+
 string Character::getProfession(){
 
 	return this->profession;

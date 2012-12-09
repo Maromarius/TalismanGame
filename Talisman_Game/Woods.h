@@ -15,6 +15,8 @@ public:
 
     Woods(int);
     ~Woods();
+	virtual void effect(Character);
+
 };
 
 #endif

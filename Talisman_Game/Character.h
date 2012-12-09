@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
-#include "Map.h"
 
 using namespace std;
 
@@ -81,8 +80,10 @@ public:
 	void battleCharacter(Character);
 	void battleMonster(Enemy);
 	void removeObject(AdventureCard);
+	void removeObject(string);
 	string getProfession();
 	string getSpawnPoint();
+	string getAlignment();
 	int getLife();
 	int getBaseLife();
 	int getStrength();

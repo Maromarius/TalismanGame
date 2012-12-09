@@ -15,6 +15,7 @@ public:
 
     Castle(int);
     ~Castle();
+	virtual void effect(Character);
 };
 
 #endif

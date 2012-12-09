@@ -15,3 +15,6 @@ VampiresTower::VampiresTower(int areaNumber) : Area(NAME, DESCRIPTION, areaNumbe
 VampiresTower::~VampiresTower()
 {
 }
+
+void VampiresTower::effect(Character character)
+{}

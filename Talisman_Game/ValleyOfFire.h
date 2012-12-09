@@ -15,6 +15,8 @@ public:
 
     ValleyOfFire(int);
     ~ValleyOfFire();
+	virtual void effect(Character);
+
 };
 
 #endif

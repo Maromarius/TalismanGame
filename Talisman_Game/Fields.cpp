@@ -12,3 +12,6 @@ Fields::Fields(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Fields::~Fields()
 {
 }
+
+void Fields::effect(Character character)
+{}

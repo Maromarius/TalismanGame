@@ -17,3 +17,32 @@ Crags::Crags(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Crags::~Crags()
 {
 }
+
+void Crags::effect(Character character)
+{
+	int diceRoll;
+			cout<<"Press an key to roll the die."<<endl;
+			srand((unsigned int)time(0));
+			diceRoll = ((int) rand() % 6 + 1);
+			cout<<"You rolled a "<<diceRoll<<" ...";
+
+			switch(diceRoll)
+			{
+			case(1):cout<<"you are attacked by a Spirit!"<<endl;
+						//character.battleMonster(Spirit)
+						break;
+			case(2):cout<<"you loose one turn!"<<endl;
+					break;
+			case(3):cout<<"you loose one turn!"<<endl;
+					break;
+			case(4):cout<<"nothing happend."<<endl;
+					break;
+			case(5):cout<<"nothing happend."<<endl;
+					break;
+			case(6):cout<<"a Barabarian came to your aid, you gained one strength!"<<endl;
+					character.gainStrength(1);
+					break;
+			}
+	character.printStats();
+	return;
+}

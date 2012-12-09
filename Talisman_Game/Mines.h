@@ -15,6 +15,8 @@ public:
 
     Mines(int);
     ~Mines();
+	virtual void effect(Character);
+
 };
 
 #endif

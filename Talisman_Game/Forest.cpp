@@ -17,3 +17,6 @@ Forest::Forest(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Forest::~Forest()
 {
 }
+
+void Forest::effect(Character character)
+{}

@@ -19,3 +19,6 @@ Village::Village(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Village::~Village()
 {
 }
+
+void Village::effect(Character character)
+{}

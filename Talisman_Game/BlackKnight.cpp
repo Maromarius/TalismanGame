@@ -12,3 +12,18 @@ BlackKnight::BlackKnight(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 BlackKnight::~BlackKnight()
 {
 }
+
+void BlackKnight::effect(Character character)
+{
+	char decision;
+	cout<<"Would you like to give up a gold or lose a life?(g/l)"<<endl;
+	cin>>decision;
+
+	if(decision=='g')
+		character.loseGold(1);
+	else if(decision=='l')
+		character.loseLive(1);
+
+	character.printStats();
+	return;
+}

@@ -15,6 +15,8 @@ public:
 
     Graveyard(int);
     ~Graveyard();
+	virtual void effect(Character);
+
 };
 
 #endif

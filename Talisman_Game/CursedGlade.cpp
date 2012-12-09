@@ -13,3 +13,6 @@ CursedGlade::CursedGlade(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 CursedGlade::~CursedGlade()
 {
 }
+
+void CursedGlade::effect(Character character)
+{}

@@ -13,3 +13,6 @@ WerewolfDen::WerewolfDen(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 WerewolfDen::~WerewolfDen()
 {
 }
+
+void WerewolfDen::effect(Character character)
+{}

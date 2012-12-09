@@ -15,6 +15,8 @@ public:
 
     Ruins(int);
     ~Ruins();
+	virtual void effect(Character);
+
 };
 
 #endif

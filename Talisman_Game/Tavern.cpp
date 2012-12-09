@@ -17,3 +17,6 @@ Tavern::Tavern(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Tavern::~Tavern()
 {
 }
+
+void Tavern::effect(Character character)
+{}

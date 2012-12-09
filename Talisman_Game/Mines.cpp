@@ -17,3 +17,6 @@ Mines::Mines(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Mines::~Mines()
 {
 }
+
+void Mines::effect(Character character)
+{}

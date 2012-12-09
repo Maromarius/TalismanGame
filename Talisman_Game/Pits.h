@@ -15,6 +15,8 @@ public:
 
     Pits(int);
     ~Pits();
+	virtual void effect(Character);
+
 };
 
 #endif

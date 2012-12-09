@@ -15,6 +15,7 @@ public:
 
     CursedGlade(int);
     ~CursedGlade();
+	virtual void effect(Character);
 };
 
 #endif

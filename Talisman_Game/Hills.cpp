@@ -12,3 +12,6 @@ Hills::Hills(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Hills::~Hills()
 {
 }
+
+void Hills::effect(Character character)
+{}

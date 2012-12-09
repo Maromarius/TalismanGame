@@ -12,3 +12,6 @@ Desert::Desert(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Desert::~Desert()
 {
 }
+
+void Desert::effect(Character character)
+{}

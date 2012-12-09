@@ -15,6 +15,7 @@ public:
 
     Desert(int);
     ~Desert();
+	virtual void effect(Character);
 };
 
 #endif

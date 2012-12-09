@@ -15,6 +15,8 @@ public:
 
     Runes(int);
     ~Runes();
+	virtual void effect(Character);
+
 };
 
 #endif

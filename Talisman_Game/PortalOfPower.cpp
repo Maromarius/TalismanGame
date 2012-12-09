@@ -18,3 +18,6 @@ PortalOfPower::PortalOfPower(int areaNumber) : Area(NAME, DESCRIPTION, areaNumbe
 PortalOfPower::~PortalOfPower()
 {
 }
+
+void PortalOfPower::effect(Character character)
+{}

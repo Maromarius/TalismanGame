@@ -14,3 +14,6 @@ Runes::Runes(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Runes::~Runes()
 {
 }
+
+void Runes::effect(Character character)
+{}

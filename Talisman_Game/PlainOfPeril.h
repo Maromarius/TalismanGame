@@ -15,6 +15,8 @@ public:
 
     PlainOfPeril(int);
     ~PlainOfPeril();
+	virtual void effect(Character);
+
 };
 
 #endif

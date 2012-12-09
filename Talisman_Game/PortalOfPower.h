@@ -15,6 +15,8 @@ public:
 
     PortalOfPower(int);
     ~PortalOfPower();
+	virtual void effect(Character);
+
 };
 
 #endif

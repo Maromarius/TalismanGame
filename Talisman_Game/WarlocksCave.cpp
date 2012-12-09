@@ -20,3 +20,6 @@ WarlocksCave::WarlocksCave(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 WarlocksCave::~WarlocksCave()
 {
 }
+
+void WarlocksCave::effect(Character character)
+{}

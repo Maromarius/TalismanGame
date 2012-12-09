@@ -15,6 +15,8 @@ public:
 
     Temple(int);
     ~Temple();
+	virtual void effect(Character);
+
 };
 
 #endif

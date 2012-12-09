@@ -15,6 +15,8 @@ public:
 
     VampiresTower(int);
     ~VampiresTower();
+	virtual void effect(Character);
+
 };
 
 #endif

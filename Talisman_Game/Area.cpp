@@ -13,6 +13,7 @@ Area::Area()
 
 Area::Area(string name)
 {
+	this->mapAreaNumber=48;
 	this->areaName=name;
 	this->areaDescription="";
 	this->left = NULL;
@@ -61,3 +62,6 @@ Area* Area::getLeft()
 {
 	return this->left;
 }
+
+void Area::effect(Character c)
+{}

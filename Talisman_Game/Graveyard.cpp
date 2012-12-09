@@ -23,3 +23,6 @@ Graveyard::Graveyard(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Graveyard::~Graveyard()
 {
 }
+
+void Graveyard::effect(Character character)
+{}

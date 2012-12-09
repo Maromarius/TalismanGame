@@ -12,3 +12,6 @@ Plains::Plains(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Plains::~Plains()
 {
 }
+
+void Plains::effect(Character character)
+{}

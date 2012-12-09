@@ -15,6 +15,8 @@ public:
 
     Village(int);
     ~Village();
+	virtual void effect(Character);
+
 };
 
 #endif

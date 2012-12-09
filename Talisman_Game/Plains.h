@@ -15,6 +15,8 @@ public:
 
     Plains(int);
     ~Plains();
+	virtual void effect(Character);
+
 };
 
 #endif

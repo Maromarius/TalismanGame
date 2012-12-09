@@ -10,11 +10,11 @@ const string Chapel::DESCRIPTION = "Based on Alignment\n\n"
 									"Good\n"
 									"\tEither heal up to your life value for free, or pray by rolling one die:\n"
 									"\t1. Ignored\n"
-									"\t1. Ignored\n"
-									"\t1. Ignored\n"
-									"\t1. Ignored\n"
-									"\t1. Gain 1 life\n"
-									"\t1. Gain 1 Spell\n";
+									"\t2. Ignored\n"
+									"\t3. Ignored\n"
+									"\t4. Ignored\n"
+									"\t5. Gain 1 life\n"
+									"\t6. Gain 1 Spell\n";
 
 Chapel::Chapel(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 {
@@ -22,4 +22,68 @@ Chapel::Chapel(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 
 Chapel::~Chapel()
 {
+}
+
+void Chapel::effect(Character character)
+{
+	if(character.getAlignment()=="Evil")
+	{
+		cout<<"You are Evil, so you will lose a life."<<endl;
+		character.loseLive(1);
+	}
+	else if(character.getAlignment()=="Neutral")
+	{
+		while(true)
+		{
+			char decision;
+			cout<<"Would you like to heal yourself at the cost of 1 gold?(y/n)"<<endl;
+			cin>>decision;
+
+			if(decision=='y')
+			{	
+				character.replenishLives(0);
+				character.printStats();
+				return;
+			}
+			else if(decision=='n')
+				return;
+		}			
+	}
+	else if(character.getAlignment()=="Good")
+	{
+		char decision;
+		cout<<"Would you like to heal yourself for free or Pray?(h/p)"<<endl;
+		cin>>decision;
+
+		if(decision=='h')
+		{	
+			character.replenishLives(0);
+		}
+		else if(decision=='p')
+		{
+			int diceRoll;
+			cout<<"Press an key to roll the die."<<endl;
+			srand((unsigned int)time(0));
+			diceRoll = ((int) rand() % 6 + 1);
+			cout<<"You rolled a "<<diceRoll<<" ...";
+
+			switch(diceRoll)
+			{
+			case(1):
+			case(2):
+			case(3):
+			case(4):cout<<"nothing happened."<<endl;
+					break;
+			case(5):cout<<"you gained a life!"<<endl;
+					character.gainLive(1);
+					break;
+			case(6):cout<<"you gained a spell!"<<endl;
+					//character.drawspell(1);
+					break;
+			}
+		}
+	}
+	
+	character.printStats();
+	return;
 }

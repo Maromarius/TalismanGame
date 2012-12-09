@@ -13,3 +13,6 @@ ValleyOfFire::ValleyOfFire(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 ValleyOfFire::~ValleyOfFire()
 {
 }
+
+void ValleyOfFire::effect(Character character)
+{}

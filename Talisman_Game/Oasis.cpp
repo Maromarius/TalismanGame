@@ -13,3 +13,6 @@ Oasis::Oasis(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Oasis::~Oasis()
 {
 }
+
+void Oasis::effect(Character character)
+{}

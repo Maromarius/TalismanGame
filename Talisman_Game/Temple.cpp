@@ -22,3 +22,6 @@ Temple::Temple(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Temple::~Temple()
 {
 }
+
+void Temple::effect(Character character)
+{}

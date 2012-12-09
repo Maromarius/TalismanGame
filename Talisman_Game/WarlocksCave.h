@@ -15,6 +15,8 @@ public:
 
     WarlocksCave(int);
     ~WarlocksCave();
+	virtual void effect(Character);
+
 };
 
 #endif

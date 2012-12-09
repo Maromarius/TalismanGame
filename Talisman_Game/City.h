@@ -15,6 +15,7 @@ public:
 
     City(int);
     ~City();
+	virtual void effect(Character);
 };
 
 #endif

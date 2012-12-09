@@ -1,10 +1,10 @@
 #ifndef AREA_H
 #define AREA_H
-
 #include <iostream>
 #include <vector>
 #include <string>
 #include "AdventureCard.h"
+#include "Character.h"
 using namespace std;
 
 class Area
@@ -12,7 +12,7 @@ class Area
 protected:
 	string areaName;
 	string areaDescription;
-	vector<AdventureCard> adventurCards;
+	//vector<AdventureCard*> adventureCards;
 	vector<Area*> raftDestination;
 	int mapAreaNumber;
 
@@ -25,7 +25,7 @@ public:
 	Area* left;
 	Area* right;
 	void setRaftDestination(Area*);
-	void effect();
+	virtual void effect(Character);
 	string getAreaName();
 	string getAreaDescription();
 	int getAreaMapNumber();

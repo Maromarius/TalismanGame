@@ -3,7 +3,6 @@
 #include <string>
 #include "Area.h"
 
-
 using namespace std;
  
 class Forest: public Area
@@ -15,6 +14,8 @@ public:
 
     Forest(int);
     ~Forest();
+	virtual void effect(Character);
+
 };
 
 #endif

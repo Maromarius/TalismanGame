@@ -15,6 +15,8 @@ public:
 
     HiddenValley(int);
     ~HiddenValley();
+	virtual void effect(Character);
+
 };
 
 #endif

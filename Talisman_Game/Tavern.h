@@ -15,6 +15,8 @@ public:
 
     Tavern(int);
     ~Tavern();
+	virtual void effect(Character);
+
 };
 
 #endif

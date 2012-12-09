@@ -15,6 +15,8 @@ public:
 
     Oasis(int);
     ~Oasis();
+	virtual void effect(Character);
+
 };
 
 #endif

@@ -13,3 +13,6 @@ Ruins::Ruins(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Ruins::~Ruins()
 {
 }
+
+void Ruins::effect(Character character)
+{}

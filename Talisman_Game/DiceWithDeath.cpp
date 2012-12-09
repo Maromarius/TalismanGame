@@ -14,3 +14,6 @@ DiceWithDeath::DiceWithDeath(int areaNumber) : Area(NAME, DESCRIPTION, areaNumbe
 DiceWithDeath::~DiceWithDeath()
 {
 }
+
+void DiceWithDeath::effect(Character character)
+{}

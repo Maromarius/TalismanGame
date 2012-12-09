@@ -15,6 +15,7 @@ public:
 
     DiceWithDeath(int);
     ~DiceWithDeath();
+	virtual void effect(Character);
 };
 
 #endif

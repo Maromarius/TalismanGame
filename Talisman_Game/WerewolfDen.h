@@ -15,6 +15,8 @@ public:
 
     WerewolfDen(int);
     ~WerewolfDen();
+	virtual void effect(Character);
+
 };
 
 #endif

@@ -13,3 +13,6 @@ HiddenValley::HiddenValley(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 HiddenValley::~HiddenValley()
 {
 }
+
+void HiddenValley::effect(Character character)
+{}

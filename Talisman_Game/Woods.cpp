@@ -12,3 +12,6 @@ Woods::Woods(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Woods::~Woods()
 {
 }
+
+void Woods::effect(Character character)
+{}

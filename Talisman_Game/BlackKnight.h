@@ -2,8 +2,6 @@
 #define BLACKKNIGHT_H
 #include <string>
 #include "Area.h"
-
-
 using namespace std;
  
 class BlackKnight: public Area
@@ -17,6 +15,7 @@ public:
 
     BlackKnight(int);
     ~BlackKnight();
+	virtual void effect(Character);
 };
 
 #endif

@@ -14,3 +14,6 @@ Pits::Pits(int areaNumber) : Area(NAME, DESCRIPTION, areaNumber)
 Pits::~Pits()
 {
 }
+
+void Pits::effect(Character character)
+{}

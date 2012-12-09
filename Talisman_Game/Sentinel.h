@@ -15,6 +15,8 @@ public:
 
     Sentinel(int);
     ~Sentinel();
+	virtual void effect(Character);
+
 };
 
 #endif
