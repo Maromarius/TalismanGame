@@ -10,3 +10,6 @@ Event::Event(void)
 Event::~Event(void)
 {
 }
+
+void Event:: effect(Character c){
+}

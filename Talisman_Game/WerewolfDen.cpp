@@ -15,4 +15,12 @@ WerewolfDen::~WerewolfDen()
 }
 
 void WerewolfDen::effect(Character character, Deck* adventureCards, Deck* spellCards)
-{}
+{
+			int diceRoll1,diceRoll2;
+			cout<<"Press an key to roll the die."<<endl;
+			srand((unsigned int)time(0));
+			diceRoll1 = ((int) rand() % 6 + 1);
+			cout<<"Press an key to roll the die."<<endl;
+			srand((unsigned int)time(0));
+			diceRoll2 = ((int) rand() % 6 + 1);
+}

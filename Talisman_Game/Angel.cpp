@@ -12,3 +12,9 @@ Angel::Angel(void)
 Angel::~Angel(void)
 {
 }
+void Angel::effect(Character c){
+	if(c.getAlignment()=="Good")
+		c.gainLive(1);
+	if(c.getAlignment()=="Evil")
+		c.loseLive(1);
+}

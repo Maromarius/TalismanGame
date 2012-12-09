@@ -12,4 +12,8 @@ BookOfSpells::BookOfSpells(void)
 
 BookOfSpells::~BookOfSpells(void)
 {
+
+}
+void BookOfSpells::effect(Character c){
+
 }
