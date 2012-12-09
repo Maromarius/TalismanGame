@@ -14,7 +14,7 @@ public:
 
     Chasm(int);
     ~Chasm();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 };
 
 #endif

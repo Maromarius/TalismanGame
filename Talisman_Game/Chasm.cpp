@@ -13,7 +13,7 @@ Chasm::~Chasm()
 {
 }
 
-void Chasm::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Chasm::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {
 	int diceRoll;
 	cout<<"Press an key to roll the die for yourselve."<<endl;
@@ -23,7 +23,7 @@ void Chasm::effect(Character character, Deck* adventureCards, Deck* spellCards)
 	if(diceRoll==1 || diceRoll==2)
 	{
 		cout<<"you lose a life!"<<endl;
-		character.loseLive(1);
+		character->loseLive(1);
 	}
 	else
 	{
@@ -48,6 +48,6 @@ void Chasm::effect(Character character, Deck* adventureCards, Deck* spellCards)
 	
 	}*/
 
-	character.printStats();
+	character->printStats();
 	return;
 }

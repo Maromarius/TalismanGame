@@ -24,5 +24,5 @@ Graveyard::~Graveyard()
 {
 }
 
-void Graveyard::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Graveyard::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

@@ -15,7 +15,7 @@ public:
 
     CursedGlade(int);
     ~CursedGlade();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 };
 
 #endif

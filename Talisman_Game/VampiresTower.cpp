@@ -16,5 +16,5 @@ VampiresTower::~VampiresTower()
 {
 }
 
-void VampiresTower::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void VampiresTower::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

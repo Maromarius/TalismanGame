@@ -13,5 +13,5 @@ Plains::~Plains()
 {
 }
 
-void Plains::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Plains::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

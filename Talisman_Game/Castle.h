@@ -15,7 +15,7 @@ public:
 
     Castle(int);
     ~Castle();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 };
 
 #endif

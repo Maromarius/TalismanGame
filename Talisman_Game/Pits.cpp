@@ -15,5 +15,5 @@ Pits::~Pits()
 {
 }
 
-void Pits::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Pits::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

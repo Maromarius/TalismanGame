@@ -14,7 +14,7 @@ WerewolfDen::~WerewolfDen()
 {
 }
 
-void WerewolfDen::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void WerewolfDen::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {
 			int diceRoll1,diceRoll2;
 			cout<<"Press an key to roll the die."<<endl;

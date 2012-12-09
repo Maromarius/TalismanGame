@@ -18,7 +18,7 @@ Crypt::~Crypt()
 {
 }
 
-void Crypt::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Crypt::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {
 	int diceRoll1;
 	int diceRoll2;
@@ -37,7 +37,7 @@ void Crypt::effect(Character character, Deck* adventureCards, Deck* spellCards)
 	diceRoll3 = ((int) rand() % 6 + 1);
 			
 	cout<<"You rolled a "<<diceRoll1<<", "<<diceRoll2<<"& "<<diceRoll3<<endl;
-	int totalRoll = diceRoll1 + diceRoll2 + diceRoll3 - character.getStrength();
+	int totalRoll = diceRoll1 + diceRoll2 + diceRoll3 - character->getStrength();
 	cout<<"Your total roll comes out to a "<<totalRoll<<" ... ";
 
 	return;

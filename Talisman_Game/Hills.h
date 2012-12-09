@@ -15,7 +15,7 @@ public:
 
     Hills(int);
     ~Hills();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 
 };
 

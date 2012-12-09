@@ -18,7 +18,7 @@ Crags::~Crags()
 {
 }
 
-void Crags::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Crags::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {
 	int diceRoll;
 			cout<<"Press an key to roll the die."<<endl;
@@ -40,9 +40,9 @@ void Crags::effect(Character character, Deck* adventureCards, Deck* spellCards)
 			case(5):cout<<"nothing happend."<<endl;
 					break;
 			case(6):cout<<"a Barabarian came to your aid, you gained one strength!"<<endl;
-					character.gainStrength(1);
+					character->gainStrength(1);
 					break;
 			}
-	character.printStats();
+	character->printStats();
 	return;
 }

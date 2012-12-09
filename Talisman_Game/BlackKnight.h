@@ -15,7 +15,7 @@ public:
 
     BlackKnight(int);
     ~BlackKnight();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 };
 
 #endif

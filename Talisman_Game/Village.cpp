@@ -20,5 +20,5 @@ Village::~Village()
 {
 }
 
-void Village::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Village::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

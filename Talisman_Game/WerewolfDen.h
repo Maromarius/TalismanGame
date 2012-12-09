@@ -15,7 +15,7 @@ public:
 
     WerewolfDen(int);
     ~WerewolfDen();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 
 };
 

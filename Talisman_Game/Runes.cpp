@@ -15,5 +15,5 @@ Runes::~Runes()
 {
 }
 
-void Runes::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Runes::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

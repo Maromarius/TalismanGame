@@ -15,7 +15,7 @@ public:
 
     PortalOfPower(int);
     ~PortalOfPower();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 
 };
 

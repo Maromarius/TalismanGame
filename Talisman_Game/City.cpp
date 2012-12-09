@@ -21,7 +21,7 @@ City::~City()
 {
 }
 
-void City::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void City::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {
 	char decision;
 	cout<<"Who would you like to visite: the Enchantress, Doctor or Alchemist?(e/d/a)"<<endl;
@@ -40,16 +40,16 @@ void City::effect(Character character, Deck* adventureCards, Deck* spellCards)
 		case(1):cout<<"you almost turned into a Toad!"<<endl;
 					break;
 		case(2):cout<<"you loose one strength!"<<endl;
-				character.loseStrength(1);
+				character->loseStrength(1);
 				break;
 		case(3):cout<<"you loose one craft!"<<endl;
-				character.loseCraft(1);
+				character->loseCraft(1);
 				break;
 		case(4):cout<<"you gained one craft!"<<endl;
-				character.gainCraft(1);
+				character->gainCraft(1);
 				break;
 		case(5):cout<<"you gained one strength!"<<endl;
-				character.gainStrength(1);
+				character->gainStrength(1);
 				break;
 		case(6):cout<<"you gained a spell!"<<endl;
 				//character.drawspell(1);
@@ -64,8 +64,8 @@ void City::effect(Character character, Deck* adventureCards, Deck* spellCards)
 
 		if(decision=='y')
 		{	
-			character.gainLive(1);
-			character.loseGold(1);
+			character->gainLive(1);
+			character->loseGold(1);
 		}
 		else if(decision=='n')
 			return;
@@ -75,8 +75,8 @@ void City::effect(Character character, Deck* adventureCards, Deck* spellCards)
 
 		if(decision=='y')
 		{	
-			character.gainLive(1);
-			character.loseGold(1);
+			character->gainLive(1);
+			character->loseGold(1);
 		}
 		else if(decision=='n')
 			return;
@@ -84,14 +84,14 @@ void City::effect(Character character, Deck* adventureCards, Deck* spellCards)
 	else if(decision=='a')
 	{
 		cout<<"Witch item would you like to turn to gold?"<<endl;
-		character.showBag();
+		character->showBag();
 		string item;
 		cin>>item;
-		character.removeObject(item);
-		character.gainGold(1);
+		character->removeObject(item);
+		character->gainGold(1);
 	}
 
 
-	character.printStats();
+	character->printStats();
 	return;
 }

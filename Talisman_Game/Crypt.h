@@ -15,7 +15,7 @@ public:
 
     Crypt(int);
     ~Crypt();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 };
 
 #endif

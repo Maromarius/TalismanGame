@@ -18,5 +18,5 @@ Mines::~Mines()
 {
 }
 
-void Mines::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Mines::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

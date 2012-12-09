@@ -14,5 +14,5 @@ Ruins::~Ruins()
 {
 }
 
-void Ruins::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Ruins::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

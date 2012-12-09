@@ -19,5 +19,5 @@ PortalOfPower::~PortalOfPower()
 {
 }
 
-void PortalOfPower::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void PortalOfPower::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

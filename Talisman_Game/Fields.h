@@ -15,7 +15,7 @@ public:
 
     Fields(int);
     ~Fields();
-	virtual void effect(Character, Deck* , Deck*);
+	virtual void effect(Character*, Deck* , Deck*);
 };
 
 #endif

@@ -13,5 +13,5 @@ Woods::~Woods()
 {
 }
 
-void Woods::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Woods::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}

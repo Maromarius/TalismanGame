@@ -14,5 +14,5 @@ Oasis::~Oasis()
 {
 }
 
-void Oasis::effect(Character character, Deck* adventureCards, Deck* spellCards)
+void Oasis::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {}
