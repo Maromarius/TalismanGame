@@ -618,7 +618,7 @@ cout<<"/////////////////////////////////////////////\n"
 
 		}
 		(turn == numberOfPlayers)?(turn=1):(turn++);
-	}	
+	}
 			
 	system("PAUSE");
 	return 0;

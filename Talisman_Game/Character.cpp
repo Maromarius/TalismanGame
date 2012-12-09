@@ -28,9 +28,6 @@ Character::Character(int _baseStrength, int _baseCraft, int _baseLife, int _base
 	raft = false;
 	isAlive = true;
 
-
-//	vector<Object> bag;
-
     baseStrength = _baseStrength;
     baseCraft = _baseCraft;
     baseLife = _baseLife;
@@ -63,32 +60,31 @@ Character::~Character(void)
 }
 
 //-----OBJECTS-----//
-//void Character::addObject(Object obj)
-//{
-//	if(bag.size() <=3){
-//		bag.push_back(obj);
-//	}
-//	else if(mule&& bag.size() <=7){
-//		bag.push_back(obj);	
-//	}
-//	else
-//	{
-//		cout << "Bag is Full"<<endl;
-//	}
-//	
-//
-//}
+void Character::addObject(AdventureCard obj)
+{
+	if(bag.size() <=3){
+		bag.push_back(obj);
+	}
+	else if(mule&& bag.size() <=7){
+		bag.push_back(obj);	
+	}
+	else
+	{
+		cout << "Bag is Full"<<endl;
+	}
+}
 
-/*void Character::removeObject(Object obj){
-
-	string name = obj.getName();
+void Character::removeObject(AdventureCard obj){
+	string name = obj.NAME;
 	for(int i = 0; i <= bag.size(); i++){
-	
 		if(bag[i].getName() == name){
-			bag.erase();
+			AdventureCard temp = bag[i];
+			bag[i] = bag.back();
+			bag.back() = temp;
+			bag.pop_back();
 		}
 	}
-}*/
+}
 
 //-----GAIN/LOSS-----//
 void Character::gainStrength(int str){
@@ -222,6 +218,8 @@ int Character::getStrength(){
 	if (this->isToad)
 		return 1;
 	else
+		//int temp = 0;
+		//for(int i = 0; i < this->)
 		return (this->baseStrength+this->counterStrength);//Add object strength
 }
 
@@ -258,25 +256,13 @@ int Character::getCounterCraft(){
 	return this->counterCraft;
 }
 
-//string Character::showBag()
-//{
-//	string temp = "";
-//
-//	for(int i = 0; i < this->bag.size(); i++){
-//		
-//		temp += "->";
-//		temp += this->bag[i].getName();
-//		temp += "\n";	
-//		temp += this->bag[i].getDescription();
-//		temp += "\n";		
-//	}
-//	return temp;
-//}
-
-//vector<Object> Character::getBag()
-//{
-//	return this->bag;
-//}
+void Character::showBag()
+{
+	for(int i = 0; i < this->bag.size(); i++){
+		this->bag[i].print();
+		cout << "\n\n";
+	}
+}
 
 int Character::getMaxObjectSize()
 {
@@ -397,61 +383,61 @@ void Character::battleCharacter(Character opponent)
 	}
 }
 
-//void Character::battleMonster(Enemy monster)
-//{
-//	char decision;
-//	int attackRoll;
-//	int monsterAttackRoll;
-//	
-//	//Attack
-//	cout<<"Roll Dice for your attack roll."<<endl;
-//	srand((unsigned int)time(0));
-//	attackRoll= ((int) rand() % 6 + 1);
-//	system("PAUSE");
-//	cout<<"You have a "<<attackRoll<<endl;
-//	
-//	cout<<"Roll Dice for your Opponet's attack roll."<<endl;
-//	srand((unsigned int)time(0));
-//	monsterAttackRoll= ((int) rand() % 6 + 1);
-//	system("PAUSE");
-//	cout<<monster.getName()<<"has a "<<monsterAttackRoll<<endl;
-//
-//	//Using fate to Redo OR not to battle
-//	if(this->currentFate>0)
-//	{
-//		cout<<"Would you like to use a Fate Counter?(y/n)"<<endl;
-//		cin>>decision;
-//	}
-//	if(decision =='y')
-//	{
-//		this->loseFate(1);
-//		this->battleMonster(monster);
-//		return;
-//	}
-//	else if(decision =='n')
-//	{
-//		char spoilDecision;
-//		//You win the battle
-//		if(this->getStrength()+attackRoll > monster.getStrength()+monsterAttackRoll)
-//		{
-//			cout<<"You wins!\n"<<endl;
-//		}
-//		//Its a draw
-//		else if (this->getStrength()+attackRoll == monster.getStrength()+monsterAttackRoll)
-//		{
-//		cout<<"It's a stand-off"<<endl;
-//		return;		
-//		}
-//		//You lose the battle
-//		else if (this->getStrength()+attackRoll < monster.getStrength()+monsterAttackRoll)
-//		{
-//			cout<<"You lose!/n"
-//			this->loseLive(1);
-//			return;
-//			this->printStats();
-//		}
-//	}
-//}
+void Character::battleMonster(Enemy monster)
+{
+	char decision;
+	int attackRoll;
+	int monsterAttackRoll;
+	
+	//Attack
+	cout<<"Roll Dice for your attack roll."<<endl;
+	srand((unsigned int)time(0));
+	attackRoll= ((int) rand() % 6 + 1);
+	system("PAUSE");
+	cout<<"You have a "<<attackRoll<<endl;
+	
+	cout<<"Roll Dice for your Opponet's attack roll."<<endl;
+	srand((unsigned int)time(0));
+	monsterAttackRoll= ((int) rand() % 6 + 1);
+	system("PAUSE");
+	cout<<monster.getName()<<"has a "<<monsterAttackRoll<<endl;
+
+	//Using fate to Redo OR not to battle
+	if(this->currentFate>0)
+	{
+		cout<<"Would you like to use a Fate Counter?(y/n)"<<endl;
+		cin>>decision;
+	}
+	if(decision =='y')
+	{
+		this->loseFate(1);
+		this->battleMonster(monster);
+		return;
+	}
+	else if(decision =='n')
+	{
+		char spoilDecision;
+		//You win the battle
+		if(this->getStrength()+attackRoll > monster.getStrength()+monsterAttackRoll)
+		{
+			cout<<"You wins!\n"<<endl;
+		}
+		//Its a draw
+		else if (this->getStrength()+attackRoll == monster.getStrength()+monsterAttackRoll)
+		{
+		cout<<"It's a stand-off"<<endl;
+		return;		
+		}
+		//You lose the battle
+		else if (this->getStrength()+attackRoll < monster.getStrength()+monsterAttackRoll)
+		{
+			cout<<"You lose!/n";
+			this->loseLive(1);
+			return;
+			this->printStats();
+		}
+	}
+}
 
 //-----PRINT-----//
 void Character::printStats()
@@ -473,11 +459,10 @@ void Character::acquiresRaft()
 
 bool Character::isBagFull()
 {
-	return false;
-	/*if(this->mule)
+	if(this->mule)
 		return !(this->bag.size()<8);
 	else
-		return !(this->bag.size()<4);*/
+		return !(this->bag.size()<4);
 }
 
 bool Character::hasAxe()

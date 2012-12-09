@@ -6,7 +6,6 @@ AdventureCard::AdventureCard(void)
 	
 }
 
-
 AdventureCard::~AdventureCard(void)
 {
 }

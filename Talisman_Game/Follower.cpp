@@ -7,6 +7,9 @@ Follower::Follower(void)
 	followerCraft = 0;
 }
 
+int Follower::getStrength(){
+	return followerStrength;
+}
 
 Follower::~Follower(void)
 {

@@ -9,5 +9,6 @@ public:
 	~Follower(void);
 	int followerStrength;
 	int followerCraft;
+	int getStrength();
 };
 #endif

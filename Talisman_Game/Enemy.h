@@ -21,6 +21,7 @@ public:
 	string getName();
 	string getDescription();
 	int getAbility();
+	int getStrength();
 
 };
 

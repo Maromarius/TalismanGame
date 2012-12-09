@@ -1,6 +1,6 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
-
+#include "Enemy.h"
 #include <iostream>
 #include <vector>
 #include <ctime>
@@ -48,7 +48,7 @@ protected: //TO CHANGE!!!
 	string alignment;
 	string profession;
 
-	//vector<Object> bag;
+	vector<AdventureCard> bag;
 
 	//Spell spells[3];					// Array to hold the spells a character has
     //LinkedList<Follower> followers;	// Linked list to hold all followers
@@ -75,12 +75,12 @@ public:
     void updateAlignment(string);
     void updateMule();
     void updateToad();
-	//void addObject(Object);
+	void addObject(AdventureCard);
 	void moveRight();
 	void moveLeft();
 	void battleCharacter(Character);
-	//void battleMonster(Enemy);
-	//void removeObject(Object);
+	void battleMonster(Enemy);
+	void removeObject(AdventureCard);
 	string getProfession();
 	string getSpawnPoint();
 	int getLife();
@@ -91,8 +91,7 @@ public:
 	int getBaseCraft();
 	int getCounterStrength();
 	int getCounterCraft();
-	string showBag();
-	//vector<Object> getBag();
+	void showBag();
 	int getMaxObjectSize();
 	void printStats();
 	bool hasAxe();

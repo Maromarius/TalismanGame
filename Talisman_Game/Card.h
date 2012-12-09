@@ -11,6 +11,8 @@ public:
 	void print();
 	string NAME;
 	string DESCRIPTION;
+	string getName();
+	string getDescription();
 };
 #endif
 
