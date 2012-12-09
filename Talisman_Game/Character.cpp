@@ -57,7 +57,7 @@ Character::~Character(void)
     alignment = "";
 	profession = "";
     mule = 0;
-    isToad = 0;
+    isToad = false;
 }
 
 //-----OBJECTS-----//
@@ -72,9 +72,8 @@ void Character::addObject(Card obj)
 	else
 		cout<<"The Bag is Full"<<endl;
  }
-
 Card Character::removeObject(Card obj){
-	string name = obj.NAME;
+	string name = obj.getName();
 	for(int i = 0; i <= bag.size(); i++){
 		if(bag[i].getName() == name){
 			Card temp = bag[i];
@@ -83,9 +82,8 @@ Card Character::removeObject(Card obj){
 			bag.pop_back();
 			return temp;
 		}
-	}	
+	}		
 }
-
 Card Character::removeObject(string name){
 	for(int i = 0; i <= bag.size(); i++){
 		if(bag[i].getName() == name){
@@ -97,6 +95,132 @@ Card Character::removeObject(string name){
 		}
 	}
 }
+void Character::showBag(void)
+{
+	if(this->bag.size() != 0){
+		for(int i = 0; i < this->bag.size(); i++){
+			this->bag[i].print();
+			cout << "\n\n";
+		}
+	}
+	else
+		cout << "Bag is empty!\n\n";
+}
+bool Character::hasInBag(string name){
+	for(int i = 0; i <= bag.size(); i++){
+		if(bag[i].getName() == name)
+			return true;
+	}
+	return false;
+}
+bool Character::isBagFull()
+{
+	if(this->mule)
+		return !(this->bag.size()<8);
+	else
+		return !(this->bag.size()<4);
+}
+
+//-----FOLLOWERS-----//
+void Character::addFollower(Card obj)
+{
+	this->followers.push_back(obj);
+}
+Card Character::removeFollower(Card obj){
+	string name = obj.getName();
+	for(int i = 0; i <= followers.size(); i++){
+		if(followers[i].getName() == name){
+			Card temp = followers[i];
+			followers[i] = followers.back();
+			followers.back() = temp;
+			followers.pop_back();
+			return temp;
+		}
+	}	
+	
+}
+Card Character::removeFollower(string name){
+	for(int i = 0; i <= followers.size(); i++){
+		if(followers[i].getName() == name){
+			Card temp = followers[i];
+			followers[i] = followers.back();
+			followers.back() = temp;
+			followers.pop_back();
+			return temp;
+		}
+	}	
+}
+void Character::showFollowers(void){
+	if(this->followers.size() != 0){
+		for(int i = 0; i < this->followers.size(); i++){
+			this->followers[i].print();
+			cout << "\n\n";
+		}
+	}
+	else
+		cout << "No Followers!\n\n";
+}
+bool Character::hasThisFollower(string name){
+	for(int i = 0; i <= followers.size(); i++){
+		if(followers[i].getName() == name)
+			return true;
+	}
+	return false;
+}
+
+//-----SPELLS-----//
+/*int Character::getMaxSpells()
+{
+	cout << "--" << this->getCraft() << "--";
+	return 3;
+}
+bool Character::hasRoomForSpells(void){
+	if(this->spells.size() < this->getMaxSpells())
+		return true;
+	else
+		return false;
+}
+void Character::addSpell(Card obj)
+{
+	if(this->spells.size() < this->getMaxSpells())
+		this->spells.push_back(obj);
+}
+
+Card Character::removeSpell(Card obj){
+	string name = obj.getName();
+	for(int i = 0; i <= spells.size(); i++){
+		if(spells[i].getName() == name){
+			Card temp = spells[i];
+			spells[i] = spells.back();
+			spells.back() = temp;
+			spells.pop_back();
+			return temp;
+		}
+	}	
+	
+}
+Card Character::removeSpell(string name){
+	for(int i = 0; i <= spells.size(); i++){
+		if(spells[i].getName() == name){
+			Card temp = spells[i];
+			spells[i] = spells.back();
+			spells.back() = temp;
+			spells.pop_back();
+			return temp;
+		}
+	}	
+}
+void Character::showSpells(void){
+	if(this->spells.size() != 0){
+		for(int i = 0; i < this->spells.size(); i++){
+			this->spells[i].print();
+			cout << "\n\n";
+		}
+	}
+	else
+		cout << "You do not have any Spells!\n\n";
+}
+*/
 //-----GAIN/LOSS-----//
 void Character::gainStrength(int str){
 	counterStrength += str;	
@@ -202,7 +326,6 @@ void Character::updateMule(){
 }
 
 void Character::updateToad(){
-
 	isToad = !isToad;
 }
 
@@ -217,6 +340,7 @@ string Character::getProfession(){
 	return this->profession;
 }
 
+
 string Character::getSpawnPoint()
 {
 	return this->spawnPoint;
@@ -228,17 +352,13 @@ int Character::getLife(){
 }
 
 int Character::getStrength(){
-
 	if (this->isToad)
 		return 1;
 	else
-		//int temp = 0;
-		//for(int i = 0; i < this->)
 		return (this->baseStrength+this->counterStrength);//Add object strength
 }
 
 int Character::getCraft(){
-	
 	if (this->isToad)
 		return 1;
 	else
@@ -256,7 +376,6 @@ int Character::getBaseStrength(){
 }
 
 int Character::getBaseCraft(){
-
 	return this->baseCraft;
 }
 
@@ -271,18 +390,6 @@ int Character::getCounterCraft(){
 }
 int Character::getIdleTurns(){
 	return this->idleTurnsLeft;
-}
-
-void Character::showBag()
-{
-	if(this->bag.size() != 0){
-		for(int i = 0; i < this->bag.size(); i++){
-			this->bag[i].print();
-			cout << "\n\n";
-		}
-	}
-	else
-		cout << "Bag is empty!\n\n";
 }
 
 int Character::getMaxObjectSize()
@@ -310,13 +417,6 @@ void Character::setHasWaterBottle(bool waterBottlesituation){
 void Character::setHasTalisman(bool talismanSituation)
 {
 	this->talisman = talismanSituation;
-}
-bool Character::isBagFull()
-{
-	if(this->mule)
-		return !(this->bag.size()<8);
-	else
-		return !(this->bag.size()<4);
 }
 
 bool Character::hasAxe()
@@ -486,12 +586,13 @@ void Character::battleMonster(Enemy monster)
 //-----PRINT-----//
 void Character::printStats()
 {
-cout << this->getProfession() << "'s stats are as follows:" << endl;
-cout << "Current Life: " << this->getLife() << "/" << this->getBaseLife() << endl;
-cout << "Strength: " << this->getBaseStrength() << " (" << this->getBaseStrength() << " Base + " << this->getCounterStrength() << " Counters)" << endl; 
-cout << "Craft: " << this->getBaseCraft() << " (" << this->getBaseCraft() << " Base + " << this->getCounterCraft() << " Counters)" << endl; 
-cout << endl;
-return;
+	cout << this->getProfession() << "'s stats are as follows:" << endl;
+	cout << "Current Life: " << this->getLife() << "/" << this->getBaseLife() << endl;
+	// WRONG METHODS
+	cout << "Strength: " << this->getStrength() << " (" << this->getBaseStrength() << " Base + " << this->getCounterStrength() << " Counters)" << endl; 
+	cout << "Craft: " << this->getCraft() << " (" << this->getBaseCraft() << " Base + " << this->getCounterCraft() << " Counters)" << endl; 
+	cout << endl;
+	return;
 }
 
 //-----MISCELLANEOUS-----//

@@ -50,10 +50,8 @@ protected: //TO CHANGE!!!
 	string profession;
 
 	vector<Card> bag;
-
-	//Spell spells[3];					// Array to hold the spells a character has
-
-
+	vector<Card> followers;
+	vector<Card> spells;
 
 public:
 	Character::Character(void);
@@ -75,14 +73,14 @@ public:
     void updateLocation(string);
     void updateAlignment(string);
     void updateMule();
-    void updateToad();
-	void addObject(Card);
+    void updateToad();	
+
+	//Movement
 	void moveRight();
 	void moveLeft();
+
 	void battleCharacter(Character);
 	void battleMonster(Enemy);
-	Card removeObject(Card);
-	Card removeObject(string);
 	string getProfession();
 	string getSpawnPoint();
 	string getAlignment();
@@ -93,9 +91,13 @@ public:
 	int getCraft();
 	int getBaseCraft();
 	int getCounterStrength();
+<<<<<<< .mine
+	int getCounterCraft();	
+=======
 	int getCounterCraft();
 	int getIdleTurns();
 	void showBag();
+>>>>>>> .r25
 	int getMaxObjectSize();
 	void printStats();
 	bool hasAxe();
@@ -105,9 +107,29 @@ public:
 	bool hasWaterBottle(void);
 	void setHasWaterBottle(bool);
 	void setHasTalisman(bool);
+
+	// Bag
+	void addObject(Card);
+	Card removeObject(Card);
+	Card removeObject(string);
 	bool isBagFull();
+	void showBag();
+	bool hasInBag(string);
 
+	// Followers
+	void addFollower(Card);
+	Card removeFollower(Card);
+	Card removeFollower(string);
+	void showFollowers(void);
+	bool hasThisFollower(string);
 
+	// Spells
+	int getMaxSpells(void);
+	bool hasRoomForSpells(void);
+	void addSpell(Card);
+	Card removeSpell(Card);
+	Card removeSpell(string);
+	void showSpells(void);
 };
 
 #endif
