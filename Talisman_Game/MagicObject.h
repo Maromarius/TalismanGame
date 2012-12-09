@@ -6,5 +6,7 @@ class MagicObject :
 public:
 	MagicObject(void);
 	~MagicObject(void);
+	int objectCraft;
+	int objectStrength;
 };
 
