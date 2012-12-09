@@ -16,7 +16,6 @@ protected: //TO CHANGE!!!
 
 	//Character Stats
 	int baseStrength;		// Base Strength (on Character Card)
-	
 	int counterStrength;	// How many Strength counters have been obtained
 	
 	int baseCraft;			// Base Craft (on Character Card)
@@ -33,6 +32,7 @@ protected: //TO CHANGE!!!
 	int gold;				// Amount of Gold the Character currently has
 	int fateTokens;			// Amount of Fate Tokens the Character currently has
 	int maxObjects;
+	int idleTurnsLeft;
 
 	bool talisman;			// Is one of the character's Adventure Cards a Talisman?
 	bool mule;				// Is the character own a Mule as one of his Adventure Cards?
@@ -71,6 +71,7 @@ public:
     void loseFate(int);
 	void gainGold(int);
 	void loseGold(int);
+	void setIdleTurns(int);
     void updateLocation(string);
     void updateAlignment(string);
     void updateMule();
@@ -93,6 +94,7 @@ public:
 	int getBaseCraft();
 	int getCounterStrength();
 	int getCounterCraft();
+	int getIdleTurns();
 	void showBag();
 	int getMaxObjectSize();
 	void printStats();

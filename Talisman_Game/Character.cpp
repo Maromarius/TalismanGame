@@ -18,6 +18,7 @@ Character::Character(int _baseStrength, int _baseCraft, int _baseLife, int _base
 	fateTokens = 0;
 	maxObjects = 4;
 	numToadTurnsLeft = 0;
+	idleTurnsLeft=0;
 	this->profession = profession;
 
     mule = false;
@@ -268,6 +269,9 @@ int Character::getCounterCraft(){
 
 	return this->counterCraft;
 }
+int Character::getIdleTurns(){
+	return this->idleTurnsLeft;
+}
 
 void Character::showBag()
 {
@@ -290,7 +294,9 @@ bool Character::hasRaft()
 {
 	return this->raft;
 }
-
+void Character::setIdleTurns(int i){
+	this->idleTurnsLeft=i;
+}
 void Character::setHasRaft(bool raftSituation)
 {
 	this->raft = raftSituation;
