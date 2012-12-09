@@ -21,5 +21,5 @@ WarlocksCave::~WarlocksCave()
 {
 }
 
-void WarlocksCave::effect(Character character)
+void WarlocksCave::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

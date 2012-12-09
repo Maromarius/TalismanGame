@@ -15,7 +15,7 @@ public:
 
     Crags(int);
     ~Crags();
-	virtual void effect(Character);
+	virtual void effect(Character, Deck* , Deck*);
 };
 
 #endif

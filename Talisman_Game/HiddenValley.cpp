@@ -14,5 +14,5 @@ HiddenValley::~HiddenValley()
 {
 }
 
-void HiddenValley::effect(Character character)
+void HiddenValley::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

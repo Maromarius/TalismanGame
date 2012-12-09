@@ -14,7 +14,7 @@ CursedGlade::~CursedGlade()
 {
 }
 
-void CursedGlade::effect(Character character)
+void CursedGlade::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {
 	//if(this->Cards.size()>0)
 	//	{}//this->Cards[0]->effect(character)

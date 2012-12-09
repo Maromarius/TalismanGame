@@ -16,5 +16,5 @@ Sentinel::~Sentinel()
 {
 }
 
-void Sentinel::effect(Character character)
+void Sentinel::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

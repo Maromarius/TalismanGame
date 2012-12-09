@@ -13,7 +13,7 @@ BlackKnight::~BlackKnight()
 {
 }
 
-void BlackKnight::effect(Character character)
+void BlackKnight::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {
 	char decision;
 	cout<<"Would you like to give up a gold or lose a life?(g/l)"<<endl;

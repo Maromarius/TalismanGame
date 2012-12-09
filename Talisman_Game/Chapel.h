@@ -15,7 +15,7 @@ public:
 
     Chapel(int);
     ~Chapel();
-	virtual void effect(Character);
+	virtual void effect(Character, Deck* , Deck*);
 };
 
 #endif

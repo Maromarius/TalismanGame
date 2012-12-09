@@ -18,7 +18,7 @@ Crypt::~Crypt()
 {
 }
 
-void Crypt::effect(Character character)
+void Crypt::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {
 	int diceRoll1;
 	int diceRoll2;

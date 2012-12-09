@@ -100,7 +100,7 @@ public:
 	bool hasRaft();
 	void setHasRaft(bool);
 	bool hasTalisman();
-	bool hasWaterBottle();
+	bool hasWaterBottle(void);
 	void setHasWaterBottle(bool);
 	void setHasTalisman(bool);
 	bool isBagFull();

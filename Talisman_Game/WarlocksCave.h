@@ -15,7 +15,7 @@ public:
 
     WarlocksCave(int);
     ~WarlocksCave();
-	virtual void effect(Character);
+	virtual void effect(Character, Deck* , Deck*);
 
 };
 

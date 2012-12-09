@@ -14,5 +14,5 @@ ValleyOfFire::~ValleyOfFire()
 {
 }
 
-void ValleyOfFire::effect(Character character)
+void ValleyOfFire::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

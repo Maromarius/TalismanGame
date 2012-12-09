@@ -5,6 +5,7 @@
 #include <string>
 #include "AdventureCard.h"
 #include "Character.h"
+#include "Deck.h"
 using namespace std;
 
 class Area
@@ -25,7 +26,7 @@ public:
 	Area* left;
 	Area* right;
 	void setRaftDestination(Area*);
-	virtual void effect(Character);
+	virtual void effect(Character, Deck*, Deck*);
 	string getAreaName();
 	string getAreaDescription();
 	int getAreaMapNumber();

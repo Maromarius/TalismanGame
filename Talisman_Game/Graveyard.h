@@ -15,7 +15,7 @@ public:
 
     Graveyard(int);
     ~Graveyard();
-	virtual void effect(Character);
+	virtual void effect(Character, Deck* , Deck*);
 
 };
 

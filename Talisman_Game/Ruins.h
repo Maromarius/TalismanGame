@@ -15,7 +15,7 @@ public:
 
     Ruins(int);
     ~Ruins();
-	virtual void effect(Character);
+	virtual void effect(Character, Deck* , Deck*);
 
 };
 

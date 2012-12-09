@@ -14,5 +14,5 @@ WerewolfDen::~WerewolfDen()
 {
 }
 
-void WerewolfDen::effect(Character character)
+void WerewolfDen::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

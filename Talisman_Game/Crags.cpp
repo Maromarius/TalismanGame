@@ -18,7 +18,7 @@ Crags::~Crags()
 {
 }
 
-void Crags::effect(Character character)
+void Crags::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {
 	int diceRoll;
 			cout<<"Press an key to roll the die."<<endl;

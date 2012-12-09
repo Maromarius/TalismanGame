@@ -18,5 +18,5 @@ Forest::~Forest()
 {
 }
 
-void Forest::effect(Character character)
+void Forest::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

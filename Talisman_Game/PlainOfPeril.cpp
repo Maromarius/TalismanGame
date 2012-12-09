@@ -14,5 +14,5 @@ PlainOfPeril::~PlainOfPeril()
 {
 }
 
-void PlainOfPeril::effect(Character character)
+void PlainOfPeril::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

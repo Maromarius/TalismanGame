@@ -13,7 +13,7 @@ Chasm::~Chasm()
 {
 }
 
-void Chasm::effect(Character character)
+void Chasm::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {
 	int diceRoll;
 	cout<<"Press an key to roll the die for yourselve."<<endl;

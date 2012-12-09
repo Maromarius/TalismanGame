@@ -13,5 +13,5 @@ Fields::~Fields()
 {
 }
 
-void Fields::effect(Character character)
+void Fields::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

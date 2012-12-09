@@ -23,5 +23,5 @@ Temple::~Temple()
 {
 }
 
-void Temple::effect(Character character)
+void Temple::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

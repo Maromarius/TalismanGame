@@ -63,5 +63,5 @@ Area* Area::getLeft()
 	return this->left;
 }
 
-void Area::effect(Character c)
+void Area::effect(Character c, Deck* d1, Deck* d2)
 {}

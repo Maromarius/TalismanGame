@@ -18,5 +18,5 @@ Tavern::~Tavern()
 {
 }
 
-void Tavern::effect(Character character)
+void Tavern::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

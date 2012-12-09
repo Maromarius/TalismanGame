@@ -13,5 +13,5 @@ Hills::~Hills()
 {
 }
 
-void Hills::effect(Character character)
+void Hills::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {}

@@ -15,7 +15,7 @@ public:
 
     Temple(int);
     ~Temple();
-	virtual void effect(Character);
+	virtual void effect(Character, Deck* , Deck*);
 
 };
 

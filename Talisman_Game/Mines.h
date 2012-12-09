@@ -15,7 +15,7 @@ public:
 
     Mines(int);
     ~Mines();
-	virtual void effect(Character);
+	virtual void effect(Character, Deck* , Deck*);
 
 };
 

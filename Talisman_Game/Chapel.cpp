@@ -24,7 +24,7 @@ Chapel::~Chapel()
 {
 }
 
-void Chapel::effect(Character character)
+void Chapel::effect(Character character, Deck* adventureCards, Deck* spellCards)
 {
 	if(character.getAlignment()=="Evil")
 	{

@@ -25,6 +25,7 @@ Character::Character(int _baseStrength, int _baseCraft, int _baseLife, int _base
 	talisman = false;
 	axe = false;
 	raft = false;
+	waterBottle= false;
 	isAlive = true;
 
     baseStrength = _baseStrength;
@@ -294,8 +295,8 @@ void Character::setHasRaft(bool raftSituation)
 {
 	this->raft = raftSituation;
 }
-bool Character::hasWaterBottle(){
-return this->waterBottle;
+bool Character::hasWaterBottle(void){
+	return this->waterBottle;
 }
 void Character::setHasWaterBottle(bool waterBottlesituation){
 	this->waterBottle = waterBottlesituation;
