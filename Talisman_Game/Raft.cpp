@@ -1,6 +1,5 @@
 #include "Raft.h"
 
-
 Raft::Raft(void)
 {
 	NAME = "Raft";
@@ -9,7 +8,10 @@ Raft::Raft(void)
 
 }
 
-
 Raft::~Raft(void)
 {
+}
+
+void Raft::effect(Character c){
+	c.setHasRaft(true);
 }

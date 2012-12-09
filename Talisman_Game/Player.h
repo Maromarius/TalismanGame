@@ -50,5 +50,7 @@ class Player
 		void moveCharacterLeft();
 		void moveCharacterRight();
 		void addToBag(Card);
+		Card removeFromBag(Card);
+		Card removeFromBag(string);
 };
 #endif

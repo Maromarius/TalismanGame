@@ -32,7 +32,7 @@ void Deck::redeal(void){
 		discardPile.pop_back();
 		cards.push_back(temp);
 	}
-	this->shuffle();	
+	this->shuffle();
 }
 
 Deck::~Deck(void)

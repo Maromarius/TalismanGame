@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
+#include <string>
 
 using namespace std;
 
@@ -38,6 +39,7 @@ protected: //TO CHANGE!!!
 	bool axe;				// Does the character have an Axe as one of his Adventure Cards?
 	bool raft;				// Does the character have a Raft as one of his Adventure Cards?
 	bool isAlive;
+	bool waterBottle;
 
 	bool isToad;			// Is the character currently inflicted with Toad status?
 	int numToadTurnsLeft;	// How many turns does the character have left of being a Toad?
@@ -78,8 +80,8 @@ public:
 	void moveLeft();
 	void battleCharacter(Character);
 	void battleMonster(Enemy);
-	void removeObject(Card);
-	void removeObject(string);
+	Card removeObject(Card);
+	Card removeObject(string);
 	string getProfession();
 	string getSpawnPoint();
 	string getAlignment();
@@ -98,8 +100,9 @@ public:
 	bool hasRaft();
 	void setHasRaft(bool);
 	bool hasTalisman();
+	bool hasWaterBottle();
+	void setHasWaterBottle(bool);
 	void setHasTalisman(bool);
-	void acquiresRaft();
 	bool isBagFull();
 
 

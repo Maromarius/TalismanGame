@@ -12,3 +12,6 @@ WaterBottle::WaterBottle(void)
 WaterBottle::~WaterBottle(void)
 {
 }
+void WaterBottle::effect(Character c){
+	c.setHasWaterBottle(true);
+}

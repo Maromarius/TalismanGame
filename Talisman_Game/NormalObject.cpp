@@ -10,3 +10,5 @@ NormalObject::NormalObject(void)
 NormalObject::~NormalObject(void)
 {
 }
+void NormalObject::effect(Character c){
+}

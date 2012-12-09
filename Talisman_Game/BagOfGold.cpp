@@ -12,3 +12,7 @@ BagOfGold::BagOfGold(void)
 BagOfGold::~BagOfGold(void)
 {
 }
+
+void BagOfGold:: effect(Character c){
+	c.gainGold(1);
+}

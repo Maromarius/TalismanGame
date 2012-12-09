@@ -71,7 +71,7 @@ void Character::addObject(Card obj)
 		cout<<"The Bag is Full"<<endl;
  }
 
-void Character::removeObject(Card obj){
+Card Character::removeObject(Card obj){
 	string name = obj.NAME;
 	for(int i = 0; i <= bag.size(); i++){
 		if(bag[i].getName() == name){
@@ -79,17 +79,19 @@ void Character::removeObject(Card obj){
 			bag[i] = bag.back();
 			bag.back() = temp;
 			bag.pop_back();
+			return temp;
 		}
-	}
+	}	
 }
 
-void Character::removeObject(string name){
+Card Character::removeObject(string name){
 	for(int i = 0; i <= bag.size(); i++){
 		if(bag[i].getName() == name){
 			Card temp = bag[i];
 			bag[i] = bag.back();
 			bag.back() = temp;
 			bag.pop_back();
+			return temp;
 		}
 	}
 }
@@ -268,10 +270,14 @@ int Character::getCounterCraft(){
 
 void Character::showBag()
 {
-	for(int i = 0; i < this->bag.size(); i++){
-		this->bag[i].print();
-		cout << "\n\n";
+	if(this->bag.size() != 0){
+		for(int i = 0; i < this->bag.size(); i++){
+			this->bag[i].print();
+			cout << "\n\n";
+		}
 	}
+	else
+		cout << "Bag is empty!\n\n";
 }
 
 int Character::getMaxObjectSize()
@@ -288,12 +294,33 @@ void Character::setHasRaft(bool raftSituation)
 {
 	this->raft = raftSituation;
 }
-
+bool Character::hasWaterBottle(){
+return this->waterBottle;
+}
+void Character::setHasWaterBottle(bool waterBottlesituation){
+	this->waterBottle = waterBottlesituation;
+}
 void Character::setHasTalisman(bool talismanSituation)
 {
 	this->talisman = talismanSituation;
 }
+bool Character::isBagFull()
+{
+	if(this->mule)
+		return !(this->bag.size()<8);
+	else
+		return !(this->bag.size()<4);
+}
 
+bool Character::hasAxe()
+{
+	return this->axe;
+}
+
+bool Character::hasTalisman()
+{
+	return this->talisman;
+}
 //-----BATTLES-----//
 void Character::battleCharacter(Character opponent)
 {
@@ -461,26 +488,4 @@ return;
 }
 
 //-----MISCELLANEOUS-----//
-void Character::acquiresRaft()
-{
-	//Add raft object to bag
-	this->raft = true;
-}
 
-bool Character::isBagFull()
-{
-	if(this->mule)
-		return !(this->bag.size()<8);
-	else
-		return !(this->bag.size()<4);
-}
-
-bool Character::hasAxe()
-{
-	return this->axe;
-}
-
-bool Character::hasTalisman()
-{
-	return this->talisman;
-}

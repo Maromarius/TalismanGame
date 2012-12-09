@@ -12,3 +12,6 @@ TwoBagsOfGold::TwoBagsOfGold(void)
 TwoBagsOfGold::~TwoBagsOfGold(void)
 {
 }
+void TwoBagsOfGold:: effect(Character c){
+	c.gainGold(2);
+}

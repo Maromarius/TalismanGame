@@ -5,14 +5,7 @@ Character character;
 bool isPermaDead;
 
 Player::Player()
-{
-	//int temp;
-
-	//srand((unsigned int)time(0));
-	//temp = ((int) rand() % 6 + 1);
-	//
-	//character = createCharacter(temp);
-}
+{}
 
 Player::Player(Map* Board, int isInPlay[])
 {
@@ -172,4 +165,12 @@ void Player :: moveCharacterLeft()
 void Player:: addToBag(Card card)
 {
 	this->character.addObject(card);
+}
+
+Card Player:: removeFromBag(Card card){
+	return this->character.removeObject(card);
+}
+
+Card Player:: removeFromBag(string card){
+	return this->character.removeObject(card);
 }

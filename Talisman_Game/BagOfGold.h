@@ -4,6 +4,7 @@ class BagOfGold :
 	public NormalObject
 {
 public:
+	virtual void effect(Character);
 	BagOfGold(void);
 	~BagOfGold(void);
 };

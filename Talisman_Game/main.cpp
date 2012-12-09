@@ -191,7 +191,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 				cin>>decision;
 				if(decision)
 				{
-					players[turn].getCharacter().acquiresRaft();
+					players[turn].getCharacter().setHasRaft(true);
 					endTurn = true;
 				}
 			}
@@ -551,14 +551,14 @@ Deck* createSpellCardDeck(void){
 }
 
 int main(void){
-cout<<" **********            ** **                                       \n"
-	<<"/////**///            /**//                                        \n"
-	<<"    /**      ******   /** **  ****** **********   ******   ******* \n"
-	<<"    /**     //////**  /**/** **//// //**//**//** //////** //**///**\n"
-	<<"    /**      *******  /**/**//*****  /** /** /**  *******  /**  /**\n"
-	<<"    /**     **////**  /**/** /////** /** /** /** **////**  /**  /**\n"
-	<<"    /**    //******** ***/** ******  *** /** /**//******** ***  /**\n"
-	<<"    //      //////// /// // //////  ///  //  //  //////// ///   // \n"<<endl;
+	cout<<" **********            ** **                                       \n"
+		<<"/////**///            /**//                                        \n"
+		<<"    /**      ******   /** **  ****** **********   ******   ******* \n"
+		<<"    /**     //////**  /**/** **//// //**//**//** //////** //**///**\n"
+		<<"    /**      *******  /**/**//*****  /** /** /**  *******  /**  /**\n"
+		<<"    /**     **////**  /**/** /////** /** /** /** **////**  /**  /**\n"
+		<<"    /**    //******** ***/** ******  *** /** /**//******** ***  /**\n"
+		<<"    //      //////// /// // //////  ///  //  //  //////// ///   // \n"<<endl;
 
 	//--------------SETUP--------------
 	//--Board Setup
@@ -581,8 +581,10 @@ cout<<" **********            ** **                                       \n"
 	}
 	numberOfPlayers = characterNumberSelection;
 	numberOfPlayersAlive = numberOfPlayers;
+
 	Player *players = new Player[numberOfPlayers];
-		
+
+
 	//--Assign characters to players
 	initializeCharacterArray();
 	for (int i=1; i<numberOfPlayers+1; i++)
@@ -593,10 +595,15 @@ cout<<" **********            ** **                                       \n"
 		players[i].getCharacter().printStats();
 	}
 
+	// MIKE TEST 1212
+	/*Card c = adventureCards->draw();
+	players[0].addToBag(c);
+	players[0].getCharacter().showBag();
 
-
-
-
+	c = players[0].removeFromBag(c);
+	cout << "??" << endl;
+	players[0].getCharacter().showBag();
+	c.print();*/
 
 	//--------------GAME--------------
 	//for(int testTurns = 0 ; testTurns<30; testTurns++)
@@ -622,7 +629,6 @@ cout<<" **********            ** **                                       \n"
 		}
 		(turn == numberOfPlayers)?(turn=1):(turn++);
 	}
-			
 	system("PAUSE");
 	return 0;
 }
