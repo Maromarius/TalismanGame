@@ -458,7 +458,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 						else if(decision2 == 'c')
 						{
 							cout << "Your Craft is " << players[turn].getCharacter()->getCraft() << endl;
-							if(totalRoll < players[turn].getCharacter()->getCraft()+100){
+							if(totalRoll < players[turn].getCharacter()->getCraft()){
 								pass = true;
 							}
 						}
