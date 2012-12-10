@@ -22,8 +22,8 @@ void Castle::effect(Character* character, Deck* adventureCards, Deck* spellCards
 	if(decision=='y')
 	{	
 		character->replenishLives(0);
-		/*if (character.hasfollower("Prince")||character.hasfollower("Princess"))
-			character.replenishLives(2);*/
+		if (character->hasThisFollower("Prince")||character->hasThisFollower("Princess"))
+			character->replenishLives(2);
 		character->loseGold(1);
 	}
 	else if(decision=='n')
