@@ -168,9 +168,10 @@ string Character::showFollower(int followerNumber){
 	if(followerNumber>followers.size()-1)
 	for(int i = 0; i <= followers.size(); i++){
 		if (i==followerNumber){
-			followers[i].getName();
+			return followers[i].getName();
 		}
-	}	
+	}
+	return "";
 }
 void Character::showFollowers(void){
 	if(this->followers.size() != 0){

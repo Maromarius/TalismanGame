@@ -49,6 +49,8 @@ class Player
 		void Player::setCurrentRegion(string);
 		void moveCharacterLeft();
 		void moveCharacterRight();
+		void encounterSpace(Deck* , Deck*);
+
 		void addToBag(Card);
 		Card removeFromBag(Card);
 		Card removeFromBag(string);

@@ -364,6 +364,11 @@ void encounterPlayer(Player players[], int turn)
 		}//End of character loop
 }
 
+void checkIfOnSpecialIdelSpace()
+{
+	return;
+}
+
 Deck* createAdventureCardDeck(void){
 	Deck * temp = new Deck();
 
@@ -614,6 +619,13 @@ int main(void){
 		//----Character Movement/Activity on Board
 		if(!players[turn].checkIfPermaDead())
 		{
+			if(players[turn].getCharacter()->getIdleTurns()>0)
+			{
+				checkIfOnSpecialIdelSpace();
+				players[turn].getCharacter()->setIdleTurns(players[turn].getCharacter()->getIdleTurns()-1);
+			}
+			else
+			{
 			movementOnBoard(players, turn, TalismanMap);
 
 			//Encounters with players -if possible-
@@ -622,12 +634,12 @@ int main(void){
 			//Encounter with space
 			cout << players[turn].getCharacter()->getProfession() << ", you are now at the "<< players[turn].getCurrentAreaName()
 				 <<"\n\n"<<players[turn].getCurrentAreaDescription()<<endl;
-			
+			players[turn].encounterSpace(adventureCards, spellCards);
 
 			cout<<"This is the end of you turn, press any key to end turn."<<endl;
 			system("PAUSE");
 			system("CLS");
-
+			}
 		}
 		(turn == numberOfPlayers)?(turn=1):(turn++);
 	}

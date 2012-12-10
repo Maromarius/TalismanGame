@@ -201,3 +201,7 @@ Card Player:: removeSpell(Card card){
 Card Player:: removeSpell(string card){
 	return this->character.removeSpell(card);
 }
+void Player:: encounterSpace(Deck* adventureCards, Deck* spellCards)
+{
+	this->currentArea->effect(character, adventureCards, spellCards);
+}
