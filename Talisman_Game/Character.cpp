@@ -135,6 +135,14 @@ bool Character::isBagFull()
 	else
 		return !(this->bag.size()<4);
 }
+bool Character::isBagEmpty()
+{
+	if(this->bag.size()==0)
+		return true;
+	else
+		return false;
+}
+
 
 //-----FOLLOWERS-----//
 void Character::addFollower(Card obj)
