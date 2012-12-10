@@ -52,11 +52,11 @@ void City::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 				character->gainStrength(1);
 				break;
 		case(6):cout<<"you gained a spell!"<<endl;
-				/*Card temp = spellCards->draw();
-					if(character.hasRoomForSpells())
-						character.addSpell(temp);
+				Card temp = spellCards->draw();
+					if(character->hasRoomForSpells())
+						character->addSpell(temp);
 					else
-						this->Cards.push_back(temp);*/
+						this->Cards.push_back(temp);
 				break;
 		}
 	}

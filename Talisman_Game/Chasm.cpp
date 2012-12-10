@@ -30,7 +30,7 @@ void Chasm::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		cout<<"noting happened."<<endl;
 	}
 	
-	/*for(int i=0;i<character->getNumberOfFollowers();i++)
+	for(int i=0;i<character->getNumFollowers();i++)
 	{
 		cout<<"Press an key to roll the die for your follower."<<endl;
 		srand((unsigned int)time(0));
@@ -38,15 +38,15 @@ void Chasm::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		cout<<"You rolled a "<<diceRoll<<" ...";
 		if(diceRoll==1 || diceRoll==2)
 		{
-			cout<<character->getFollower(i)<<" died!"<<endl;
-			character->loseFollower(i);
+			cout<<character->showFollower(i)<<" died!"<<endl;
+			character->removeFollower(i);
 		}
 		else
 		{
 			cout<<"noting happened."<<endl;
 		}
 	
-	}*/
+	}
 
 	character->printStats();
 	return;

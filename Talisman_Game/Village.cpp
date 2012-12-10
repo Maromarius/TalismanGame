@@ -42,7 +42,7 @@ void Village::effect(Character* character, Deck* adventureCards, Deck* spellCard
 		case(4):{
 				string tempAlignment = character->getAlignment();
 				if(tempAlignment =="Neutral"||tempAlignment =="Evil")
-					{cout<<"doing nothin!"<<endl;}//character->setAlignment("Good");
+					character->setAlignment("Good");
 				break;
 				}
 		case(5):cout<<"you gained one craft!"<<endl;

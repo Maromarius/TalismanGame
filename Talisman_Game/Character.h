@@ -116,6 +116,8 @@ public:
 	void addFollower(Card);
 	Card removeFollower(Card);
 	Card removeFollower(string);
+	Card removeFollower(int);
+	string showFollower(int);
 	void showFollowers(void);
 	bool hasThisFollower(string);
 	int getNumFollowers(void);

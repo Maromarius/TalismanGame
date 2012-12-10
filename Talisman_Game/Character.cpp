@@ -150,6 +150,28 @@ Card Character::removeFollower(string name){
 		}
 	}	
 }
+Card Character::removeFollower(int followerNumber){
+	if(followerNumber>followers.size()-1)
+
+	
+	for(int i = 0; i <= followers.size(); i++){
+		if (i==followerNumber){
+			Card temp = followers[i];
+			followers[i] = followers.back();
+			followers.back() = temp;
+			followers.pop_back();
+			return temp;
+		}
+	}	
+}
+string Character::showFollower(int followerNumber){
+	if(followerNumber>followers.size()-1)
+	for(int i = 0; i <= followers.size(); i++){
+		if (i==followerNumber){
+			followers[i].getName();
+		}
+	}	
+}
 void Character::showFollowers(void){
 	if(this->followers.size() != 0){
 		for(int i = 0; i < this->followers.size(); i++){
@@ -160,6 +182,8 @@ void Character::showFollowers(void){
 	else
 		cout << "No Followers!\n\n";
 }
+
+
 bool Character::hasThisFollower(string name){
 	for(int i = 0; i <= followers.size(); i++){
 		if(followers[i].getName() == name)
