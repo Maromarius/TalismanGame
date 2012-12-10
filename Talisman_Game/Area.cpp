@@ -13,7 +13,7 @@ Area::Area()
 
 Area::Area(string name)
 {
-	this->mapAreaNumber=48;
+	this->mapAreaNumber=24;
 	this->areaName=name;
 	this->areaDescription="";
 	this->left = NULL;

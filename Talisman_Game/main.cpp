@@ -126,6 +126,54 @@ int FateCounters = 36;
 int GoldCoins = 30;
 int turn = 1;
 
+void printMap(Player players[])
+{
+	int mapAreaNumber=0;
+	bool putPlayerOnArea=false;
+	
+	for(int v = 0;v<7;v++)
+	{
+		if(v==5)
+			cout<<" _ _ _ _ _ = _ \n";
+		else if (v==6)
+			cout<<" _ _ = _ _ _ _ \n";
+		else
+			cout<<" _ _ _ _ _ _ _ \n";
+		
+		for(int h = 0;h<7;h++)
+		{
+			for (int i=1; i<numberOfPlayers+1; i++)
+			{
+				if (players[i].getCurrentAreaNumber()==mapAreaNumber)
+				{
+					if (v==3&&h==3)
+						cout<<"}"<<i;
+					else
+						cout<<"|"<<i;
+
+					putPlayerOnArea=true;
+					break;
+				}
+			}
+			if(!putPlayerOnArea)
+			{
+				if (v==3&&h==3)
+					cout<<"} ";
+				else
+					cout<<"| ";
+			}
+
+			putPlayerOnArea=false;
+			mapAreaNumber++;
+		}
+		if (v==6)
+			cout<<"|\n"<<" _ _ _ _ _ _ _ \n\n\n";
+		else
+			cout<<"|\n";
+	}
+}
+	
+
 void playerBannerTemplate(int turn)
 {
 	switch(turn)
@@ -839,6 +887,7 @@ int main(void){
 		if(!players[turn].checkIfPermaDead())
 		{
 			playerBannerTemplate(turn);
+			printMap(players);
 			players[turn].getCharacter()->printStats();
 
 			if(players[turn].getCharacter()->getIdleTurns()>0)
