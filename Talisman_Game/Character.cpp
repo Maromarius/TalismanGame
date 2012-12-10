@@ -290,15 +290,12 @@ void Character::loseCraft(int craft){
 }
 
 void Character::gainLive(int lives){
-
-	currentLife =+ lives;
-
-
+	currentLife += lives;
 }
 
 void Character::loseLive(int lives){
 
-	currentLife =- lives;
+	currentLife -= lives;
 
 	if (currentLife <=0 ){
 		isAlive = false;
@@ -320,14 +317,14 @@ void Character::replenishLives(int lives){
 
 void Character::gainFate(int fate){
 
-	currentFate =+ fate;
+	currentFate += fate;
 
 
 }
 
 void Character::loseFate(int fate){
 
-	currentFate =- fate;
+	currentFate -= fate;
 
 	if (currentFate <=0 ){
 		currentFate = 0;

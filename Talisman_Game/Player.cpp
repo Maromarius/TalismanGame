@@ -41,6 +41,8 @@ bool Player::checkIfPermaDead(void)
 void Player::isNowPermaDead(void)
 {
 	isPermaDead = true;
+	
+
 }
 
 Character Player::createCharacter(int characterRoll)

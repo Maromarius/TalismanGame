@@ -126,6 +126,73 @@ int FateCounters = 36;
 int GoldCoins = 30;
 int turn = 1;
 
+void playerBannerTemplate(int turn)
+{
+	switch(turn)
+	{
+		case (1):
+		cout<<"  *******   **                                      ** \n"
+			<<"	/**////** /**            **   **                  *** \n"
+			<<"	/**   /** /**  ******   //** **   *****  ******  //** \n"
+			<<"	/*******  /** //////**   //***   **///**//**//*   /** \n"
+			<<"	/**////   /**  *******    /**   /******* /** /    /** \n"
+			<<"	/**       /** **////**    **    /**////  /**      /** \n"
+			<<"	/**       ***//********  **     //******/***      ****\n"
+			<<"	//       ///  ////////  //       ////// ///      //// \n"<<endl;
+		break;
+	case (2):
+		cout<<" *******   **                                      **** \n"
+			<<"/**////** /**            **   **                  */// *\n"
+			<<"/**   /** /**  ******   //** **   *****  ******  /    /*\n"
+			<<"/*******  /** //////**   //***   **///**//**//*     *** \n"
+			<<"/**////   /**  *******    /**   /******* /** /     *//  \n"
+			<<"/**       /** **////**    **    /**////  /**      *     \n"
+			<<"/**       ***//********  **     //******/***     /******\n"
+			<<"//       ///  ////////  //       ////// ///      ////// \n"<<endl;
+		break;
+	case (3):
+		cout<<" *******   **                                      **** \n"
+			<<"	/**////** /**            **   **                  */// *\n"
+			<<"	/**   /** /**  ******   //** **   *****  ******  /    /*\n"
+			<<"	/*******  /** //////**   //***   **///**//**//*     *** \n"
+			<<"	/**////   /**  *******    /**   /******* /** /     /// *\n"
+			<<"	/**       /** **////**    **    /**////  /**      *   /*\n"
+			<<"	/**       ***//********  **     //******/***     / **** \n"
+			<<"	//       ///  ////////  //       ////// ///       ////  \n"<<endl;
+		break;
+	case (4):
+		cout<<" *******   **                                        ** \n"
+			<<"	/**////** /**            **   **                    */* \n"
+			<<"	/**   /** /**  ******   //** **   *****  ******    * /* \n"
+			<<"	/*******  /** //////**   //***   **///**//**//*   ******\n"
+			<<"	/**////   /**  *******    /**   /******* /** /   /////* \n"
+			<<"	/**       /** **////**    **    /**////  /**         /* \n"
+			<<"	/**       ***//********  **     //******/***         /* \n"
+			<<"	//       ///  ////////  //       ////// ///          /  \n"<<endl;
+		break;
+	case (5):
+		cout<<" *******   **                                     ******\n"
+			<<"	/**////** /**            **   **                 /*//// \n"
+			<<"	/**   /** /**  ******   //** **   *****  ******  /***** \n"
+			<<"	/*******  /** //////**   //***   **///**//**//*  ///// *\n"
+			<<"	/**////   /**  *******    /**   /******* /** /        /*\n"
+			<<"	/**       /** **////**    **    /**////  /**      *   /*\n"
+			<<"	/**       ***//********  **     //******/***     / **** \n"
+			<<"	//       ///  ////////  //       ////// ///       ////  \n"<<endl;
+		break;
+	case (6):
+		cout<<" *******   **                                      **** \n"
+			<<"	/**////** /**            **   **                  */// *\n"
+			<<"	/**   /** /**  ******   //** **   *****  ******  /*   / \n"
+			<<"	/*******  /** //////**   //***   **///**//**//*  /***** \n"
+			<<"	/**////   /**  *******    /**   /******* /** /   /*/// *\n"
+			<<"	/**       /** **////**    **    /**////  /**     /*   /*\n"
+			<<"	/**       ***//********  **     //******/***     / **** \n"
+			<<"	//       ///  ////////  //       ////// ///       ////  \n"<<endl;
+		break;
+	}
+}
+
 void initializeCharacterArray(void)
 {
 	for(int i = 0; i < NUMBEROFCHARACTERS; i++)
@@ -152,7 +219,7 @@ bool canEvade(Player opponent)
 
 void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 {
-	cout << "\nIt is currently Player " << turn << "'s turn!" << endl;
+	//cout << "\nIt is currently Player " << turn << "'s turn!" << endl;
 			cout << players[turn].getCharacter()->getProfession() << ", you are at the "<< players[turn].getCurrentAreaName()<<endl;
 			char decision;
 			bool endTurn=false;
@@ -492,8 +559,17 @@ void encounterPlayer(Player players[], int turn)
 		}//End of character loop
 }
 
-void checkIfOnSpecialIdelSpace()
+void checkIfOnSpecialIdelSpace(Player * players, int turn, Deck* adventureCards, Deck* spellCards)
 {
+	if (players[turn].getCurrentAreaName()=="Dice with Death"||players[turn].getCurrentAreaName()=="Temple")
+	{
+		players[turn].encounterSpace(adventureCards, spellCards);
+	}
+	if (players[turn].getCurrentAreaName()=="Pits"||players[turn].getCurrentAreaName()=="Wereworlf Den")
+	{
+		players[turn].encounterSpace(adventureCards, spellCards);
+		players[turn].getCharacter()->setIdleTurns(players[turn].getCharacter()->getIdleTurns()-1);
+	}	
 	return;
 }
 
@@ -747,9 +823,11 @@ int main(void){
 		//----Character Movement/Activity on Board
 		if(!players[turn].checkIfPermaDead())
 		{
+			playerBannerTemplate(turn);
+
 			if(players[turn].getCharacter()->getIdleTurns()>0)
 			{
-				checkIfOnSpecialIdelSpace();
+				checkIfOnSpecialIdelSpace(players, turn,adventureCards, spellCards);
 				players[turn].getCharacter()->setIdleTurns(players[turn].getCharacter()->getIdleTurns()-1);
 			}
 			else
