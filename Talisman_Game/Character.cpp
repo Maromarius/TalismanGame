@@ -625,8 +625,7 @@ bool Character::battleMonster(Card monster)
 	if(decision =='y')
 	{
 		this->currentFate--;
-		this->battleMonster(monster);
-		return false;
+		return this->battleMonster(monster);
 	}
 	else if(decision =='n')
 	{
@@ -641,7 +640,7 @@ bool Character::battleMonster(Card monster)
 			cout<<"You wins!\n"<<endl;
 			this->trophies += 1;
 			if(this->trophies>4){
-				//Changing throphie management for strenth gaining
+				//Changing trophy management for strength gaining
 				this->trophies = this->trophies%4;
 				this->counterStrength+=1;
 			}

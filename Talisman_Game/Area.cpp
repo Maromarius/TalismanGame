@@ -97,7 +97,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!c.isBagFull()){
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				CursedGlade.push_back(card);
@@ -138,7 +138,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!c.isBagFull()){
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				Fields.push_back(card);
@@ -180,7 +180,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			if(!c.isBagFull())
 			{
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				Hills.push_back(card);
@@ -221,7 +221,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!c.isBagFull()){
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				Plains.push_back(card);
@@ -262,7 +262,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!c.isBagFull()){
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				PortalOfPower.push_back(card);
@@ -303,7 +303,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!c.isBagFull()){
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				Ruins.push_back(card);
@@ -345,7 +345,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			if(!c.isBagFull())
 			{
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				Woods.push_back(card);
@@ -386,7 +386,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!c.isBagFull()){
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				Runes.push_back(card);
@@ -429,7 +429,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				if(!c.isBagFull())
 				{
 					c.addObject(card);
-					cout<<"This object has been added to your Bag!" <<endl<<endl;
+					cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 				}
 				else
 					HiddenValley.push_back(card);
@@ -472,7 +472,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 			else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 				if(!c.isBagFull()){
-					c.addObject(card);cout<<"This object has been added to your Bag!" <<endl<<endl;
+					c.addObject(card);cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 				}
 				else
 					Oasis.push_back(card);
@@ -864,7 +864,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!c.isBagFull()){
 				c.addObject(card);
-				cout<<"This object has been added to your Bag!" <<endl<<endl;
+				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
 				Sentinel.push_back(card);
