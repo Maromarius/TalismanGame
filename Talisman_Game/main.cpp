@@ -267,7 +267,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 					cout<<"Can't move there!";
 				}
 
-				//-Special landing points on board 1/4 Sentinel		
+				//-Special landing points on board 1/5 Sentinel		
 				sentinel:
 				if(players[turn].getCurrentAreaName()=="Sentinel")
 				{
@@ -316,7 +316,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 					}
 				}
 
-				//-Special landing points on board 2/4 Hills from the middle region
+				//-Special landing points on board 2/5 Hills from the middle region
 				if(players[turn].getCurrentAreaName()=="Hills" && players[turn].getCurrentRegion()=="middle")
 				{
 				cout << players[turn].getCharacter()->getProfession() << ", you are back at the Hills, would you like to cross the bridge? (y/n) " << endl;
@@ -332,7 +332,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 					}
 				}
 
-				//-Special landing points on board 3/4 Portal of Power
+				//-Special landing points on board 3/5 Portal of Power
 				portalOfPower:
 				if(players[turn].getCurrentAreaName()=="Portal of Power")
 				{
@@ -419,7 +419,23 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 					}
 				}
 
-				//-Special landing points on board 4/4 Valley of Fire
+				//-Special landing points on board 4/5 Plain of Peril from the inner region
+				if(players[turn].getCurrentAreaName()=="Plain of Peril" && players[turn].getCurrentRegion()=="inner")
+				{
+				cout << players[turn].getCharacter()->getProfession() << ", you are back at the Plain Of Peril, would you like to cross the Portal Power back? (y/n) " << endl;
+				cin>>decision;
+					if(decision == 'y')
+					{
+						cout<<"You have crossed the the Portal!!\n"
+							<<"Would you like to continue right(r) or left(l)?"<<endl;
+						cin>>movedirection;
+						players[turn].setCurrentArea(TalismanMap,"middle","Portal of Power");
+						players[turn].setCurrentRegion("middle");
+						i++;
+					}
+				}
+
+				//-Special landing points on board 5/5 Valley of Fire
 				if(players[turn].getCurrentAreaName()=="Valey of Fire")
 				{
 				cout << players[turn].getCharacter()->getProfession() << "!!, you have reach the Valey of Fire!!"<<endl;
