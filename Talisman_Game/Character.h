@@ -111,6 +111,7 @@ public:
 	Card removeObject(Card);
 	Card removeObject(string);
 	bool isBagFull();
+	bool isBagEmpty();
 	void showBag();
 	bool hasInBag(string);
 
