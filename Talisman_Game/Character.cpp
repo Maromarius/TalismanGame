@@ -441,6 +441,11 @@ int Character::getMaxObjectSize()
 	return this->maxObjects;
 }
 
+int Character::getGold()
+{
+	return this->gold;
+}
+
 bool Character::hasRaft()
 {
 	return this->raft;

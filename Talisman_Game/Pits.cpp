@@ -25,10 +25,9 @@ void Pits::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	diceRoll = ((int) rand() % 6 + 1);
 			
 	cout<<diceRoll<<" Pittlords Attack you!!"<<endl;
+	character->setIdleTurns(diceRoll-1);
 
-	for(int i =0;i<diceRoll;i++)
-	{
-		Enemy *PitLord = new Enemy("PitLord", "a self-intitle Lord of this Pit.","Pitlord",5,0,4);		
-		character->battleMonster(*PitLord);
-	}
+	Enemy *PitLord = new Enemy("PitLord", "a self-intitle Lord of this Pit.","Pitlord",5,0,4);		
+	character->battleMonster(*PitLord);
+
 }

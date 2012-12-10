@@ -95,6 +95,7 @@ public:
 	int getCounterCraft();	
 	int getIdleTurns();
 	int getMaxObjectSize();
+	int getGold();
 	void printStats();
 	bool hasAxe();
 	bool hasRaft();

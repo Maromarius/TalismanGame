@@ -500,43 +500,43 @@ void checkIfOnSpecialIdelSpace()
 Deck* createAdventureCardDeck(void){
 	Deck * temp = new Deck();
 
-	Card * c = new Ape();
-	temp->add(*c);
-	c = new Bear();
-	temp->add(*c);
-	c = new Lion();
-	temp->add(*c);
-	c = new Serpent();
-	temp->add(*c);
-	c = new WildBoar();
-	temp->add(*c);
-	c = new Wolf();
-	temp->add(*c);
-	c = new Dragon();
-	temp->add(*c);
-	c = new Bandit();
-	temp->add(*c);
-	c = new Giant();
-	temp->add(*c);
-	c = new Goblin();
-	temp->add(*c);
-	c = new Hobgoblin();
-	temp->add(*c);
-	c = new Ogre();
-	temp->add(*c);
-	c = new Demon();
-	temp->add(*c);
-	c = new Ghost();
-	temp->add(*c);
-	c = new Lemure();
-	temp->add(*c);
-	c = new Shadow();
-	temp->add(*c);
-	c = new Spectre();
-	temp->add(*c);
-	c = new Wraith();
-	temp->add(*c);
-	c = new Alchemist();
+	Enemy * e = new Ape();
+	temp->add(*e);
+	e = new Bear();
+	temp->add(*e);
+	e = new Lion();
+	temp->add(*e);
+	e = new Serpent();
+	temp->add(*e);
+	e = new WildBoar();
+	temp->add(*e);
+	e = new Wolf();
+	temp->add(*e);
+	e = new Dragon();
+	temp->add(*e);
+	e = new Bandit();
+	temp->add(*e);
+	e = new Giant();
+	temp->add(*e);
+	e = new Goblin();
+	temp->add(*e);
+	e = new Hobgoblin();
+	temp->add(*e);
+	e = new Ogre();
+	temp->add(*e);
+	e = new Demon();
+	temp->add(*e);
+	e = new Ghost();
+	temp->add(*e);
+	e = new Lemure();
+	temp->add(*e);
+	e = new Shadow();
+	temp->add(*e);
+	e = new Spectre();
+	temp->add(*e);
+	e = new Wraith();
+	temp->add(*e);
+	Card * c = new Alchemist();
 	temp->add(*c);
 	c = new CursedByAHag();
 	temp->add(*c);
@@ -754,20 +754,25 @@ int main(void){
 			}
 			else
 			{
-			movementOnBoard(players, turn, TalismanMap);
+				movementOnBoard(players, turn, TalismanMap);
 
-			//Encounters with players -if possible-
-			encounterPlayer(players, turn);
+				//Encounters with players -if possible-
+				encounterPlayer(players, turn);
 
-			//Encounter with space
-			cout << players[turn].getCharacter()->getProfession() << ", you are now at the "<< players[turn].getCurrentAreaName()
-				 <<"\n\n"<<players[turn].getCurrentAreaDescription()<<endl;
-			players[turn].encounterSpace(adventureCards, spellCards);
+				//Encounter with space
+				cout << players[turn].getCharacter()->getProfession() << ", you are now at the "<< players[turn].getCurrentAreaName()
+					 <<"\n\n"<<players[turn].getCurrentAreaDescription()<<endl;
+				players[turn].encounterSpace(adventureCards, spellCards);
 
-			cout<<"This is the end of you turn, press any key to end turn."<<endl;
-			system("PAUSE");
-			system("CLS");
+				cout<<"This is the end of you turn, press any key to end turn."<<endl;
+				system("PAUSE");
+				system("CLS");
 			}
+
+			//Killing character if he died this turn!
+			if (players[turn].getCharacter()->getLife()<1){
+				players[turn].isNowPermaDead();
+				cout<<"Sorry "<<players[turn].getCharacter()->getProfession()<<" this is where your adventure ends, you are now dead!"<<endl;}
 		}
 		(turn == numberOfPlayers)?(turn=1):(turn++);
 	}

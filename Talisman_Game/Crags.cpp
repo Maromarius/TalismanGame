@@ -34,14 +34,16 @@ void Crags::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 					character->battleMonster(*spirit);
 					break;}
 			case(2):cout<<"you loose one turn!"<<endl;
+					character->setIdleTurns(1);
 					break;
 			case(3):cout<<"you loose one turn!"<<endl;
+					character->setIdleTurns(1);
 					break;
 			case(4):cout<<"nothing happend."<<endl;
 					break;
 			case(5):cout<<"nothing happend."<<endl;
 					break;
-			case(6):cout<<"a Barabarian came to your aid, you gained one strength!"<<endl;
+			case(6):cout<<"a Barbarian came to your aid, you gained one strength!"<<endl;
 					character->gainStrength(1);
 					break;
 			}

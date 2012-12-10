@@ -1,5 +1,11 @@
 #include "Village.h"
 #include "Area.h"
+#include "Helmet.h"
+#include "Sword.h"
+#include "Armour.h"
+#include "Shield.h"
+#include "Axe.h"
+
 
 const string Village::NAME = "Village";
 const string Village::DESCRIPTION =	"Visit only one of the following.\n"
@@ -74,14 +80,82 @@ void Village::effect(Character* character, Deck* adventureCards, Deck* spellCard
 				return;
 		}
 		}
-	else if(decision=='a')
+	else if(decision=='b')
 	{
-		cout<<"Witch item would you like to turn to gold?"<<endl;
-		character->showBag();
-		string item;
-		cin>>item;
-		character->removeObject(item);
-		character->gainGold(1);
+		string tempName;
+		
+		cout<<"Witch item would you like to buy?(helmet/sword/axe/shield/armor)"<<endl;
+		cin>>tempName;
+		if(tempName=="helmet")
+		{
+			if (character->getGold()<2)
+			{
+				cout<<"Sorry, you can't afford this"<<endl;
+				return;
+			}
+			else
+			{
+				BattleObject* tempObj = new Helmet();
+				character->addFollower(*tempObj);
+				character->loseGold(2);
+			}
+		}
+		else if(tempName=="sword")
+		{
+			if (character->getGold()<2)
+			{
+				cout<<"Sorry, you can't afford this"<<endl;
+				return;
+			}
+			else
+			{
+				BattleObject* tempObj = new Sword();
+				character->addFollower(*tempObj);
+				character->loseGold(2);
+			}
+		}
+		else if(tempName=="shield")
+		{
+			if (character->getGold()<2)
+			{
+				cout<<"Sorry, you can't afford this"<<endl;
+				return;
+			}
+			else
+			{
+				BattleObject* tempObj = new Shield();
+				character->addFollower(*tempObj);
+				character->loseGold(2);
+			}
+		}
+		else if(tempName=="axe")
+		{
+			if (character->getGold()<2)
+			{
+				cout<<"Sorry, you can't afford this"<<endl;
+				return;
+			}
+			else
+			{
+				BattleObject* tempObj = new Axe();
+				character->addFollower(*tempObj);
+				character->loseGold(2);
+			}
+		}
+		else if(tempName=="armour")
+		{
+			if (character->getGold()<4)
+			{
+				cout<<"Sorry, you can't afford this"<<endl;
+				return;
+			}
+			else
+			{
+				BattleObject* tempObj = new Armour();
+				character->addFollower(*tempObj);
+				character->loseGold(4);
+			}
+		}
 	}
 
 

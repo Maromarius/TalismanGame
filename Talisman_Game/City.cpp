@@ -87,7 +87,7 @@ void City::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	}
 	else if(decision=='a')
 	{
-		cout<<"Witch item would you like to turn to gold?"<<endl;
+		cout<<"Witch item would you like to turn to gold?(enter name)"<<endl;
 		character->showBag();
 		string item;
 		cin>>item;
