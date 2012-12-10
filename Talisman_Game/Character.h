@@ -96,6 +96,7 @@ public:
 	int getIdleTurns();
 	int getMaxObjectSize();
 	int getGold();
+	int getFate();
 	void printStats();
 	bool hasAxe();
 	bool hasRaft();

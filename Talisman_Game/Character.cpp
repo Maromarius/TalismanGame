@@ -100,7 +100,7 @@ void Character::showBag(void)
 	if(this->bag.size() != 0){
 		for(int i = 0; i < this->bag.size(); i++){
 			this->bag[i].print();
-			cout << "\n\n";
+			cout << "; ";
 		}
 	}
 	else
@@ -177,7 +177,7 @@ void Character::showFollowers(void){
 	if(this->followers.size() != 0){
 		for(int i = 0; i < this->followers.size(); i++){
 			this->followers[i].print();
-			cout << "\n\n";
+			cout << "; ";
 		}
 	}
 	else
@@ -395,8 +395,12 @@ int Character::getLife(){
 }
 
 int Character::getStrength(){
-		int strengthy;
-		strengthy=this->baseStrength+this->counterStrength;
+		int strengthy=0;
+
+		for(int i=0;i<this->followers.size();i++)
+			strengthy += followers[i].getStrength();
+
+		strengthy+=(this->baseStrength+this->counterStrength);
 		return (strengthy);
 }
 
@@ -441,6 +445,11 @@ int Character::getMaxObjectSize()
 int Character::getGold()
 {
 	return this->gold;
+}
+
+int Character::getFate()
+{
+	return this->currentFate;
 }
 
 bool Character::hasRaft()
@@ -600,7 +609,7 @@ bool Character::battleMonster(Card monster)
 	}
 	if(decision =='y')
 	{
-		this->loseFate(1);
+		this->currentFate--;
 		this->battleMonster(monster);
 		return false;
 	}
@@ -615,6 +624,12 @@ bool Character::battleMonster(Card monster)
 		if(this->getStrength()+attackRoll > monster.getStrength()+monsterAttackRoll)
 		{
 			cout<<"You wins!\n"<<endl;
+			this->trophies += 1;
+			if(this->trophies>4){
+				//Changing throphie management for strenth gaining
+				this->trophies = this->trophies%4;
+				this->counterStrength+=1;
+			}
 			return true;
 		}
 		//Its a draw
@@ -627,7 +642,7 @@ bool Character::battleMonster(Card monster)
 		else if (this->getStrength()+attackRoll < monster.getStrength()+monsterAttackRoll)
 		{
 			cout<<"You lose!\n";
-			this->loseLive(1);			
+			this->currentLife--;			
 			this->printStats();
 			return false;
 		}
@@ -637,12 +652,16 @@ bool Character::battleMonster(Card monster)
 //-----PRINT-----//
 void Character::printStats()
 {
-	cout << this->getProfession() << "'s stats are as follows:" << endl;
-	cout << "Current Life: " << this->getLife() << "/" << this->getBaseLife() << endl;
-	// WRONG METHODS
-	cout << "Strength: " << this->getStrength() << " (" << this->getBaseStrength() << " Base + " << this->getCounterStrength() << " Counters)" << endl; 
-	cout << "Craft: " << this->getCraft() << " (" << this->getBaseCraft() << " Base + " << this->getCounterCraft() << " Counters)" << endl; 
-	cout << endl;
+	cout << this->getProfession() << "'s stats are as follows:\n"
+	<<"-------------------------------"
+	<<"Alignment: "<<this->getAlignment()<<"\n"
+	<< "Current Life: " << this->getLife() << "/" << this->getBaseLife()<<"\n"
+	<< "Strength: " << this->getStrength() << " (" << this->getBaseStrength() << " Base + " << this->getCounterStrength() << " Counters)\n"
+	<< "Craft: " << this->getCraft() << " (" << this->getBaseCraft() << " Base + " << this->getCounterCraft() << " Counters)\n"
+	<< "Gold: " <<this->getGold()<<"\n"
+	<< "Fate: " <<this->getFate()<<"\n"
+	<< "Bag: "; this->showBag(); cout<<"\n"
+	<< "Followers: "; this->showFollowers(); cout<<"\n\n\n";
 	return;
 }
 
