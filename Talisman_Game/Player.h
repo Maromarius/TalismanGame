@@ -55,6 +55,7 @@ class Player
 		void addFollower(Card);
 		Card removeFollower(Card);
 		Card removeFollower(string);
+		bool hasRoomForSpells(void);
 		void addSpell(Card);
 		Card removeSpell(Card);
 		Card removeSpell(string);

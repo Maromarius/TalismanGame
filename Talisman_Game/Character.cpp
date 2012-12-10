@@ -169,21 +169,32 @@ bool Character::hasThisFollower(string name){
 }
 
 //-----SPELLS-----//
-/*int Character::getMaxSpells()
-{
-	cout << "--" << this->getCraft() << "--";
-	return 3;
-}
-bool Character::hasRoomForSpells(void){
-	if(this->spells.size() < this->getMaxSpells())
+
+bool Character::hasRoomForSpells(){
+	int crafty;
+	int maxnumOfSpells;
+	crafty = this->getCraft();
+	if(crafty==1||crafty==2)
+		maxnumOfSpells=0;
+	if(crafty==3)	
+		maxnumOfSpells=1;
+	if(crafty==4||crafty==5)
+		maxnumOfSpells=2;
+	if(crafty>=6)
+		maxnumOfSpells=3;
+	if(spells.size()<maxnumOfSpells)
+	{
+		cout<<"You can add spells"<<endl;
 		return true;
+	}
 	else
 		return false;
 }
+
 void Character::addSpell(Card obj)
 {
-	if(this->spells.size() < this->getMaxSpells())
-		this->spells.push_back(obj);
+	if(this->hasRoomForSpells())
+	this->spells.push_back(obj);
 }
 
 Card Character::removeSpell(Card obj){
@@ -220,7 +231,7 @@ void Character::showSpells(void){
 	else
 		cout << "You do not have any Spells!\n\n";
 }
-*/
+
 //-----GAIN/LOSS-----//
 void Character::gainStrength(int str){
 	counterStrength += str;	
@@ -352,17 +363,15 @@ int Character::getLife(){
 }
 
 int Character::getStrength(){
-	if (this->isToad)
-		return 1;
-	else
-		return (this->baseStrength+this->counterStrength);//Add object strength
+		int strengthy;
+		strengthy=this->baseStrength+this->counterStrength;
+		return (strengthy);
 }
 
 int Character::getCraft(){
-	if (this->isToad)
-		return 1;
-	else
-		return (this->baseCraft+this->counterCraft);//Add object craft
+		int crafty;
+		crafty=this->baseCraft+this->counterCraft;
+		return crafty;
 }
 
 int Character::getBaseLife(){

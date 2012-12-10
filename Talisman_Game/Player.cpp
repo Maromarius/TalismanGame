@@ -187,7 +187,10 @@ Card Player:: removeFollower(string card){
 }
 
 // Spells
-/*
+bool Player::hasRoomForSpells(){
+	return this->character.hasRoomForSpells();
+}
+
 void Player:: addSpell(Card card)
 {
 	this->character.addSpell(card);
@@ -197,4 +200,4 @@ Card Player:: removeSpell(Card card){
 }
 Card Player:: removeSpell(string card){
 	return this->character.removeSpell(card);
-}*/
+}
