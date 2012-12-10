@@ -373,7 +373,7 @@ int Character::getStrength(){
 
 int Character::getCraft(){
 		int crafty;
-		crafty=this->baseCraft+this->counterCraft;
+		crafty=(this->baseCraft)+(this->counterCraft);
 		return crafty;
 }
 
@@ -539,9 +539,9 @@ void Character::battleCharacter(Character opponent)
 	}
 }
 
-void Character::battleMonster(Enemy monster)
+bool Character::battleMonster(Enemy monster)
 {
-	char decision;
+	char decision = 'n';
 	int attackRoll;
 	int monsterAttackRoll;
 	
@@ -551,12 +551,12 @@ void Character::battleMonster(Enemy monster)
 	attackRoll= ((int) rand() % 6 + 1);
 	system("PAUSE");
 	cout<<"You have a "<<attackRoll<<endl;
-	
-	cout<<"Roll Dice for your Opponet's attack roll."<<endl;
+
+	cout<<"Roll Dice for your Opponent's attack roll."<<endl;
 	srand((unsigned int)time(0));
 	monsterAttackRoll= ((int) rand() % 6 + 1);
 	system("PAUSE");
-	cout<<monster.getName()<<"has a "<<monsterAttackRoll<<endl;
+	cout<<monster.getName()<<" has a "<<monsterAttackRoll<<endl;
 
 	//Using fate to Redo OR not to battle
 	if(this->currentFate>0)
@@ -568,29 +568,34 @@ void Character::battleMonster(Enemy monster)
 	{
 		this->loseFate(1);
 		this->battleMonster(monster);
-		return;
+		return false;
 	}
 	else if(decision =='n')
 	{
 		char spoilDecision;
+		
+		cout << "Your total strength for this battle is " << this->getStrength()+attackRoll << endl;
+		cout << "Monster's total strength for this battle is \n" << monster.getStrength()+monsterAttackRoll << endl << endl;
+
 		//You win the battle
 		if(this->getStrength()+attackRoll > monster.getStrength()+monsterAttackRoll)
 		{
 			cout<<"You wins!\n"<<endl;
+			return true;
 		}
 		//Its a draw
 		else if (this->getStrength()+attackRoll == monster.getStrength()+monsterAttackRoll)
 		{
-		cout<<"It's a stand-off"<<endl;
-		return;		
+			cout<<"It's a stand-off.\n"<<endl;
+			return false;		
 		}
 		//You lose the battle
 		else if (this->getStrength()+attackRoll < monster.getStrength()+monsterAttackRoll)
 		{
-			cout<<"You lose!/n";
-			this->loseLive(1);
-			return;
+			cout<<"You lose!\n";
+			this->loseLive(1);			
 			this->printStats();
+			return false;
 		}
 	}
 }

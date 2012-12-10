@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "SentinelMonster.h"
 #include "Ape.h"
 #include "Bear.h"
 #include "Lion.h"
@@ -258,12 +259,19 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 				cin>>decision;
 					if(decision == 'y')
 					{
-						cout<<"Congratulations, you have crossed the bridge!!\n"
-							<<"Would you like to continue right(r) or left(l)?"<<endl;
-						cin>>movedirection;
-						players[turn].setCurrentArea(TalismanMap,"middle","Hills");
-						players[turn].setCurrentRegion("middle");
-						i++;
+						SentinelMonster sentinel;
+						if(players[turn].getCharacter()->battleMonster(sentinel)){
+							cout<<"Congratulations, you have crossed the bridge!!\n"
+								<<"Would you like to continue right(r) or left(l)?"<<endl;
+							cin>>movedirection;
+							players[turn].setCurrentArea(TalismanMap,"middle","Hills");
+							players[turn].setCurrentRegion("middle");
+							i++;
+						}
+						else{
+							cout << "You have lost the engagement and have failed to cross the bridge.";
+							break;
+						}
 					}
 				}
 

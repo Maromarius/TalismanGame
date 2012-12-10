@@ -18,11 +18,11 @@ Enemy::Enemy(string name, string description,string type,int encounterNumber,int
 Enemy::~Enemy(){}
 
 string Enemy::getName(){
-	return this->getName();
+	return this->NAME;
 }
 
 string Enemy::getDescription(){
-	return this->getDescription();
+	return this->DESCRIPTION;
 }
 
 int Enemy::getStrength(void){

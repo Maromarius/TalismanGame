@@ -80,7 +80,7 @@ public:
 	void moveLeft();
 
 	void battleCharacter(Character);
-	void battleMonster(Enemy);
+	bool battleMonster(Enemy);
 	string getProfession();
 	string getSpawnPoint();
 	string getAlignment();
