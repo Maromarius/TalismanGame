@@ -156,12 +156,13 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 			cout << players[turn].getCharacter()->getProfession() << ", you are at the "<< players[turn].getCurrentAreaName()<<endl;
 			char decision;
 			bool endTurn=false;
+			bool hasRolled=false;
 
 			//--Non-Rolling Non-Movement Alternative to the Turn 1/2
 			//-Casting the Command Spell
 			if(players[turn].getCurrentAreaName()=="Crown of Command")
 			{
-				cout<<players[turn].getCharacter()->getProfession()<<", you are still at the COROWN OF COMMAND, please press any key to roll the die and cast the Command Spell!" << endl;
+				cout<<players[turn].getCharacter()->getProfession()<<", you are still at the CROWN OF COMMAND, please press any key to roll the die and cast the Command Spell!" << endl;
 				system("PAUSE");
 				int dRoll = diceRoll();
 				cout << "You have rolled a " << dRoll << "!"<<endl;
@@ -225,18 +226,32 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 			//--Rolling Movement Alternative to the Turn
 			else
 			{
-				cout<<"Please press any key to roll the die." << endl;
-				system("PAUSE");
-				dRoll = diceRoll();
-				cout << "You have rolled a " << dRoll << "!"<<endl; 
+				if(players[turn].getCurrentAreaName()=="Portal of Power"){
+					goto portalOfPower;
+				}
+				else if(players[turn].getCurrentAreaName()=="Sentinel"){
+					goto sentinel;
+				}			
+
+				if(hasRolled == false){
+					cout<<"Please press any key to roll the die." << endl;
+					system("PAUSE");
+					dRoll = diceRoll();
+					hasRolled = true;
+					cout << "You have rolled a " << dRoll << "!"<<endl; 		
+				}			
 			}
 			char movedirection;
 			cout << "Would you like to move right(r) or left(l)?" << endl;
 			cin >> movedirection; //Must be idiot-proofed
 
-			//Moving Player's Character on the Board
+			//Moving Player's Character on the Board	
+			mainMovementLoop:
 			for (int i=0; i<dRoll; i++)
-			{
+			{				
+				mainMovementLoop2:
+				if(i == dRoll)
+					break;
 				if(movedirection == 'r')
 				{
 					players[turn].moveCharacterRight();
@@ -252,7 +267,8 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 					cout<<"Can't move there!";
 				}
 
-				//-Special landing points on board 1/4 Sentinel
+				//-Special landing points on board 1/4 Sentinel		
+				sentinel:
 				if(players[turn].getCurrentAreaName()=="Sentinel")
 				{
 				cout << players[turn].getCharacter()->getProfession() << "!!, you have reach the Sentinel, would you like to tempt to cross the bridge? (y/n) " << endl;
@@ -266,11 +282,36 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 							cin>>movedirection;
 							players[turn].setCurrentArea(TalismanMap,"middle","Hills");
 							players[turn].setCurrentRegion("middle");
-							i++;
+							if(hasRolled == false){
+								cout<<"Please press any key to roll the die." << endl;
+								system("PAUSE");
+								dRoll = diceRoll();
+								cout << "You have rolled a " << dRoll << "!"<<endl; 
+								hasRolled = true;
+							}
+							else
+								i++;
 						}
 						else{
 							cout << "You have lost the engagement and have failed to cross the bridge.";
 							break;
+						}
+					}
+					else{
+						if(hasRolled == false){
+							cout<<"Please press any key to roll the die." << endl;
+							system("PAUSE");
+							dRoll = diceRoll();
+							hasRolled = true;
+							cout << "You have rolled a " << dRoll << "!"<<endl; 			
+							cout << "Would you like to move right(r) or left(l)?" << endl;
+							movedirection = 'r';
+							cin >> movedirection;
+							goto mainMovementLoop;
+						}
+						else{
+							i++;
+							goto mainMovementLoop2;
 						}
 					}
 				}
@@ -292,22 +333,93 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 				}
 
 				//-Special landing points on board 3/4 Portal of Power
+				portalOfPower:
 				if(players[turn].getCurrentAreaName()=="Portal of Power")
 				{
 				cout << players[turn].getCharacter()->getProfession() << "!!, you have reach the Portal of Power, would you like to tempt to open it? (y/n) " << endl;
 				cin>>decision;
 					if(decision == 'y')
 					{
-						cout<<"You have opened the portal!!\n"
-							<<"Would you like to continue right(r) or left(l)?"<<endl;
-						cin>>movedirection;
-						players[turn].setCurrentArea(TalismanMap,"inner","Plain of Peril");
-						players[turn].setCurrentRegion("inner");
-						i++;
+						// Strength or Craft?
+						char decision2;
+						while(true){
+							cout<<"Would you like to attempt to open the Portal with Strength or Craft? (s/c)" << endl;
+							cin>>decision2;
+							if(decision2 == 's'){
+								break;
+							}
+							else if(decision2 == 'c'){
+								break;
+							}
+							else
+								cout<<"Error-- Input must be 's' or 'c'." << endl;
+						}
+
+						cout<<"You are about to roll the first die." << endl;
+						system("PAUSE");
+						int diceRoll1 = diceRoll();
+						cout<<"You have rolled a " << diceRoll1 << endl << endl;
+
+						cout<<"You are about to roll the second die." << endl;
+						system("PAUSE");
+						int diceRoll2 = diceRoll();
+						cout<<"You have rolled a " << diceRoll2 << endl << endl;
+
+						int totalRoll = diceRoll1 + diceRoll2;
+						cout << "Your total roll is " << totalRoll << endl;
+						bool pass = false;
+
+						if(decision2 == 's')
+						{
+							cout << "Your Strength is " << players[turn].getCharacter()->getStrength() << endl;
+							if(totalRoll < players[turn].getCharacter()->getStrength()){
+								pass = true;
+							}
+						}
+						else if(decision2 == 'c')
+						{
+							cout << "Your Craft is " << players[turn].getCharacter()->getCraft() << endl;
+							if(totalRoll < players[turn].getCharacter()->getCraft()+100){
+								pass = true;
+							}
+						}
+
+						if(pass){
+							cout<<"You have opened the portal!!"<<endl;
+							players[turn].setCurrentArea(TalismanMap,"inner","Plain of Peril");
+							players[turn].setCurrentRegion("inner");
+
+							// SHOW SPACE INFO
+
+
+							break;
+						}
+						else{
+							cout << "You have failed to cross the Portal of Power.";
+							break;
+						}
+
+					}
+					else{
+						if(hasRolled == false){
+							cout<<"Please press any key to roll the die." << endl;
+							system("PAUSE");
+							dRoll = diceRoll();
+							hasRolled = true;
+							cout << "You have rolled a " << dRoll << "!"<<endl; 			
+							cout << "Would you like to move right(r) or left(l)?" << endl;
+							movedirection = 'r';
+							cin >> movedirection;
+							goto mainMovementLoop;
+						}
+						else{
+							i++;
+							goto mainMovementLoop2;
+						}
 					}
 				}
 
-				//-Special landing points on board 4/4 Valey of Fire
+				//-Special landing points on board 4/4 Valley of Fire
 				if(players[turn].getCurrentAreaName()=="Valey of Fire")
 				{
 				cout << players[turn].getCharacter()->getProfession() << "!!, you have reach the Valey of Fire!!"<<endl;
