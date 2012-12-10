@@ -74,418 +74,374 @@ Area* Area::getLeft()
 void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {
 	if(this->areaName == "Cursed Glade"){
-		Card* card;		
+		Card card;		
 		if(CursedGlade.size() == 0)
 		{
-			card= &adventureCards->draw();
+			card= adventureCards->draw();
 			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
-			card = &CursedGlade.back();
+			card = *CursedGlade.back();
 			CursedGlade.pop_back();
 			cout << "Picking up..." << endl;
 		}
-		card->print();
+		card.print();
 
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
+		if(card.getType() == "Enemy"){
+			bool wins = character->battleMonster(card);
 			if(wins){
-				adventureCards->discard(*card);
+				adventureCards->discard(card);
 			}
 			else{
-					CursedGlade.push_back(*card);
+					CursedGlade.push_back(&card);
 			}
 		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		else if(card.getType() == "Follower"){
+			character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!character->isBagFull()){
-				character->addObject(card);
+				character->addObject(&card);
 				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
-				CursedGlade.push_back(*card);
+				CursedGlade.push_back(&card);
 		}		
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			CursedGlade.push_back(*card);
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			CursedGlade.push_back(&card);
 			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
-	else if(this->areaName == "Fields"){
-		Card* card;		
+	else if(this->areaName == "Fields"){	
+		Card card;		
 		if(Fields.size() == 0)
 		{
-			card= &adventureCards->draw();
+			card= adventureCards->draw();
 			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
-			card = &Fields.back();
+			card = *Fields.back();
 			Fields.pop_back();
 			cout << "Picking up..." << endl;
 		}
-		card->print();
+		card.print();
 
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
+		if(card.getType() == "Enemy"){
+			bool wins = character->battleMonster(card);
 			if(wins){
-				adventureCards->discard(*card);
+				adventureCards->discard(card);
 			}
 			else{
-					Fields.push_back(*card);
+					Fields.push_back(&card);
 			}
 		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		else if(card.getType() == "Follower"){
+			character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!character->isBagFull()){
-				character->addObject(card);
+				character->addObject(&card);
 				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
-				Fields.push_back(*card);
-		}
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			Fields.push_back(*card);
+				Fields.push_back(&card);
+		}		
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Fields.push_back(&card);
 			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	else if(this->areaName == "Hills"){
-		Card* card;		
+		Card card;		
 		if(Hills.size() == 0)
 		{
-			card= &adventureCards->draw();
+			card= adventureCards->draw();
 			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
-			card = &Hills.back();
+			card = *Hills.back();
 			Hills.pop_back();
 			cout << "Picking up..." << endl;
 		}
-		card->print();
+		card.print();
 
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
+		if(card.getType() == "Enemy"){
+			bool wins = character->battleMonster(card);
 			if(wins){
-				adventureCards->discard(*card);
+				adventureCards->discard(card);
 			}
 			else{
-					Hills.push_back(*card);
+					Hills.push_back(&card);
 			}
 		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		else if(card.getType() == "Follower"){
+			character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
-			if(!character->isBagFull())
-			{
-				character->addObject(card);
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!character->isBagFull()){
+				character->addObject(&card);
 				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
-				Hills.push_back(*card);
-		}
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			Hills.push_back(*card);
+				Hills.push_back(&card);
+		}		
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Hills.push_back(&card);
 			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	else if(this->areaName == "Plains"){
-		Card* card;		
+		Card card;		
 		if(Plains.size() == 0)
 		{
-			card= &adventureCards->draw();
+			card= adventureCards->draw();
 			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
-			card = &Plains.back();
+			card = *Plains.back();
 			Plains.pop_back();
 			cout << "Picking up..." << endl;
 		}
-		card->print();
+		card.print();
 
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
+		if(card.getType() == "Enemy"){
+			bool wins = character->battleMonster(card);
 			if(wins){
-				adventureCards->discard(*card);
+				adventureCards->discard(card);
 			}
 			else{
-					Plains.push_back(*card);
+					Plains.push_back(&card);
 			}
 		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		else if(card.getType() == "Follower"){
+			character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!character->isBagFull()){
-				character->addObject(card);
+				character->addObject(&card);
 				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
-				Plains.push_back(*card);
-		}
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			Plains.push_back(*card);
+				Plains.push_back(&card);
+		}		
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Plains.push_back(&card);
 			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	else if(this->areaName == "Portal of Power"){
-		Card* card;		
+		Card card;		
 		if(PortalOfPower.size() == 0)
 		{
-			card = &adventureCards->draw();
+			card= adventureCards->draw();
 			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
-			card = &PortalOfPower.back();
+			card = *PortalOfPower.back();
 			PortalOfPower.pop_back();
 			cout << "Picking up..." << endl;
 		}
-		card->print();
+		card.print();
 
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
+		if(card.getType() == "Enemy"){
+			bool wins = character->battleMonster(card);
 			if(wins){
-				adventureCards->discard(*card);
+				adventureCards->discard(card);
 			}
 			else{
-				PortalOfPower.push_back(*card);
+					PortalOfPower.push_back(&card);
 			}
 		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		else if(card.getType() == "Follower"){
+			character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!character->isBagFull()){
-				character->addObject(card);
+				character->addObject(&card);
 				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
-				PortalOfPower.push_back(*card);
-		}
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			PortalOfPower.push_back(*card);
+				PortalOfPower.push_back(&card);
+		}		
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			PortalOfPower.push_back(&card);
 			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	else if(this->areaName == "Ruins"){
-		Card* card;		
+		Card card;		
 		if(Ruins.size() == 0)
 		{
-			card = &adventureCards->draw();cout<<card->getType()<<endl;
+			card= adventureCards->draw();
 			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
-			card = &Ruins.back();
+			card = *Ruins.back();
 			Ruins.pop_back();
 			cout << "Picking up..." << endl;
 		}
-		card->print();
+		card.print();
 
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
+		if(card.getType() == "Enemy"){
+			bool wins = character->battleMonster(card);
 			if(wins){
-				adventureCards->discard(*card);
+				adventureCards->discard(card);
 			}
 			else{
-					Ruins.push_back(*card);
+					Ruins.push_back(&card);
 			}
 		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		else if(card.getType() == "Follower"){
+			character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!character->isBagFull()){
-				character->addObject(card);
+				character->addObject(&card);
 				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
-				Ruins.push_back(*card);
-		}
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			Ruins.push_back(*card);
+				Ruins.push_back(&card);
+		}		
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Ruins.push_back(&card);
 			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	else if(this->areaName == "Woods"){
-		Card* card;
+		Card card;		
 		if(Woods.size() == 0)
 		{
-			card = &adventureCards->draw();
+			card= adventureCards->draw();
 			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
-			card = &Woods.back();
+			card = *Woods.back();
 			Woods.pop_back();
 			cout << "Picking up..." << endl;
 		}
-		card->print();
+		card.print();
 
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
+		if(card.getType() == "Enemy"){
+			bool wins = character->battleMonster(card);
 			if(wins){
-				adventureCards->discard(*card);
+				adventureCards->discard(card);
 			}
 			else{
-					Woods.push_back(*card);
+					Woods.push_back(&card);
 			}
 		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		else if(card.getType() == "Follower"){
+			character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
-			if(!character->isBagFull())
-			{
-				character->addObject(card);
-				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
-			}
-			else
-				Woods.push_back(*card);
-		}
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			Woods.push_back(*card);
-			cout << "The card has been placed on this Area." <<endl<<endl;
-		}
-	}
-	else if(this->areaName == "Runes"){
-		Card* card;		
-		if(Runes.size() == 0)
-		{
-			card = &adventureCards->draw();cout<<card->getType()<<endl;
-			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
-		}
-		else
-		{
-			card = &Runes.back();
-			Runes.pop_back();
-			cout << "Picking up..." << endl;
-		}
-		card->print();
-
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
-			if(wins){
-				adventureCards->discard(*card);
-			}
-			else{
-				Runes.push_back(*card);
-			}
-		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
-		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!character->isBagFull()){
-				character->addObject(card);
+				character->addObject(&card);
 				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
-				Runes.push_back(*card);
-		}
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			Runes.push_back(*card);
+				Woods.push_back(&card);
+		}		
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Woods.push_back(&card);
 			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	else if(this->areaName == "Hidden Valley"){
-		Card* card;		
+		Card card;		
 		for(int i = 0; i < 3; i++){
 			if(HiddenValley.size() == 0)
 			{
-				card = &adventureCards->draw();cout<<card->getType()<<endl;
+				card= adventureCards->draw();
 				cout << "Drawing Card..." << endl;
-				cout<<card->getType()<<endl;
+				cout<<card.getType()<<endl;
 			}
 			else
 			{
-				card = &HiddenValley.back();
-				HiddenValley.pop_back();
+				card = *HiddenValley.back();
+				Woods.pop_back();
 				cout << "Picking up..." << endl;
 			}
-			card->print();
+			card.print();
 
-			if(card->getType() == "Enemy"){
-				bool wins = character->battleMonster(*card);
+			if(card.getType() == "Enemy"){
+				bool wins = character->battleMonster(card);
 				if(wins){
-					adventureCards->discard(*card);
+					adventureCards->discard(card);
 				}
 				else{
-						HiddenValley.push_back(*card);
+						HiddenValley.push_back(&card);
 				}
 			}
-			else if(card->getType() == "Follower"){
-				character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+			else if(card.getType() == "Follower"){
+				character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 			}
-			else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
-				if(!character->isBagFull())
-				{
-					character->addObject(card);
+			else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+				if(!character->isBagFull()){
+					character->addObject(&card);
 					cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 				}
 				else
-					HiddenValley.push_back(*card);
-			}
-			else if(card->getType() == "Place" || card->getType() == "Stranger"){
-				HiddenValley.push_back(*card);
+					HiddenValley.push_back(&card);
+			}		
+			else if(card.getType() == "Place" || card.getType() == "Stranger"){
+				HiddenValley.push_back(&card);
 				cout << "The card has been placed on this Area." <<endl<<endl;
 			}
 		}
 
 	}
 	else if(this->areaName == "Oasis"){
-		Card* card;		
+		Card card;		
 		for(int i = 0; i < 2; i++){
-			if(Oasis.size() == 0)
-			{
-				card = &adventureCards->draw();cout<<card->getType()<<endl;
+			if(Oasis.size() == 0){
+				card= adventureCards->draw();
 				cout << "Drawing Card..." << endl;
-				cout<<card->getType()<<endl;
+				cout<<card.getType()<<endl;
 			}
 			else
 			{
-				card = &Oasis.back();
-				Oasis.pop_back();
+				card = *Oasis.back();
+				Woods.pop_back();
 				cout << "Picking up..." << endl;
 			}
-			card->print();
+			card.print();
 
-			if(card->getType() == "Enemy"){
-				bool wins = character->battleMonster(*card);
+			if(card.getType() == "Enemy"){
+				bool wins = character->battleMonster(card);
 				if(wins){
-					adventureCards->discard(*card);
+					adventureCards->discard(card);
 				}
 				else{
-						Oasis.push_back(*card);
+						Oasis.push_back(&card);
 				}
 			}
-			else if(card->getType() == "Follower"){
-				character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+			else if(card.getType() == "Follower"){
+				character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 			}
-			else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
+			else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 				if(!character->isBagFull()){
-					character->addObject(card);cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
+					character->addObject(&card);
+					cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 				}
 				else
-					Oasis.push_back(*card);
-			}
-			else if(card->getType() == "Place" || card->getType() == "Stranger"){
-				Oasis.push_back(*card);
+					Oasis.push_back(&card);
+			}		
+			else if(card.getType() == "Place" || card.getType() == "Stranger"){
+				Oasis.push_back(&card);
 				cout << "The card has been placed on this Area." <<endl<<endl;
 			}
 		}
@@ -495,11 +451,13 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	
 		int diceRoll1,diceRoll2;
 
-		cout<<"Press an key to roll the die."<<endl;
+		cout<<"Press any key to roll the first die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll1 = ((int) rand() % 6 + 1);
 
-		cout<<"Press an key to roll the die."<<endl;
+		cout<<"Press any key to roll the second die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll2 = ((int) rand() % 6 + 1);
 
@@ -511,7 +469,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	}
 	else if(this->areaName == "Warlocks Cave"){
 		int diceRoll;
-		cout<<"Press an key to roll the die."<<endl;
+		cout<<"Press any key to roll the die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll = ((int) rand() % 6 + 1);
 		cout<<"You rolled a "<<diceRoll<<" ...";
@@ -550,7 +509,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		if(decision=='m')
 		{
 			int diceRoll;
-			cout<<"Press an key to roll the die."<<endl;
+			cout<<"Press any key to roll the die."<<endl;
+			system("PAUSE");
 			srand((unsigned int)time(0));
 			diceRoll = ((int) rand() % 6 + 1);
 			cout<<"You rolled a "<<diceRoll<<" ...";
@@ -688,7 +648,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		int LifeGettingLost;
 		char decision;
 
-		cout<<"Press an key to roll the first die."<<endl;
+		cout<<"Press any key to roll the die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll = ((int) rand() % 6 + 1);
 		cout<<"You rolled a "<<diceRoll<<endl;
@@ -724,12 +685,14 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		int diceRoll1;
 		int diceRoll2;
 
-		cout<<"Press an key to roll the die."<<endl;
+		cout<<"Press any key to roll the first die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll1 = ((int) rand() % 6 + 1);
 		cout<<"You rolled a "<<diceRoll1<<" ...";
 
-		cout<<"Press an key to roll the die."<<endl;
+		cout<<"Press any key to roll the second die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll2 = ((int) rand() % 6 + 1);
 		cout<<"You rolled a "<<diceRoll2<<" ...";
@@ -782,18 +745,18 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 					if(character->hasRoomForSpells())
 						character->addSpell(&tempSpell);
 					else{
-						Temple.push_back(tempSpell);
+						Temple.push_back(&tempSpell);
 						cout<<"you have to leave that spell here because you have no room for spells"<<endl;}
 				}
 				else
 				{
-					Card tempSpell = Temple.back();
+					Card tempSpell = *Temple.back();
 					Temple.pop_back();
 					cout<<"you picked the "<<tempSpell.getName()<<"\nDescription: "<<tempSpell.getDescription()<<endl;
 					if(character->hasRoomForSpells())
 						character->addSpell(&tempSpell);
 					else{
-						Temple.push_back(tempSpell);
+						Temple.push_back(&tempSpell);
 						cout<<"you have to leave that spell here because you have no room for spells"<<endl;}
 				}
 				break;
@@ -814,7 +777,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	}
 	else if(this->areaName == "Tavern"){
 		int diceRoll;
-		cout<<"Press an key to roll the die."<<endl;
+		cout<<"Press any key to roll the die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll = ((int) rand() % 6 + 1);
 		cout<<"You rolled a "<<diceRoll<<" ...";
@@ -841,43 +805,43 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		}
 	}
 	else if(this->areaName == "Sentinel"){
-		Card* card;		
+		Card card;		
 		if(Sentinel.size() == 0)
 		{
-			card= &adventureCards->draw();
+			card= adventureCards->draw();
 			cout << "Drawing Card..." << endl;
-			cout<<card->getType()<<endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
-			card = &Sentinel.back();
+			card = *Sentinel.back();
 			Sentinel.pop_back();
 			cout << "Picking up..." << endl;
 		}
-		card->print();
+		card.print();
 
-		if(card->getType() == "Enemy"){
-			bool wins = character->battleMonster(*card);
+		if(card.getType() == "Enemy"){
+			bool wins = character->battleMonster(card);
 			if(wins){
-				adventureCards->discard(*card);
+				adventureCards->discard(card);
 			}
 			else{
-				Sentinel.push_back(*card);
+				Sentinel.push_back(&card);
 			}
 		}
-		else if(card->getType() == "Follower"){
-			character->addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		else if(card.getType() == "Follower"){
+			character->addFollower(&card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card->getType() == "Magic Object" || card->getType() == "Battle Object"){
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!character->isBagFull()){
-				character->addObject(card);
+				character->addObject(&card);
 				cout<<"\nThis Object has been added to your Bag!" <<endl<<endl;
 			}
 			else
-				Sentinel.push_back(*card);
+				Sentinel.push_back(&card);
 		}
-		else if(card->getType() == "Place" || card->getType() == "Stranger"){
-			Sentinel.push_back(*card);
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Sentinel.push_back(&card);
 			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
@@ -892,11 +856,12 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		}
 		else
 		{
-			cout<<"Press an key to roll the die."<<endl;
+			cout<<"Press any key to roll the die."<<endl;
+			system("PAUSE");
 			srand((unsigned int)time(0));
 			diceRoll = ((int) rand() % 6 + 1);
 		}	
-		cout<<diceRoll<<" Pittlords Attack you!!"<<endl;
+		cout<<diceRoll<<" Pittlord(s) Attack you!!"<<endl;
 		character->setIdleTurns(diceRoll-1);
 
 		Enemy *PitLord = new Enemy("PitLord", "a self-intitle Lord of this Pit.","Pitlord",5,0,4);		
@@ -907,15 +872,18 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		int diceRoll2;
 		int diceRoll3;
 
-		cout<<"Press an key to roll the first die."<<endl;
+		cout<<"Press any key to roll the first die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll1 = ((int) rand() % 6 + 1);
 
-		cout<<"Press an key to roll the second die."<<endl;
+		cout<<"Press any key to roll the second die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll2 = ((int) rand() % 6 + 1);
 
-		cout<<"Press an key to roll the third die."<<endl;
+		cout<<"Press any key to roll the third die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll3 = ((int) rand() % 6 + 1);
 			
@@ -957,7 +925,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 			else if(decision=='p')
 			{
 				int diceRoll;
-				cout<<"Press an key to roll the die."<<endl;
+				cout<<"Press any key to roll the die."<<endl;
+				system("PAUSE");
 				srand((unsigned int)time(0));
 				diceRoll = ((int) rand() % 6 + 1);
 				cout<<"You rolled a "<<diceRoll<<" ...";
@@ -989,7 +958,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	}
 	else if(this->areaName == "Forest"){
 		int diceRoll;
-		cout<<"Press an key to roll the die."<<endl;
+		cout<<"Press any key to roll the die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll = ((int) rand() % 6 + 1);
 		cout<<"You rolled a "<<diceRoll<<" ...";
@@ -1022,22 +992,26 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		int diceRoll4;
 
 
-		cout<<"Press an key to roll your first die."<<endl;
+		cout<<"Press any key to roll your first die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll1 = ((int) rand() % 6 + 1);
 
-		cout<<"Press an key to roll your second die."<<endl;
+		cout<<"Press any key to roll your second die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll2 = ((int) rand() % 6 + 1);
 			
 		cout<<"You rolled a "<<diceRoll1<<"& "<<diceRoll2<<endl;
 		int yourRoll = diceRoll1 + diceRoll2 ;
 
-		cout<<"Press an key to roll death's first die."<<endl;
+		cout<<"Press any key to roll death's first die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll3 = ((int) rand() % 6 + 1);
 
-		cout<<"Press an key to roll death's second die."<<endl;
+		cout<<"Press any key to roll death's second die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll4 = ((int) rand() % 6 + 1);
 			
@@ -1084,15 +1058,18 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		int diceRoll2;
 		int diceRoll3;
 
-		cout<<"Press an key to roll the first die."<<endl;
+		cout<<"Press any key to roll the first die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll1 = ((int) rand() % 6 + 1);
 
-		cout<<"Press an key to roll the second die."<<endl;
+		cout<<"Press any key to roll the second die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll2 = ((int) rand() % 6 + 1);
 
-		cout<<"Press an key to roll the third die."<<endl;
+		cout<<"Press any key to roll the third die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll3 = ((int) rand() % 6 + 1);
 			
@@ -1104,7 +1081,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	}
 	else if(this->areaName == "Crags"){
 		int diceRoll;
-		cout<<"Press an key to roll the die."<<endl;
+		cout<<"Press any key to roll the die."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll = ((int) rand() % 6 + 1);
 		cout<<"You rolled a "<<diceRoll<<" ...";
@@ -1140,7 +1118,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		if(decision=='e')
 		{
 			int diceRoll;
-			cout<<"Press an key to roll the die."<<endl;
+			cout<<"Press any key to roll the die."<<endl;
+			system("PAUSE");
 			srand((unsigned int)time(0));
 			diceRoll = ((int) rand() % 6 + 1);
 			cout<<"You rolled a "<<diceRoll<<" ...";
@@ -1217,7 +1196,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	}
 	else if(this->areaName == "Chasm"){
 		int diceRoll;
-		cout<<"Press an key to roll the die for yourselve."<<endl;
+		cout<<"Press any key to roll the die for yourselve."<<endl;
+		system("PAUSE");
 		srand((unsigned int)time(0));
 		diceRoll = ((int) rand() % 6 + 1);
 		cout<<"You rolled a "<<diceRoll<<" ...";
@@ -1233,7 +1213,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	
 		for(int i=0;i<character->getNumFollowers();i++)
 		{
-			cout<<"Press an key to roll the die for your follower."<<endl;
+			cout<<"Press any key to roll the die for your follower."<<endl;
+			system("PAUSE");
 			srand((unsigned int)time(0));
 			diceRoll = ((int) rand() % 6 + 1);
 			cout<<"You rolled a "<<diceRoll<<" ...";
@@ -1289,7 +1270,8 @@ void Area::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 			else if(decision=='p')
 			{
 				int diceRoll;
-				cout<<"Press an key to roll the die."<<endl;
+				cout<<"Press any key to roll the die."<<endl;
+				system("PAUSE");
 				srand((unsigned int)time(0));
 				diceRoll = ((int) rand() % 6 + 1);
 				cout<<"You rolled a "<<diceRoll<<" ...";

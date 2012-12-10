@@ -45,18 +45,18 @@ protected:
 
 public:
 	string getRaftDestination(void);
-	vector<Card> CursedGlade;
-	vector<Card> Fields;
-	vector<Card> HiddenValley;
-	vector<Card> Hills;
-	vector<Card> Oasis;
-	vector<Card> Plains;
-	vector<Card> PortalOfPower;
-	vector<Card> Ruins;
-	vector<Card> Runes;
-	vector<Card> Sentinel;
-	vector<Card> Temple;
-	vector<Card> Woods;
+	vector<Card*> CursedGlade;
+	vector<Card*> Fields;
+	vector<Card*> HiddenValley;
+	vector<Card*> Hills;
+	vector<Card*> Oasis;
+	vector<Card*> Plains;
+	vector<Card*> PortalOfPower;
+	vector<Card*> Ruins;
+	vector<Card*> Runes;
+	vector<Card*> Sentinel;
+	vector<Card*> Temple;
+	vector<Card*> Woods;
 
 	Area();
 	Area(string);

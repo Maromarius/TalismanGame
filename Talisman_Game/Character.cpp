@@ -71,7 +71,7 @@ void Character::addObject(Card* obj)
 		if(obj->getName()=="Raft")
 			this->raft=true;
 		cout<<"Adding "<<obj->getName()<<" to the bag\n";
-		this->bag.push_back(obj);
+//		this->bag.push_back(obj);
 	}
 	else
 		cout<<"The Bag is Full"<<endl;
@@ -148,7 +148,7 @@ bool Character::isBagEmpty()
 //-----FOLLOWERS-----//
 void Character::addFollower(Card* obj)
 {
-	this->followers.push_back(obj);
+	//this->followers.push_back(obj);
 }
 Card* Character::removeFollower(Card obj){
 	string name = obj.getName();
@@ -160,7 +160,7 @@ Card* Character::removeFollower(Card obj){
 			followers.pop_back();
 			return temp;
 		}
-	}	
+	}
 	
 }
 Card* Character::removeFollower(string name){

@@ -829,7 +829,10 @@ int main(void){
 
 
 	//--------------GAME--------------
-	//for(int testTurns = 0 ; testTurns<30; testTurns++)
+	cout<<"----------------------------PRESS ANY KEY TO BEGINNING THE GAME\n";
+	system("PAUSE");
+	system("CLS");
+
 	while(numberOfPlayersAlive > 1)
 	{
 		//----Character Movement/Activity on Board
@@ -840,6 +843,8 @@ int main(void){
 
 			if(players[turn].getCharacter()->getIdleTurns()>0)
 			{
+				cout<<"Sorry Adventurer, you must stay on this space this turn.\n";
+				
 				checkIfOnSpecialIdelSpace(players, turn,adventureCards, spellCards);
 				players[turn].getCharacter()->setIdleTurns(players[turn].getCharacter()->getIdleTurns()-1);
 			}
