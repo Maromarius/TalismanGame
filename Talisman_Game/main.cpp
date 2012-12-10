@@ -284,7 +284,7 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 					else if(players[turn].getCurrentRegion()=="outter")
 					{
 						string temp = players[turn].getRaftDestination();
-						players[turn].setCurrentArea(TalismanMap,"middle",string temp = players[turn].getRaftDestination());
+						players[turn].setCurrentArea(TalismanMap,"middle",temp);
 						players[turn].setCurrentRegion("middle");
 					
 					}
