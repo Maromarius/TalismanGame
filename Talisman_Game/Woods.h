@@ -2,8 +2,6 @@
 #define WOODS_H
 #include <string>
 #include "Area.h"
-
-
 using namespace std;
  
 class Woods: public Area
@@ -15,7 +13,7 @@ public:
 
     Woods(int);
     ~Woods();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 
 };
 

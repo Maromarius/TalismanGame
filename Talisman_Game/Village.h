@@ -15,7 +15,7 @@ public:
 
     Village(int);
     ~Village();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 
 };
 

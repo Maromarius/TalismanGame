@@ -63,5 +63,40 @@ Area* Area::getLeft()
 	return this->left;
 }
 
-void Area::effect(Character c, Deck* d1, Deck* d2)
-{}
+
+void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
+{
+
+	cout << "-----" << endl;
+	cout << this->areaName << endl;
+	cout << "-----" << endl;
+	
+	if(this->areaName == "Cursed Glade"){
+		Card card;
+		
+		if(CursedGlade.size() == 0)
+		{
+			card= adventureCards->draw();
+			cout << "Drawing..." << endl;
+		}
+		else
+		{
+			card = CursedGlade.back();
+			cout << "Picking up..." << endl;
+		}
+		card.print();
+
+		if(card.getType() == "Enemy"){
+			bool wins = c.battleMonster(card);
+			if(wins){
+				adventureCards->discard(card);
+				CursedGlade.pop_back();}
+			else{
+					CursedGlade.push_back(card);}
+		}
+		//else if(card.getType() == "Follower"){
+		//	cout << "YAY";
+		//}
+		//if
+	}
+}

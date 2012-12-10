@@ -15,7 +15,7 @@ public:
 
     Sentinel(int);
     ~Sentinel();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 
 };
 

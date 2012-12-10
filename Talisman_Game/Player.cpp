@@ -203,5 +203,5 @@ Card Player:: removeSpell(string card){
 }
 void Player:: encounterSpace(Deck* adventureCards, Deck* spellCards)
 {
-	this->currentArea->effect(character, adventureCards, spellCards);
+	this->currentArea->effect(this->character, adventureCards, spellCards);
 }

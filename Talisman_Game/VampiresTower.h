@@ -15,7 +15,7 @@ public:
 
     VampiresTower(int);
     ~VampiresTower();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 
 };
 

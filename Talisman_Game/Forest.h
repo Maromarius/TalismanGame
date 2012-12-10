@@ -14,7 +14,7 @@ public:
 
     Forest(int);
     ~Forest();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 
 };
 

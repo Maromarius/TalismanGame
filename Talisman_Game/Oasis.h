@@ -15,7 +15,7 @@ public:
 
     Oasis(int);
     ~Oasis();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 
 };
 

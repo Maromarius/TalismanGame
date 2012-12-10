@@ -26,3 +26,7 @@ string Card::getName(){
 string Card::getDescription(){
 	return this->DESCRIPTION;
 }
+
+int Card::getStrength(void){
+	return strength;
+}

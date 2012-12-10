@@ -12,8 +12,6 @@ class Enemy : public AdventureCard {
 protected:
 	string type;
 	int encounterNumber;
-	int strength;
-	int craft;
 
 public:
     Enemy(string,string,string,int,int,int);
@@ -21,8 +19,6 @@ public:
 	string getName();
 	string getDescription();
 	int getAbility();
-	int getStrength();
-
 };
 
 #endif

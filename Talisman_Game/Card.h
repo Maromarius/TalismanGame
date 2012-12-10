@@ -12,6 +12,9 @@ public:
 	string CARDTYPE;
 	string NAME;
 	string DESCRIPTION;
+	int strength;
+	int craft;
+	int getStrength();
 	string getType();
 	string getName();
 	string getDescription();

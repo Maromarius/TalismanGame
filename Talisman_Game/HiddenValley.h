@@ -15,7 +15,7 @@ public:
 
     HiddenValley(int);
     ~HiddenValley();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 
 };
 

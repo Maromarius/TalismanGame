@@ -576,7 +576,7 @@ void Character::battleCharacter(Character opponent)
 	}
 }
 
-bool Character::battleMonster(Enemy monster)
+bool Character::battleMonster(Card monster)
 {
 	char decision = 'n';
 	int attackRoll;

@@ -15,7 +15,7 @@ public:
 
     Tavern(int);
     ~Tavern();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 
 };
 

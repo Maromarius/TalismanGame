@@ -24,7 +24,3 @@ string Enemy::getName(){
 string Enemy::getDescription(){
 	return this->DESCRIPTION;
 }
-
-int Enemy::getStrength(void){
-	return strength;
-}

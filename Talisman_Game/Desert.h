@@ -15,7 +15,7 @@ public:
 
     Desert(int);
     ~Desert();
-	virtual void effect(Character*, Deck* , Deck*);
+	void effect(Character*, Deck* , Deck*);
 };
 
 #endif
