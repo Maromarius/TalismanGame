@@ -1199,12 +1199,17 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		}
 		else if(decision=='a')
 		{
-			cout<<"Witch item would you like to turn to gold?(enter name)"<<endl;
-			c.showBag();
-			string item;
-			cin>>item;
-			c.removeObject(item);
-			c.gainGold(1);
+			if(!c.isBagEmpty())
+			{
+				cout<<"Which item would you like to turn to gold?(enter name)"<<endl;
+				c.showBag();
+				string item;
+				cin>>item;
+				c.removeObject(item);
+				c.gainGold(1);
+			}
+			else
+				cout << "You have no Objects inside of your bag!"<<endl<<endl;
 		}
 
 

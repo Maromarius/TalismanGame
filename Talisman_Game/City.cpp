@@ -24,7 +24,7 @@ City::~City()
 void City::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {/*
 	char decision;
-	cout<<"Who would you like to visite: the Enchantress, Doctor or Alchemist?(e/d/a)"<<endl;
+	cout<<"Who would you like to visit: the Enchantress, Doctor or Alchemist?(e/d/a)"<<endl;
 	cin>>decision;
 
 	if(decision=='e')

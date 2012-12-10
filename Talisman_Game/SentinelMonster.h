@@ -5,7 +5,7 @@ class SentinelMonster :
 {
 
 protected:	
-    static const int STRENGTH = 2;
+    static const int STRENGTH = 9;
     static const int CRAFT = 0;
 	static const int ENCOUNTER_NUMBER = 0;
     static const string NAME;
