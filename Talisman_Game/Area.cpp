@@ -71,7 +71,8 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		if(CursedGlade.size() == 0)
 		{
 			card= adventureCards->draw();
-			cout << "Drawing..." << endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
@@ -91,13 +92,19 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 		}
 		else if(card.getType() == "Follower"){
-			c.addFollower(card);
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card.getType() == "Object"){
-			if(!c.isBagFull())
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!c.isBagFull()){
 				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
 			else
 				CursedGlade.push_back(card);
+		}		
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			CursedGlade.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	if(this->areaName == "Fields"){
@@ -105,7 +112,8 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		if(Fields.size() == 0)
 		{
 			card= adventureCards->draw();
-			cout << "Drawing..." << endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
@@ -125,13 +133,19 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 		}
 		else if(card.getType() == "Follower"){
-			c.addFollower(card);
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card.getType() == "Object"){
-			if(!c.isBagFull())
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!c.isBagFull()){
 				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
 			else
 				Fields.push_back(card);
+		}
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Fields.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	if(this->areaName == "Hills"){
@@ -139,7 +153,8 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		if(Hills.size() == 0)
 		{
 			card= adventureCards->draw();
-			cout << "Drawing..." << endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
@@ -159,13 +174,20 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 		}
 		else if(card.getType() == "Follower"){
-			c.addFollower(card);
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card.getType() == "Object"){
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 			if(!c.isBagFull())
+			{
 				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
 			else
 				Hills.push_back(card);
+		}
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Hills.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	if(this->areaName == "Plains"){
@@ -173,7 +195,8 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		if(Plains.size() == 0)
 		{
 			card= adventureCards->draw();
-			cout << "Drawing..." << endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
@@ -193,13 +216,19 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 		}
 		else if(card.getType() == "Follower"){
-			c.addFollower(card);
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card.getType() == "Object"){
-			if(!c.isBagFull())
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!c.isBagFull()){
 				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
 			else
 				Plains.push_back(card);
+		}
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Plains.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	if(this->areaName == "Portal of Power"){
@@ -207,7 +236,8 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		if(PortalOfPower.size() == 0)
 		{
 			card = adventureCards->draw();
-			cout << "Drawing..." << endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
@@ -227,21 +257,28 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 		}
 		else if(card.getType() == "Follower"){
-			c.addFollower(card);
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card.getType() == "Object"){
-			if(!c.isBagFull())
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!c.isBagFull()){
 				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
 			else
 				PortalOfPower.push_back(card);
-		}		
+		}
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			PortalOfPower.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
+		}
 	}
 	if(this->areaName == "Ruins"){
 		Card card;		
 		if(Ruins.size() == 0)
 		{
-			card = adventureCards->draw();
-			cout << "Drawing..." << endl;
+			card = adventureCards->draw();cout<<card.getType()<<endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
@@ -261,21 +298,70 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 		}
 		else if(card.getType() == "Follower"){
-			c.addFollower(card);
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card.getType() == "Object"){
-			if(!c.isBagFull())
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!c.isBagFull()){
 				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
 			else
 				Ruins.push_back(card);
+		}
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Ruins.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
+		}
+	}
+	if(this->areaName == "Woods"){
+		Card card;
+		if(Woods.size() == 0)
+		{
+			card = adventureCards->draw();cout<<card.getType()<<endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
+		}
+		else
+		{
+			card = Woods.back();
+			Woods.pop_back();
+			cout << "Picking up..." << endl;
+		}
+		card.print();
+
+		if(card.getType() == "Enemy"){
+			bool wins = c.battleMonster(card);
+			if(wins){
+				adventureCards->discard(card);
+			}
+			else{
+					Woods.push_back(card);
+			}
+		}
+		else if(card.getType() == "Follower"){
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
+		}
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!c.isBagFull())
+			{
+				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
+			else
+				Woods.push_back(card);
+		}
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Woods.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	if(this->areaName == "Runes"){
 		Card card;		
 		if(Runes.size() == 0)
 		{
-			card = adventureCards->draw();
-			cout << "Drawing..." << endl;
+			card = adventureCards->draw();cout<<card.getType()<<endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
@@ -295,13 +381,19 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 		}
 		else if(card.getType() == "Follower"){
-			c.addFollower(card);
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card.getType() == "Object"){
-			if(!c.isBagFull())
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!c.isBagFull()){
 				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
 			else
 				Runes.push_back(card);
+		}
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Runes.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	if(this->areaName == "Hidden Valley"){
@@ -309,8 +401,9 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		for(int i = 0; i < 3; i++){
 			if(HiddenValley.size() == 0)
 			{
-				card = adventureCards->draw();
-				cout << "Drawing..." << endl;
+				card = adventureCards->draw();cout<<card.getType()<<endl;
+				cout << "Drawing Card..." << endl;
+				cout<<card.getType()<<endl;
 			}
 			else
 			{
@@ -330,23 +423,32 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				}
 			}
 			else if(card.getType() == "Follower"){
-				c.addFollower(card);
+				c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 			}
-			else if(card.getType() == "Object"){
+			else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
 				if(!c.isBagFull())
+				{
 					c.addObject(card);
+					cout<<"This object has been added to your Bag!" <<endl<<endl;
+				}
 				else
 					HiddenValley.push_back(card);
 			}
+			else if(card.getType() == "Place" || card.getType() == "Stranger"){
+				HiddenValley.push_back(card);
+				cout << "The card has been placed on this Area." <<endl<<endl;
+			}
 		}
+
 	}
 	if(this->areaName == "Oasis"){
 		Card card;		
 		for(int i = 0; i < 2; i++){
 			if(Oasis.size() == 0)
 			{
-				card = adventureCards->draw();
-				cout << "Drawing..." << endl;
+				card = adventureCards->draw();cout<<card.getType()<<endl;
+				cout << "Drawing Card..." << endl;
+				cout<<card.getType()<<endl;
 			}
 			else
 			{
@@ -366,30 +468,21 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				}
 			}
 			else if(card.getType() == "Follower"){
-				c.addFollower(card);
+				c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 			}
-			else if(card.getType() == "Object"){
-				if(!c.isBagFull())
-					c.addObject(card);
+			else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+				if(!c.isBagFull()){
+					c.addObject(card);cout<<"This object has been added to your Bag!" <<endl<<endl;
+				}
 				else
 					Oasis.push_back(card);
 			}
+			else if(card.getType() == "Place" || card.getType() == "Stranger"){
+				Oasis.push_back(card);
+				cout << "The card has been placed on this Area." <<endl<<endl;
+			}
 		}
 	}	
-	if(this->areaName == "Woods"){
-		if(this->Woods.size()>0)
-		{
-			Card temp = Woods.back();
-			Woods.pop_back();
-			cout<<"You picked up the "<<temp.getName()<<endl<<temp.getDescription()<<endl;
-		}
-		else if(this->Woods.size()==0)
-		{
-			Card temp;	
-			temp = adventureCards->draw();
-			cout<<"You drew a "<<temp.getName()<<endl<<temp.getDescription()<<endl;
-		}
-	}
 	if(this->areaName == "Werewolf Den"){
 		cout<<"You are attacked by a WereWolf!"<<endl;
 	
@@ -444,7 +537,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 	}
 	if(this->areaName == "Village"){
 		char decision;
-		cout<<"Who would you like to visite: the Healer, BlackSmith or Mystic?(h/b/m)"<<endl;
+		cout<<"Who would you like to visit: the Healer, BlackSmith or Mystic?(h/b/m)"<<endl;
 		cin>>decision;
 
 		if(decision=='m')
@@ -472,7 +565,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			case(6):cout<<"you gained a spell!"<<endl;
 						if(c.hasRoomForSpells()){
 							Card temp = spellCards->draw();
-							c.addSpell(temp);
+							c.addSpell(temp);cout<<"You learned a spell!"<<endl<<endl;
 						}
 						else
 							cout << "No more room for spells!" << endl;
@@ -512,8 +605,9 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				else
 				{
 					BattleObject* tempObj = new Helmet();
-					c.addFollower(*tempObj);
+					c.addObject(*tempObj);
 					c.loseGold(2);
+					cout << "You bought the Helmet!" << endl;
 				}
 			}
 			else if(tempName=="sword")
@@ -526,8 +620,9 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				else
 				{
 					BattleObject* tempObj = new Sword();
-					c.addFollower(*tempObj);
+					c.addObject(*tempObj);
 					c.loseGold(2);
+					cout << "You bought the Sword!" << endl;
 				}
 			}
 			else if(tempName=="shield")
@@ -540,8 +635,9 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				else
 				{
 					BattleObject* tempObj = new Shield();
-					c.addFollower(*tempObj);
+					c.addObject(*tempObj);
 					c.loseGold(2);
+					cout << "You bought the Shield!" << endl;
 				}
 			}
 			else if(tempName=="axe")
@@ -554,8 +650,9 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				else
 				{
 					BattleObject* tempObj = new Axe();
-					c.addFollower(*tempObj);
+					c.addObject(*tempObj);
 					c.loseGold(2);
+					cout << "You bought the Axe!" << endl;
 				}
 			}
 			else if(tempName=="armour")
@@ -568,8 +665,9 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				else
 				{
 					BattleObject* tempObj = new Armour();
-					c.addFollower(*tempObj);
+					c.addObject(*tempObj);
 					c.loseGold(4);
+					cout << "You bought the Armour!" << endl;
 				}
 			}
 		}
@@ -740,7 +838,8 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		if(Sentinel.size() == 0)
 		{
 			card= adventureCards->draw();
-			cout << "Drawing..." << endl;
+			cout << "Drawing Card..." << endl;
+			cout<<card.getType()<<endl;
 		}
 		else
 		{
@@ -760,13 +859,19 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			}
 		}
 		else if(card.getType() == "Follower"){
-			c.addFollower(card);
+			c.addFollower(card);cout<<"A follower has joined the party!"<<endl<<endl;
 		}
-		else if(card.getType() == "Object"){
-			if(!c.isBagFull())
+		else if(card.getType() == "Magic Object" || card.getType() == "Battle Object"){
+			if(!c.isBagFull()){
 				c.addObject(card);
+				cout<<"This object has been added to your Bag!" <<endl<<endl;
+			}
 			else
 				Sentinel.push_back(card);
+		}
+		else if(card.getType() == "Place" || card.getType() == "Stranger"){
+			Sentinel.push_back(card);
+			cout << "The card has been placed on this Area." <<endl<<endl;
 		}
 	}
 	if(this->areaName == "Plain of Peril"){
@@ -864,7 +969,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 					case(6):cout<<"you gained a spell!"<<endl;
 						if(c.hasRoomForSpells()){
 							Card temp = spellCards->draw();
-							c.addSpell(temp);
+							c.addSpell(temp);cout<<"You learned a spell!"<<endl<<endl;
 						}
 						else
 							cout << "You do not have any room for spells!" << endl;
@@ -893,9 +998,9 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				break;
 			case(3):cout<<"you loose one turn!"<<endl;
 				break;
-			case(4):cout<<"nothing happend."<<endl;
+			case(4):cout<<"nothing happened."<<endl;
 				break;
-			case(5):cout<<"nothing happend."<<endl;
+			case(5):cout<<"nothing happened."<<endl;
 				break;
 			case(6):cout<<"a Ranger came to your aid, you gained one craft!"<<endl;
 				c.gainCraft(1);
@@ -1010,9 +1115,9 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			case(3):cout<<"you loose one turn!"<<endl;
 				c.setIdleTurns(1);
 				break;
-			case(4):cout<<"nothing happend."<<endl;
+			case(4):cout<<"nothing happened."<<endl;
 				break;
-			case(5):cout<<"nothing happend."<<endl;
+			case(5):cout<<"nothing happened."<<endl;
 				break;
 			case(6):cout<<"a Barbarian came to your aid, you gained one strength!"<<endl;
 				c.gainStrength(1);
@@ -1023,7 +1128,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 	}
 	if(this->areaName == "City"){
 		char decision;
-		cout<<"Who would you like to visite: the Enchantress, Doctor or Alchemist?(e/d/a)"<<endl;
+		cout<<"Who would you like to visit: the Enchantress, Doctor or Alchemist?(e/d/a)"<<endl;
 		cin>>decision;
 
 		if(decision=='e')
@@ -1053,7 +1158,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 			case(6):cout<<"you gained a spell!"<<endl;
 						if(c.hasRoomForSpells()){
 							Card temp = spellCards->draw();
-							c.addSpell(temp);
+							c.addSpell(temp);cout<<"You learned a spell!"<<endl<<endl;
 						}
 						else
 							cout << "No more room for spells!" << endl;
@@ -1191,7 +1296,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 				case(6):cout<<"you gained a spell!"<<endl;						
 						if(c.hasRoomForSpells()){
 							Card temp = spellCards->draw();
-							c.addSpell(temp);
+							c.addSpell(temp);cout<<"You learned a spell!"<<endl<<endl;
 						}
 						else
 							cout << "No more room for spells!" << endl;
