@@ -1,5 +1,8 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
+#include "AdventureCard.h"
+#include "Card.h"
+#include "Follower.h"
 #include "Enemy.h"
 #include <iostream>
 #include <vector>
@@ -49,9 +52,9 @@ protected: //TO CHANGE!!!
 	string alignment;
 	string profession;
 
-	vector<Card> bag;
-	vector<Card> followers;
-	vector<Card> spells;
+	vector<Card*> bag;
+	vector<Card*> followers;
+	vector<Card*> spells;
 
 public:
 	Character::Character(void);
@@ -107,19 +110,19 @@ public:
 	void setHasTalisman(bool);
 
 	// Bag
-	void addObject(Card);
-	Card removeObject(Card);
-	Card removeObject(string);
+	void addObject(Card*);
+	Card* removeObject(Card);
+	Card* removeObject(string);
 	bool isBagFull();
 	bool isBagEmpty();
 	void showBag();
 	bool hasInBag(string);
 
 	// Followers
-	void addFollower(Card);
-	Card removeFollower(Card);
-	Card removeFollower(string);
-	Card removeFollower(int);
+	void addFollower(Card*);
+	Card* removeFollower(Card);
+	Card* removeFollower(string);
+	Card* removeFollower(int);
 	string showFollower(int);
 	void showFollowers(void);
 	bool hasThisFollower(string);
@@ -128,9 +131,9 @@ public:
 	// Spells
 	int getMaxSpells(void);
 	bool hasRoomForSpells(void);
-	void addSpell(Card);
-	Card removeSpell(Card);
-	Card removeSpell(string);
+	void addSpell(Card*);
+	Card* removeSpell(Card);
+	Card* removeSpell(string);
 	void showSpells(void);
 };
 

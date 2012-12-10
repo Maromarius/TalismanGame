@@ -61,22 +61,22 @@ Character::~Character(void)
 }
 
 //-----OBJECTS-----//
-void Character::addObject(Card obj)
+void Character::addObject(Card* obj)
 {
 	if((this->bag.size() <=3)||(mule&& this->bag.size() <=7)){
-		if(obj.getName()=="Talisman")
+		if(obj->getName()=="Talisman")
 			this->talisman=true;
-		if(obj.getName()=="Axe")
+		if(obj->getName()=="Axe")
 			this->axe=true;
-		if(obj.getName()=="Raft")
+		if(obj->getName()=="Raft")
 			this->raft=true;
-		cout<<"Adding "<<obj.getName()<<" to the bag\n";
+		cout<<"Adding "<<obj->getName()<<" to the bag\n";
 		this->bag.push_back(obj);
 	}
 	else
 		cout<<"The Bag is Full"<<endl;
  }
-Card Character::removeObject(Card obj){
+Card* Character::removeObject(Card obj){
 	string name = obj.getName();
 	if(name=="Talisman")
 		this->talisman=false;
@@ -84,27 +84,27 @@ Card Character::removeObject(Card obj){
 		this->axe=false;
 	if(name=="Raft")
 		this->raft=false;
-	for(int i = 0; i <= bag.size(); i++){
-		if(bag[i].getName() == name){
-			Card temp = bag[i];
-			bag[i] = bag.back();
+	for(unsigned i = 0; i <= bag.size(); i++){
+		if(bag.at(i)->getName() == name){
+			Card* temp = bag.at(i);
+			bag.at(i) = bag.back();
 			bag.back() = temp;
 			bag.pop_back();
 			return temp;
 		}
 	}		
 }
-Card Character::removeObject(string name){
+Card* Character::removeObject(string name){
 	if(name=="Talisman")
 		this->talisman=false;
 	if(name=="Axe")
 		this->axe=false;
 	if(name=="Raft")
 		this->raft=false;
-	for(int i = 0; i <= bag.size(); i++){
-		if(bag[i].getName() == name){
-			Card temp = bag[i];
-			bag[i] = bag.back();
+	for(unsigned i = 0; i <= bag.size(); i++){
+		if(bag.at(i)->getName() == name){
+			Card *temp = bag.at(i);
+			bag.at(i) = bag.back();
 			bag.back() = temp;
 			bag.pop_back();
 			return temp;
@@ -113,9 +113,9 @@ Card Character::removeObject(string name){
 }
 void Character::showBag(void)
 {
-	if(this->bag.size() != 0){
-		for(int i = 0; i < this->bag.size(); i++){
-			this->bag[i].print();
+	if(this->bag.size() > 0){
+		for(unsigned i = 0; i < this->bag.size(); i++){
+				this->bag.at(i)->getName();
 			cout << "; ";
 		}
 	}
@@ -123,8 +123,8 @@ void Character::showBag(void)
 		cout << "Bag is empty!";
 }
 bool Character::hasInBag(string name){
-	for(int i = 0; i <= bag.size(); i++){
-		if(bag[i].getName() == name)
+	for(unsigned i = 0; i <= bag.size(); i++){
+		if(bag.at(i)->getName() == name)
 			return true;
 	}
 	return false;
@@ -146,16 +146,16 @@ bool Character::isBagEmpty()
 
 
 //-----FOLLOWERS-----//
-void Character::addFollower(Card obj)
+void Character::addFollower(Card* obj)
 {
 	this->followers.push_back(obj);
 }
-Card Character::removeFollower(Card obj){
+Card* Character::removeFollower(Card obj){
 	string name = obj.getName();
-	for(int i = 0; i <= followers.size(); i++){
-		if(followers[i].getName() == name){
-			Card temp = followers[i];
-			followers[i] = followers.back();
+	for(unsigned i = 0; i <= followers.size(); i++){
+		if(followers.at(i)->getName() == name){
+			Card *temp = followers.at(i);
+			followers.at(i) = followers.back();
 			followers.back() = temp;
 			followers.pop_back();
 			return temp;
@@ -163,44 +163,43 @@ Card Character::removeFollower(Card obj){
 	}	
 	
 }
-Card Character::removeFollower(string name){
-	for(int i = 0; i <= followers.size(); i++){
-		if(followers[i].getName() == name){
-			Card temp = followers[i];
-			followers[i] = followers.back();
+Card* Character::removeFollower(string name){
+	for(unsigned i = 0; i <= followers.size(); i++){
+		if(followers.at(i)->getName() == name){
+			Card *temp = followers.at(i);
+			followers.at(i) = followers.back();
 			followers.back() = temp;
 			followers.pop_back();
 			return temp;
 		}
 	}	
 }
-Card Character::removeFollower(int followerNumber){
-	if(followerNumber>followers.size()-1)
-
-	
-	for(int i = 0; i <= followers.size(); i++){
-		if (i==followerNumber){
-			Card temp = followers[i];
-			followers[i] = followers.back();
-			followers.back() = temp;
-			followers.pop_back();
-			return temp;
-		}
-	}	
+Card* Character::removeFollower(int followerNumber){
+	if(followerNumber>followers.size()-1){
+		for(unsigned i = 0; i <= followers.size(); i++){
+			if (i==followerNumber){
+				Card *temp = followers.at(i);
+				followers.at(i) = followers.back();
+				followers.back() = temp;
+				followers.pop_back();
+				return temp;
+			}
+		}	
+	}
 }
 string Character::showFollower(int followerNumber){
 	if(followerNumber>followers.size()-1)
-	for(int i = 0; i <= followers.size(); i++){
+	for(unsigned i = 0; i <= followers.size(); i++){
 		if (i==followerNumber){
-			return followers[i].getName();
+			return followers.at(i)->getName();
 		}
 	}
 	return "";
 }
 void Character::showFollowers(void){
-	if(this->followers.size() != 0){
-		for(int i = 0; i < this->followers.size(); i++){
-			this->followers[i].print();
+	if(this->followers.size() > 0){
+		for(unsigned i = 0; i < this->followers.size(); i++){
+			this->followers.at(i)->getName();
 			cout << "; ";
 		}
 	}
@@ -210,8 +209,8 @@ void Character::showFollowers(void){
 
 
 bool Character::hasThisFollower(string name){
-	for(int i = 0; i <= followers.size(); i++){
-		if(followers[i].getName() == name)
+	for(unsigned i = 0; i <= followers.size(); i++){
+		if(followers.at(i)->getName() == name)
 			return true;
 	}
 	return false;
@@ -243,18 +242,18 @@ bool Character::hasRoomForSpells(){
 		return false;
 }
 
-void Character::addSpell(Card obj)
+void Character::addSpell(Card* obj)
 {
 	if(this->hasRoomForSpells())
 	this->spells.push_back(obj);
 }
 
-Card Character::removeSpell(Card obj){
+Card* Character::removeSpell(Card obj){
 	string name = obj.getName();
-	for(int i = 0; i <= spells.size(); i++){
-		if(spells[i].getName() == name){
-			Card temp = spells[i];
-			spells[i] = spells.back();
+	for(unsigned i = 0; i <= spells.size(); i++){
+		if(spells.at(i)->getName() == name){
+			Card *temp = spells.at(i);
+			spells.at(i) = spells.back();
 			spells.back() = temp;
 			spells.pop_back();
 			return temp;
@@ -262,11 +261,11 @@ Card Character::removeSpell(Card obj){
 	}	
 	
 }
-Card Character::removeSpell(string name){
-	for(int i = 0; i <= spells.size(); i++){
-		if(spells[i].getName() == name){
-			Card temp = spells[i];
-			spells[i] = spells.back();
+Card* Character::removeSpell(string name){
+	for(unsigned i = 0; i <= spells.size(); i++){
+		if(spells.at(i)->getName() == name){
+			Card *temp = spells.at(i);
+			spells.at(i) = spells.back();
 			spells.back() = temp;
 			spells.pop_back();
 			return temp;
@@ -275,8 +274,8 @@ Card Character::removeSpell(string name){
 }
 void Character::showSpells(void){
 	if(this->spells.size() != 0){
-		for(int i = 0; i < this->spells.size(); i++){
-			this->spells[i].print();
+		for(unsigned i = 0; i < this->spells.size(); i++){
+			this->spells.at(i)->print();
 			cout << "\n\n";
 		}
 	}
@@ -422,7 +421,7 @@ int Character::getStrength(){
 		int strengthy=0;
 
 		for(int i=0;i<this->followers.size();i++)
-			strengthy += followers[i].getStrength();
+			strengthy += followers[i]->getStrength();
 
 		strengthy+=(this->baseStrength+this->counterStrength);
 		return (strengthy);

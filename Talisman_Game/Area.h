@@ -66,7 +66,7 @@ public:
 	Area* left;
 	Area* right;
 	void setRaftDestination(Area*);
-	void effect(Character, Deck*, Deck*);
+	void effect(Character*, Deck*, Deck*);
 	string getAreaName();
 	string getAreaDescription();
 	int getAreaMapNumber();
