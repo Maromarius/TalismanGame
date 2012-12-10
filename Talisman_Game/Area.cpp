@@ -37,6 +37,13 @@ void Area::setRaftDestination(Area* destination)
 {
 	this->raftDestination.push_back(destination);
 }
+string Area::getRaftDestination(void)
+{
+	if (raftDestination.size()>0)
+		return this->raftDestination.back()->getAreaName();
+	else
+		return "none";
+}
 
 string Area::getAreaName()
 {

@@ -46,6 +46,7 @@ class Player
 		int Player::getCurrentAreaNumber(void);
 		string Player::getCurrentAreaDescription(void);
 		string Player::getCurrentRegion(void);
+		string Player::getRaftDestination(void);
 		void Player::setCurrentRegion(string);
 		void moveCharacterLeft();
 		void moveCharacterRight();

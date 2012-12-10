@@ -154,6 +154,11 @@ void Player::setCurrentRegion(string newRegion)
 	this->currentRegion = newRegion;
 }
 
+string Player::getRaftDestination(void)
+{
+	return this->currentArea->getRaftDestination();
+}
+
 void Player :: moveCharacterRight()
 {
 	this->currentArea = this->currentArea->getRight();

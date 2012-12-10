@@ -44,6 +44,7 @@ protected:
 	int mapAreaNumber;
 
 public:
+	string getRaftDestination(void);
 	vector<Card> CursedGlade;
 	vector<Card> Fields;
 	vector<Card> HiddenValley;

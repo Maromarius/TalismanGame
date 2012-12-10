@@ -272,9 +272,22 @@ void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 			{
 				cout<<"Would you like to use this turn to cross the Storm River with your Raft instead of moving (y/n)?"<<endl;
 				cin>>decision;
-				if(decision)
+				if(decision=='y')
 				{
-					//Implement raft crossing
+					if(players[turn].getCurrentRegion()=="middle")
+					{
+						string temp = players[turn].getRaftDestination();
+						players[turn].setCurrentArea(TalismanMap,"outter",temp);
+						players[turn].setCurrentRegion("outter");
+					
+					}
+					else if(players[turn].getCurrentRegion()=="outter")
+					{
+						string temp = players[turn].getRaftDestination();
+						players[turn].setCurrentArea(TalismanMap,"middle",string temp = players[turn].getRaftDestination());
+						players[turn].setCurrentRegion("middle");
+					
+					}
 					endTurn = true;
 				}
 			}
@@ -850,10 +863,18 @@ int main(void){
 			//Killing character if he died this turn!
 			if (players[turn].getCharacter()->getLife()<1){
 				players[turn].isNowPermaDead();
-				cout<<"Sorry "<<players[turn].getCharacter()->getProfession()<<" this is where your adventure ends, you are now dead!"<<endl;}
+				cout<<"Sorry "<<players[turn].getCharacter()->getProfession()<<" this is where your adventure ends, you are now dead!"<<endl;
+				numberOfPlayersAlive--;}
 		}
 		(turn == numberOfPlayers)?(turn=1):(turn++);
 	}
+
+	cout<<"======================\n"
+		<<"Congradulation!!!!\n\n"
+		<<players[turn].getCharacter()->getProfession()<<" has won the Game!\n";
+		players[turn].getCharacter()->printStats();
+
+		cout<<"Thank you for playing, see you next time!";
 	system("PAUSE");
 	return 0;
 }
