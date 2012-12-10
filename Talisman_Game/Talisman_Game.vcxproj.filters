@@ -600,10 +600,10 @@
       <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
     </ClInclude>
     <ClInclude Include="SentinelMonster.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Card\AdventureCard\Enemy\Sentinel</Filter>
     </ClInclude>
     <ClInclude Include="AdventureCard.h">
-      <Filter>Header Files\Card\AdventureCard\Enemy\Sentinel</Filter>
+      <Filter>Header Files\Card\AdventureCard</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
