@@ -117,6 +117,7 @@ public:
 	Card removeFollower(string);
 	void showFollowers(void);
 	bool hasThisFollower(string);
+	int getNumFollowers(void);
 
 	// Spells
 	int getMaxSpells(void);

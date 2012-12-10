@@ -168,6 +168,10 @@ bool Character::hasThisFollower(string name){
 	return false;
 }
 
+int Character::getNumFollowers(){
+	return this->followers.size();
+}
+
 //-----SPELLS-----//
 
 bool Character::hasRoomForSpells(){
@@ -184,7 +188,6 @@ bool Character::hasRoomForSpells(){
 		maxnumOfSpells=3;
 	if(spells.size()<maxnumOfSpells)
 	{
-		cout<<"You can add spells"<<endl;
 		return true;
 	}
 	else
