@@ -39,7 +39,7 @@ class Area
 protected:
 	string areaName;
 	string areaDescription;
-	
+	vector<AdventureCard> Cards;
 	vector<Area*> raftDestination;
 	int mapAreaNumber;
 
