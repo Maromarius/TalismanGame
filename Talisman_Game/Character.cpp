@@ -63,17 +63,26 @@ Character::~Character(void)
 //-----OBJECTS-----//
 void Character::addObject(Card obj)
 {
-		if(this->bag.size() <=3){
+	if((this->bag.size() <=3)||(mule&& this->bag.size() <=7)){
+		if(obj.getName()=="Talisman")
+			this->talisman=true;
+		if(obj.getName()=="Axe")
+			this->axe=true;
+		if(obj.getName()=="Raft")
+			this->raft=true;
 		this->bag.push_back(obj);
-	}
-	else if(mule&& this->bag.size() <=7){
-		this->bag.push_back(obj);	
 	}
 	else
 		cout<<"The Bag is Full"<<endl;
  }
 Card Character::removeObject(Card obj){
 	string name = obj.getName();
+	if(name=="Talisman")
+		this->talisman=false;
+	if(name=="Axe")
+		this->axe=false;
+	if(name=="Raft")
+		this->raft=false;
 	for(int i = 0; i <= bag.size(); i++){
 		if(bag[i].getName() == name){
 			Card temp = bag[i];
@@ -85,6 +94,12 @@ Card Character::removeObject(Card obj){
 	}		
 }
 Card Character::removeObject(string name){
+	if(name=="Talisman")
+		this->talisman=false;
+	if(name=="Axe")
+		this->axe=false;
+	if(name=="Raft")
+		this->raft=false;
 	for(int i = 0; i <= bag.size(); i++){
 		if(bag[i].getName() == name){
 			Card temp = bag[i];
@@ -104,7 +119,7 @@ void Character::showBag(void)
 		}
 	}
 	else
-		cout << "Bag is empty!\n\n";
+		cout << "Bag is empty!";
 }
 bool Character::hasInBag(string name){
 	for(int i = 0; i <= bag.size(); i++){
@@ -181,7 +196,7 @@ void Character::showFollowers(void){
 		}
 	}
 	else
-		cout << "No Followers!\n\n";
+		cout << "No Followers!";
 }
 
 
