@@ -349,6 +349,13 @@ string Character::getAlignment(){
 	return this->alignment;
 }
 
+void Character::setAlignment(string _alignment){
+	if(alignment == "Good" || alignment == "Neutral" || alignment == "Evil")
+		alignment = _alignment;
+	else
+		cout << "Error-- that is not a valid alignment.";
+}
+
 string Character::getProfession(){
 
 	return this->profession;

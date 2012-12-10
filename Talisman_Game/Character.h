@@ -84,6 +84,7 @@ public:
 	string getProfession();
 	string getSpawnPoint();
 	string getAlignment();
+	void setAlignment(string);
 	int getLife();
 	int getBaseLife();
 	int getStrength();
