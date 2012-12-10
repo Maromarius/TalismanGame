@@ -123,6 +123,12 @@
     <Filter Include="Source Files\Card\AdventureCard\Place">
       <UniqueIdentifier>{8d0e2470-9a31-4514-9ec1-877f68999ca6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Card\AdventureCard\Enemy\Sentinel">
+      <UniqueIdentifier>{9d7bbb5b-d125-4533-87e8-7ba7d17468ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Card\AdventureCard\Enemy\Sentinel">
+      <UniqueIdentifier>{1a4b6f91-0185-4e60-9853-fbfbbcd94596}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Warrior.h">
@@ -337,9 +343,6 @@
     </ClInclude>
     <ClInclude Include="Card.h">
       <Filter>Header Files\Card</Filter>
-    </ClInclude>
-    <ClInclude Include="AdventureCard.h">
-      <Filter>Header Files\Card\AdventureCard</Filter>
     </ClInclude>
     <ClInclude Include="Deck.h">
       <Filter>Header Files\Card</Filter>
@@ -595,6 +598,12 @@
     </ClInclude>
     <ClInclude Include="Talisman.h">
       <Filter>Header Files\Card\AdventureCard\MagicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SentinelMonster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdventureCard.h">
+      <Filter>Header Files\Card\AdventureCard\Enemy\Sentinel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1071,6 +1080,9 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SentinelMonster.cpp">
+      <Filter>Source Files\Card\AdventureCard\Enemy\Sentinel</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -181,6 +181,7 @@
     <ClInclude Include="Runes.h" />
     <ClInclude Include="Runesword.h" />
     <ClInclude Include="Sentinel.h" />
+    <ClInclude Include="SentinelMonster.h" />
     <ClInclude Include="Serpent.h" />
     <ClInclude Include="Shadow.h" />
     <ClInclude Include="Shield.h" />
@@ -341,6 +342,7 @@
     <ClCompile Include="Runes.cpp" />
     <ClCompile Include="Runesword.cpp" />
     <ClCompile Include="Sentinel.cpp" />
+    <ClCompile Include="SentinelMonster.cpp" />
     <ClCompile Include="Serpent.cpp" />
     <ClCompile Include="Shadow.cpp" />
     <ClCompile Include="Shield.cpp" />
