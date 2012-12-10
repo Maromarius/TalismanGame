@@ -17,7 +17,7 @@ VampiresTower::~VampiresTower()
 }
 
 void VampiresTower::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll;
 	int LifeGettingLost;
 	char decision;
@@ -52,5 +52,5 @@ void VampiresTower::effect(Character* character, Deck* adventureCards, Deck* spe
 		}
 
 		cout<<i+1<<LifeGettingLost-(i+1)<<"to go."<<endl;
-	}
+	}*/
 }

@@ -14,7 +14,7 @@ Chasm::~Chasm()
 }
 
 void Chasm::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll;
 	cout<<"Press an key to roll the die for yourselve."<<endl;
 	srand((unsigned int)time(0));
@@ -49,5 +49,5 @@ void Chasm::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	}
 
 	character->printStats();
-	return;
+	return;*/
 }

@@ -20,7 +20,7 @@ PortalOfPower::~PortalOfPower()
 }
 
 void PortalOfPower::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	Card temp;
 		if(this->Cards.size()>0)
 		{
@@ -33,5 +33,5 @@ void PortalOfPower::effect(Character* character, Deck* adventureCards, Deck* spe
 			temp;	
 			temp = adventureCards->draw();
 			cout<<"You drew a "<<temp.getName()<<endl<<temp.getDescription()<<endl;
-		}
+		}*/
 }

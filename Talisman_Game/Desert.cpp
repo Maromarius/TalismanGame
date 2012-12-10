@@ -14,7 +14,7 @@ Desert::~Desert()
 }
 
 void Desert::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	if(character->hasWaterBottle())
 		{
 			char decision;
@@ -31,5 +31,5 @@ void Desert::effect(Character* character, Deck* adventureCards, Deck* spellCards
 			}
 		}
 	else
-		character->loseLive(1);
+		character->loseLive(1);*/
 }

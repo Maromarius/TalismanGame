@@ -14,8 +14,8 @@ Fields::~Fields()
 }
 
 void Fields::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
-	if(this->Cards.size()>0)
+{/*
+	if(this->Fields.size()>0)
 	{
 			Card temp = Cards.back();
 			Cards.pop_back();
@@ -26,5 +26,5 @@ void Fields::effect(Character* character, Deck* adventureCards, Deck* spellCards
 		Card temp;	
 		temp = adventureCards->draw();
 		cout<<"You drew a "<<temp.getName()<<endl<<temp.getDescription()<<endl;
-	}
+	}*/
 }

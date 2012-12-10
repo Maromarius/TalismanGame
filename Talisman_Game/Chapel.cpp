@@ -25,7 +25,7 @@ Chapel::~Chapel()
 }
 
 void Chapel::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	if(character->getAlignment()=="Evil")
 	{
 		cout<<"You are Evil, so you will lose a life."<<endl;
@@ -89,5 +89,5 @@ void Chapel::effect(Character* character, Deck* adventureCards, Deck* spellCards
 	}
 	
 	character->printStats();
-	return;
+	return;*/
 }

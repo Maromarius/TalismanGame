@@ -19,7 +19,7 @@ Crypt::~Crypt()
 }
 
 void Crypt::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll1;
 	int diceRoll2;
 	int diceRoll3;
@@ -40,5 +40,5 @@ void Crypt::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	int totalRoll = diceRoll1 + diceRoll2 + diceRoll3 - character->getStrength();
 	cout<<"Your total roll comes out to a "<<totalRoll<<" ... ";
 
-	return;
+	return;*/
 }

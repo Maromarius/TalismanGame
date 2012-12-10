@@ -16,7 +16,7 @@ DiceWithDeath::~DiceWithDeath()
 }
 
 void DiceWithDeath::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll1;
 	int diceRoll2;
 	int diceRoll3;
@@ -59,5 +59,5 @@ void DiceWithDeath::effect(Character* character, Deck* adventureCards, Deck* spe
 			cout<<"You lose! You lose a life and will need to Dice with Death again Next Turn!"<<endl;
 			character->loseLive(1);
 			character->setIdleTurns(1);
-	}
+	}*/
 }

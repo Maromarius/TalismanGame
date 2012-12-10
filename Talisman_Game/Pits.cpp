@@ -17,7 +17,7 @@ Pits::~Pits()
 }
 
 void Pits::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll;
 
 	cout<<"Press an key to roll the die."<<endl;
@@ -28,6 +28,6 @@ void Pits::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 	character->setIdleTurns(diceRoll-1);
 
 	Enemy *PitLord = new Enemy("PitLord", "a self-intitle Lord of this Pit.","Pitlord",5,0,4);		
-	character->battleMonster(*PitLord);
+	character->battleMonster(*PitLord);*/
 
 }

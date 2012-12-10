@@ -25,7 +25,7 @@ Graveyard::~Graveyard()
 }
 
 void Graveyard::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	if(character->getAlignment()=="Good")
 	{
 		cout<<"You are Evil, so you will lose a life."<<endl;
@@ -86,5 +86,5 @@ void Graveyard::effect(Character* character, Deck* adventureCards, Deck* spellCa
 	}
 	
 	character->printStats();
-	return;
+	return;*/
 }

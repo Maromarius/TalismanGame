@@ -27,7 +27,7 @@ Village::~Village()
 }
 
 void Village::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	char decision;
 	cout<<"Who would you like to visite: the Healer, BlackSmith or Mystic?(h/b/m)"<<endl;
 	cin>>decision;
@@ -160,5 +160,5 @@ void Village::effect(Character* character, Deck* adventureCards, Deck* spellCard
 
 
 	character->printStats();
-	return;
+	return;*/
 }

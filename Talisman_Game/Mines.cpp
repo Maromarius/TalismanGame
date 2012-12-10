@@ -19,7 +19,7 @@ Mines::~Mines()
 }
 
 void Mines::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll1;
 	int diceRoll2;
 	int diceRoll3;
@@ -38,5 +38,5 @@ void Mines::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 			
 	cout<<"You rolled a "<<diceRoll1<<", "<<diceRoll2<<"& "<<diceRoll3<<endl;
 	int totalRoll = diceRoll1 + diceRoll2 + diceRoll3 - character->getCraft();
-	cout<<"Your total roll comes out to a "<<totalRoll<<" ... ";
+	cout<<"Your total roll comes out to a "<<totalRoll<<" ... ";*/
 }

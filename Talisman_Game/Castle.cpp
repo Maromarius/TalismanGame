@@ -14,7 +14,7 @@ Castle::~Castle()
 }
 
 void Castle::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	char decision;
 	cout<<"Would you like to heal yourself at the cost of 1 gold?(y/n)"<<endl;
 	cin>>decision;
@@ -30,5 +30,5 @@ void Castle::effect(Character* character, Deck* adventureCards, Deck* spellCards
 		return;
 
 	character->printStats();
-	return;
+	return;*/
 }

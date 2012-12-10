@@ -16,7 +16,7 @@ WerewolfDen::~WerewolfDen()
 
 void WerewolfDen::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {
-			cout<<"You are attacked by a WereWolf!"<<endl;
+			/*cout<<"You are attacked by a WereWolf!"<<endl;
 	
 			int diceRoll1,diceRoll2;
 
@@ -32,5 +32,5 @@ void WerewolfDen::effect(Character* character, Deck* adventureCards, Deck* spell
 			bool killedWereWolf = character->battleMonster(*WereWolf);
 
 			if(!killedWereWolf)
-				character->setIdleTurns(1);
+				character->setIdleTurns(1);*/
 }

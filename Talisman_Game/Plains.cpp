@@ -14,7 +14,7 @@ Plains::~Plains()
 }
 
 void Plains::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	Card temp;
 		if(this->Cards.size()>0)
 		{
@@ -28,5 +28,5 @@ void Plains::effect(Character* character, Deck* adventureCards, Deck* spellCards
 			temp = adventureCards->draw();
 			cout<<"You drew a "<<temp.getName()<<endl<<temp.getDescription()<<endl;
 		}
-	
+	*/
 }

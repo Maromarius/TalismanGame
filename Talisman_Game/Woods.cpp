@@ -14,7 +14,7 @@ Woods::~Woods()
 }
 
 void Woods::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	if(this->Cards.size()>0)
 	{
 			Card temp = Cards.back();
@@ -26,5 +26,5 @@ void Woods::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 		Card temp;	
 		temp = adventureCards->draw();
 		cout<<"You drew a "<<temp.getName()<<endl<<temp.getDescription()<<endl;
-	}
+	}*/
 }

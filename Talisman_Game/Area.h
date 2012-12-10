@@ -25,6 +25,13 @@
 #include "Wraith.h"
 #include "Character.h"
 #include "Deck.h"
+#include "Armour.h"
+#include "Sword.h"
+#include "Shield.h"
+#include "Helmet.h"
+#include "Axe.h"
+#include "Talisman.h"
+
 using namespace std;
 
 class Area
@@ -46,6 +53,9 @@ public:
 	vector<Card> PortalOfPower;
 	vector<Card> Ruins;
 	vector<Card> Runes;
+	vector<Card> Sentinel;
+	vector<Card> Temple;
+	vector<Card> Woods;
 
 	Area();
 	Area(string);

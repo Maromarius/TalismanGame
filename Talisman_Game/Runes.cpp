@@ -16,7 +16,7 @@ Runes::~Runes()
 }
 
 void Runes::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	Card temp;
 	for (int i =0;i<2;i++)
 	{
@@ -32,5 +32,5 @@ void Runes::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 			temp = adventureCards->draw();
 			cout<<"You drew a "<<temp.getName()<<endl<<temp.getDescription()<<endl;
 		}
-	}
+	}*/
 }

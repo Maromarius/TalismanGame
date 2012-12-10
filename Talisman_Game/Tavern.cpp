@@ -20,7 +20,7 @@ Tavern::~Tavern()
 }
 
 void Tavern::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll;
 		cout<<"Press an key to roll the die."<<endl;
 		srand((unsigned int)time(0));
@@ -46,5 +46,5 @@ void Tavern::effect(Character* character, Deck* adventureCards, Deck* spellCards
 				break;
 		case(6):cout<<"you met the boatman!"<<endl;
 				break;
-		}
+		}*/
 }

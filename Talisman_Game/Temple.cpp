@@ -25,7 +25,7 @@ Temple::~Temple()
 }
 
 void Temple::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 		int diceRoll1;
 		int diceRoll2;
 
@@ -115,5 +115,5 @@ void Temple::effect(Character* character, Deck* adventureCards, Deck* spellCards
 		case(12):cout<<"gain 2 lives!"<<endl;
 				character->gainLive(2);
 				break;
-		}
+		}*/
 }

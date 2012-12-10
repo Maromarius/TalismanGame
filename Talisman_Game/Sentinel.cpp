@@ -17,7 +17,7 @@ Sentinel::~Sentinel()
 }
 
 void Sentinel::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	Card temp;
 		if(this->Cards.size()>0)
 		{
@@ -30,5 +30,5 @@ void Sentinel::effect(Character* character, Deck* adventureCards, Deck* spellCar
 			temp;	
 			temp = adventureCards->draw();
 			cout<<"You drew a "<<temp.getName()<<endl<<temp.getDescription()<<endl;
-		}
+		}*/
 }

@@ -19,7 +19,7 @@ Forest::~Forest()
 }
 
 void Forest::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll;
 			cout<<"Press an key to roll the die."<<endl;
 			srand((unsigned int)time(0));
@@ -45,5 +45,5 @@ void Forest::effect(Character* character, Deck* adventureCards, Deck* spellCards
 					break;
 			}
 	character->printStats();
-	return;
+	return;*/
 }

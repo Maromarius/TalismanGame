@@ -16,5 +16,5 @@ PlainOfPeril::~PlainOfPeril()
 
 void PlainOfPeril::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 {
-	cout<<"Welcome to the Plain of peril, take a beak here, nothing will happen to you!"<<endl;
+	/*cout<<"Welcome to the Plain of peril, take a break here, nothing will happen to you!"<<endl;*/
 }

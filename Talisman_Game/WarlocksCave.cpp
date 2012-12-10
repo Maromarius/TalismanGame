@@ -22,7 +22,7 @@ WarlocksCave::~WarlocksCave()
 }
 
 void WarlocksCave::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{
+{/*
 	int diceRoll;
 		cout<<"Press an key to roll the die."<<endl;
 		srand((unsigned int)time(0));
@@ -53,5 +53,5 @@ void WarlocksCave::effect(Character* character, Deck* adventureCards, Deck* spel
 		case(6):cout<<"you lose 2 gold!"<<endl;
 				character->loseGold(2);
 				break;
-		}
+		}*/
 }
