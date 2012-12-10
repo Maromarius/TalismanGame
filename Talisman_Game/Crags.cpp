@@ -1,5 +1,6 @@
 #include "Crags.h"
 #include "Area.h"
+#include "Enemy.h"
 
 const string Crags::NAME = "Crags";
 const string Crags::DESCRIPTION =	"Roll 1 Die\n"
@@ -28,9 +29,10 @@ void Crags::effect(Character* character, Deck* adventureCards, Deck* spellCards)
 
 			switch(diceRoll)
 			{
-			case(1):cout<<"you are attacked by a Spirit!"<<endl;
-						//character.battleMonster(Spirit)
-						break;
+			case(1):{cout<<"you are attacked by a Spirit!"<<endl;
+					Enemy *spirit = new Enemy("Spirit", "a spirit from the Crags.","Spirit",5,4,0);		
+					character->battleMonster(*spirit);
+					break;}
 			case(2):cout<<"you loose one turn!"<<endl;
 					break;
 			case(3):cout<<"you loose one turn!"<<endl;

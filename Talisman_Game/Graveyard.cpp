@@ -25,4 +25,66 @@ Graveyard::~Graveyard()
 }
 
 void Graveyard::effect(Character* character, Deck* adventureCards, Deck* spellCards)
-{}
+{
+	if(character->getAlignment()=="Good")
+	{
+		cout<<"You are Evil, so you will lose a life."<<endl;
+		character->loseLive(1);
+	}
+	else if(character->getAlignment()=="Neutral")
+	{
+			char decision;
+			cout<<"Would you like to gain Fate at the cost of 1 gold?(y/n)"<<endl;
+			cin>>decision;
+
+			if(decision=='y')
+			{	
+				character->replenishFate(1);
+				character->printStats();
+				return;
+			}
+			else if(decision=='n')
+				return;
+	}
+	else if(character->getAlignment()=="Evil")
+	{
+		char decision;
+		cout<<"Would you like to replenish your Fate for free or Pray?(h/p)"<<endl;
+		cin>>decision;
+
+		if(decision=='h')
+		{	
+			character->replenishFate(1);
+		}
+		else if(decision=='p')
+		{
+			int diceRoll;
+			cout<<"Press an key to roll the die."<<endl;
+			srand((unsigned int)time(0));
+			diceRoll = ((int) rand() % 6 + 1);
+			cout<<"You rolled a "<<diceRoll<<" ...";
+
+			switch(diceRoll)
+			{
+			case(1):
+			case(2):
+			case(3):
+			case(4):cout<<"nothing happened."<<endl;
+					break;
+			case(5):cout<<"you gained a life!"<<endl;
+					character->gainFate(1);
+					break;
+			case(6):cout<<"you gained a spell!"<<endl;
+					Card temp = spellCards->draw();
+					if(character->hasRoomForSpells())
+						character->addSpell(temp);
+					else
+						this->Cards.push_back(temp);
+					break;
+			}
+		}
+	}
+	
+	character->printStats();
+	return;
+}

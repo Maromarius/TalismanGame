@@ -29,7 +29,7 @@ void Chapel::effect(Character* character, Deck* adventureCards, Deck* spellCards
 	if(character->getAlignment()=="Evil")
 	{
 		cout<<"You are Evil, so you will lose a life."<<endl;
-		character.loseLive(1);
+		character->loseLive(1);
 	}
 	else if(character->getAlignment()=="Neutral")
 	{
@@ -78,7 +78,11 @@ void Chapel::effect(Character* character, Deck* adventureCards, Deck* spellCards
 					character->gainLive(1);
 					break;
 			case(6):cout<<"you gained a spell!"<<endl;
-					//character.drawspell(1);
+					Card temp = spellCards->draw();
+					if(character->hasRoomForSpells())
+						character->addSpell(temp);
+					else
+						this->Cards.push_back(temp);
 					break;
 			}
 		}

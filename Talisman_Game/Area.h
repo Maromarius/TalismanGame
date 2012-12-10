@@ -13,11 +13,13 @@ class Area
 protected:
 	string areaName;
 	string areaDescription;
-	vector<Card*> Cards;
+	
 	vector<Area*> raftDestination;
 	int mapAreaNumber;
 
 public:
+	vector<Card> Cards;
+
 	Area();
 	Area(string);
 	Area(string,string,int);

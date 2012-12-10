@@ -52,10 +52,12 @@ void DiceWithDeath::effect(Character* character, Deck* adventureCards, Deck* spe
 	else if(yourRoll==deathRoll)
 	{
 		cout<<"It's a draw! You will need to Dice with Death again Next Turn!"<<endl;
+		character->setIdleTurns(1);
 	}
 	else if(yourRoll<deathRoll)
 	{
 			cout<<"You lose! You lose a life and will need to Dice with Death again Next Turn!"<<endl;
 			character->loseLive(1);
+			character->setIdleTurns(1);
 	}
 }
