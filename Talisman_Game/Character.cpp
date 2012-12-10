@@ -70,6 +70,7 @@ void Character::addObject(Card obj)
 			this->axe=true;
 		if(obj.getName()=="Raft")
 			this->raft=true;
+		cout<<"Adding "<<obj.getName()<<" to the bag\n";
 		this->bag.push_back(obj);
 	}
 	else
