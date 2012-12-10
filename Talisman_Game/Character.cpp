@@ -653,7 +653,7 @@ bool Character::battleMonster(Card monster)
 void Character::printStats()
 {
 	cout << this->getProfession() << "'s stats are as follows:\n"
-	<<"-------------------------------"
+	<<"-------------------------------\n"
 	<<"Alignment: "<<this->getAlignment()<<"\n"
 	<< "Current Life: " << this->getLife() << "/" << this->getBaseLife()<<"\n"
 	<< "Strength: " << this->getStrength() << " (" << this->getBaseStrength() << " Base + " << this->getCounterStrength() << " Counters)\n"

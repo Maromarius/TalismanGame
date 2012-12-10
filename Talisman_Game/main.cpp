@@ -219,7 +219,6 @@ bool canEvade(Player opponent)
 
 void movementOnBoard(Player players[], int turn, Map* TalismanMap)
 {
-	//cout << "\nIt is currently Player " << turn << "'s turn!" << endl;
 			cout << players[turn].getCharacter()->getProfession() << ", you are at the "<< players[turn].getCurrentAreaName()<<endl;
 			char decision;
 			bool endTurn=false;
@@ -824,6 +823,7 @@ int main(void){
 		if(!players[turn].checkIfPermaDead())
 		{
 			playerBannerTemplate(turn);
+			players[turn].getCharacter()->printStats();
 
 			if(players[turn].getCharacter()->getIdleTurns()>0)
 			{
