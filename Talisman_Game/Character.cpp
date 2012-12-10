@@ -507,7 +507,7 @@ void Character::battleCharacter(Character opponent)
 	system("PAUSE");
 	cout<<"You have a "<<attackRoll<<endl;
 	
-	cout<<"Roll Dice for your Opponet's attack roll."<<endl;
+	cout<<"Roll Dice for your Opponent's attack roll."<<endl;
 	srand((unsigned int)time(0));
 	opponentAttackRoll= ((int) rand() % 6 + 1);
 	system("PAUSE");
@@ -618,7 +618,7 @@ bool Character::battleMonster(Card monster)
 		char spoilDecision;
 		
 		cout << "Your total strength for this battle is " << this->getStrength()+attackRoll << endl;
-		cout << "Monster's total strength for this battle is \n" << monster.getStrength()+monsterAttackRoll << endl << endl;
+		cout << "Monster's total strength for this battle is " << monster.getStrength()+monsterAttackRoll << endl << endl;
 
 		//You win the battle
 		if(this->getStrength()+attackRoll > monster.getStrength()+monsterAttackRoll)

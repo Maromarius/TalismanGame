@@ -317,7 +317,7 @@ void Area::effect(Character c, Deck* adventureCards, Deck* spellCards)
 		Card card;
 		if(Woods.size() == 0)
 		{
-			card = adventureCards->draw();cout<<card.getType()<<endl;
+			card = adventureCards->draw();
 			cout << "Drawing Card..." << endl;
 			cout<<card.getType()<<endl;
 		}
